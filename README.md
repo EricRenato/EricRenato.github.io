@@ -2,7 +2,7 @@
 
 > Personal portfolio & interactive resume — Data Analyst | USP/ESALQ
 
-🚧 **Status: Em construção** — site sendo desenvolvido ativamente.
+🚧 **Status: Em construção** 
 
 -----
 
