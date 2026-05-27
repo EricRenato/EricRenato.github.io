@@ -1,0 +1,30 @@
+/* ============================================
+   STYLE.CSS — Estilos gerais do site
+   ============================================
+   Responsabilidades:
+   - Reset e tipografia base
+   - Layout principal (seções, dock, canvas)
+   - Cards, botões, formulários
+   - Cursor customizado dourado
+   - Variáveis CSS (tema claro como default)
+   ============================================ */
+
+:root {
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+    --color-accent: #d4af37; /* dourado */
+    --color-dock-bg: rgba(255, 255, 255, 0.6);
+    --transition: 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    cursor: none; /* esconde cursor padrão (cursor customizado assume) */
+    overflow: hidden;
+}
+
+/* TODO: dock, canvas, cards, botões... */

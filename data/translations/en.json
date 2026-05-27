@@ -1,0 +1,34 @@
+{
+    "nav": {
+        "inicio": "Home",
+        "projetos": "Projects",
+        "curriculo": "Resume",
+        "quem_sou": "About me",
+        "livros": "Books"
+    },
+    "hero_sequence": [
+        "Welcome",
+        "I am Eric",
+        "Data Analyst",
+        "USP/ESALQ",
+        "SQL & Data"
+    ],
+    "skills": {
+        "sql":      { "label": "SQL",        "level": 80 },
+        "excel":    { "label": "Excel",      "level": 70 },
+        "python":   { "label": "Python",     "level": 20 },
+        "power_bi": { "label": "Power BI",   "level": 20 },
+        "html_css": { "label": "HTML/CSS",   "level": 50 }
+    },
+    "modal": {
+        "title": "Request access",
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "chat_interest": "Interested in chatting",
+        "time_morning": "Morning",
+        "time_afternoon": "Afternoon",
+        "time_evening": "Evening",
+        "submit": "Submit"
+    }
+}

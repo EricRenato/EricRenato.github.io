@@ -1,0 +1,15 @@
+/* ============================================
+   DARK-MODE.CSS — Tema escuro
+   ============================================
+   Ativado via classe .dark no <body>.
+   Controlado por js/theme-toggle.js
+   (manual + automático 18h-06h)
+   ============================================ */
+
+body.dark {
+    --color-bg: #0d0d0d;
+    --color-text: #f0f0f0;
+    --color-dock-bg: rgba(20, 20, 20, 0.6);
+}
+
+/* TODO: ajustes específicos do dark mode */

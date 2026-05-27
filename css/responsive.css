@@ -1,0 +1,16 @@
+/* ============================================
+   RESPONSIVE.CSS — Media queries
+   ============================================
+   Breakpoints:
+   - Mobile:  até 768px
+   - Tablet:  769px a 1024px
+   - Desktop: 1025px+
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* TODO: ajustes mobile (dock menor, fontes, etc.) */
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* TODO: ajustes tablet */
+}

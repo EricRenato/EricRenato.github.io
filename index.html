@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric — Data Analyst</title>
+    <meta name="description" content="Portfólio pessoal de Eric, Data Analyst formado pela USP/ESALQ.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ===== BANNER RECRUITER MODE (ativado via ?mode=recruiter) ===== -->
+    <div id="recruiter-banner" class="hidden">
+        <span data-pt="Modo Recrutador Ativo" data-en="Recruiter Mode Active" data-es="Modo Reclutador Activo"></span>
+    </div>
+
+    <!-- ===== BANDEIRAS DE IDIOMA (topo central) ===== -->
+    <div id="language-switcher">
+        <img src="https://flagcdn.com/w40/br.png" alt="Português" data-lang="pt">
+        <img src="https://flagcdn.com/w40/us.png" alt="English"    data-lang="en">
+        <img src="https://flagcdn.com/w40/es.png" alt="Español"    data-lang="es">
+    </div>
+
+    <!-- ===== TOGGLE DARK/LIGHT ===== -->
+    <button id="theme-toggle" title="Alternar tema">🌓</button>
+
+    <!-- ===== CANVAS DA TELA INICIAL (partículas + ondas) ===== -->
+    <canvas id="hero-canvas"></canvas>
+
+    <!-- ===== SEÇÕES (SPA) ===== -->
+    <main>
+
+        <!-- Seção Início (vazia: o canvas faz o show) -->
+        <section id="inicio" class="active"></section>
+
+        <!-- Seção Projetos -->
+        <section id="projetos">
+            <h2 data-pt="Projetos" data-en="Projects" data-es="Proyectos"></h2>
+            <div id="projects-container">
+                <!-- Cards injetados via js/main.js a partir de data/projects.json -->
+            </div>
+        </section>
+
+        <!-- Seção Currículo -->
+        <section id="curriculo">
+            <h2 data-pt="Currículo" data-en="Resume" data-es="Currículum"></h2>
+            <div id="timeline"></div>
+            <div id="skills"></div>
+            <div id="languages"></div>
+        </section>
+
+        <!-- Seção Quem eu sou -->
+        <section id="quem-sou">
+            <h2 data-pt="Quem eu sou" data-en="About me" data-es="Sobre mí"></h2>
+            <img src="assets/images/eric.jpg" alt="Eric" id="profile-photo">
+            <p id="bio"></p>
+            <div id="hobby-tags"></div>
+            <blockquote id="rotating-quote"></blockquote>
+        </section>
+
+        <!-- Seção Livros -->
+        <section id="livros">
+            <h2 data-pt="Livros" data-en="Books" data-es="Libros"></h2>
+            <div id="books-container"></div>
+        </section>
+
+    </main>
+
+    <!-- ===== DOCK macOS (parte inferior central) ===== -->
+    <nav id="dock">
+        <button data-section="inicio"   title="Início">🏠</button>
+        <button data-section="projetos" title="Projetos">📊</button>
+        <button data-section="curriculo" title="Currículo">📄</button>
+        <button data-section="quem-sou" title="Quem eu sou">👤</button>
+        <button data-section="livros"   title="Livros">📚</button>
+        <a href="https://github.com/"   target="_blank" title="GitHub">💻</a>
+        <a href="https://linkedin.com/" target="_blank" title="LinkedIn">💼</a>
+    </nav>
+
+    <!-- ===== BOTÕES FIXOS: Home + Voltar ===== -->
+    <button id="btn-home"  title="Início">⌂</button>
+    <button id="btn-back"  title="Voltar">←</button>
+
+    <!-- ===== MODAL DE SOLICITAÇÃO DE ACESSO ===== -->
+    <div id="access-modal" class="hidden">
+        <div class="modal-content">
+            <h3 data-pt="Solicitar acesso" data-en="Request access" data-es="Solicitar acceso"></h3>
+            <input type="text"  id="modal-name"    placeholder="Nome">
+            <input type="email" id="modal-email"   placeholder="Email">
+            <input type="text"  id="modal-company" placeholder="Empresa">
+            <label><input type="checkbox" id="modal-chat"> Interesse em conversa</label>
+            <select id="modal-time">
+                <option value="manha"> Manhã</option>
+                <option value="tarde"> Tarde</option>
+                <option value="noite"> Noite</option>
+            </select>
+            <button id="modal-submit">Enviar</button>
+            <button id="modal-close">×</button>
+        </div>
+    </div>
+
+    <!-- ===== CURSOR CUSTOMIZADO DOURADO ===== -->
+    <div id="custom-cursor"></div>
+
+    <!-- ===== SCRIPTS (ordem importa) ===== -->
+    <script src="js/language.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/noise-waves.js"></script>
+    <script src="js/tree-transition.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
