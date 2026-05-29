@@ -441,6 +441,29 @@ html, body {
   color:rgba(0,0,0,0.2); z-index:101;
   pointer-events:none;
 }
+
+/* ── HOME RETURN GIF ────────────────────────────────────────────────────── */
+#home-gif-wrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#home-gif-wrap.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+#home-gif-wrap img {
+  max-width: 70vw;
+  max-height: 65vh;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+}
 </style>
 </head>
 <body>
@@ -709,15 +732,33 @@ function setLang(lang, btn) {
 
 // ── SECTION NAVIGATION ───────────────────────────────────────────────────
 let current = 'home'
+let leftHome = false
+let gifTimer = null
+
+function showHomeGif() {
+  const wrap = document.getElementById('home-gif-wrap')
+  const img  = wrap.querySelector('img')
+  img.src = 'home-return.gif?' + Date.now()  // força recarregar o GIF do início
+  wrap.classList.add('visible')
+  clearTimeout(gifTimer)
+  gifTimer = setTimeout(hideHomeGif, 4000)
+}
+
+function hideHomeGif() {
+  document.getElementById('home-gif-wrap').classList.remove('visible')
+  clearTimeout(gifTimer)
+}
 
 function showSection(id) {
   if (id === current) return
+  if (current === 'home') leftHome = true
   triggerTreeTransition(() => {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'))
     document.querySelectorAll('.dock-item').forEach(d => d.classList.remove('active-section'))
     document.getElementById('sec-' + id).classList.add('active')
     document.getElementById('dock-' + id)?.classList.add('active-section')
     current = id
+    if (id === 'home' && leftHome) showHomeGif()
     if(networkShown) showNetworkBg()
   })
 }
@@ -1073,6 +1114,11 @@ window.addEventListener('resize', () => { pResize() })
 pResize()
 pAnimate()
 </script>
+
+<!-- Home return GIF -->
+<div id="home-gif-wrap" onclick="hideHomeGif()">
+  <img src="home-return.gif" alt="">
+</div>
 
 <!-- GoatCounter visitor badge -->
 <div id="gc-badge" style="
