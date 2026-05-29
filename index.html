@@ -81,19 +81,25 @@ html, body {
 
 /* ── CANVAS (tree) ───────────────────────────────────────────────────────── */
 
-/* ── VIDEO INTRO ────────────────────────────────────────────────────────── */
-#intro-v1, #intro-v2 {
+/* ── VIDEO INTRO (YouTube) ───────────────────────────────────────────────── */
+#intro-wrap {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 80vw;
-  max-height: 70vh;
+  width: min(360px, 80vw);
+  aspect-ratio: 9/16;
   z-index: 50;
   opacity: 0;
   transition: opacity 0.8s ease;
   pointer-events: none;
   border-radius: 16px;
+  overflow: hidden;
+}
+#intro-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 #canvas-tree {
@@ -483,9 +489,9 @@ html, body {
 <canvas id="canvas-tree"></canvas>
 <div id="tree-click-hint">click to grow a new tree</div>
 
-<!-- Video intro elements -->
-<video id="intro-v1" src="intro1.mp4" muted playsinline preload="auto"></video>
-<video id="intro-v2" src="intro2.mp4" muted playsinline preload="auto"></video>
+<!-- YouTube intro player -->
+<div id="intro-wrap"><div id="yt-player"></div></div>
+<script src="https://www.youtube.com/iframe_api"></script>
 
 <!-- ── SECTIONS ──────────────────────────────────────────────────────────── -->
 
@@ -820,38 +826,52 @@ function growBranch(b, tree) {
 }
 function drawBranch(b, tree) {}
 
-// ── VIDEO INTRO ───────────────────────────────────────────────────────────
-const videos = [
-  document.getElementById('intro-v1'),
-  document.getElementById('intro-v2')
-]
+// ── VIDEO INTRO (YouTube) ─────────────────────────────────────────────────
+const VIDEO_IDS = ['kx7KqdxRc04', 'BN-ku_ISWFs']
 let videoIdx = 0
 let introTimer = null
+let ytPlayer = null
+const introWrap = document.getElementById('intro-wrap')
+
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('yt-player', {
+    videoId: VIDEO_IDS[0],
+    playerVars: {
+      autoplay: 0,
+      mute: 1,
+      controls: 0,
+      rel: 0,
+      playsinline: 1,
+      modestbranding: 1,
+      showinfo: 0,
+      fs: 0
+    },
+    events: {
+      onReady: () => setTimeout(playIntro, 500),
+      onStateChange: e => {
+        if (e.data === YT.PlayerState.ENDED) {
+          introWrap.style.opacity = '0'
+          scheduleNextIntro()
+        }
+      }
+    }
+  })
+}
 
 function playIntro() {
-  if (current !== 'home') { scheduleNextIntro(); return }
-  const vid = videos[videoIdx]
-  vid.currentTime = 0
-  vid.style.opacity = '1'
-  vid.play().catch(() => { vid.style.opacity = '0'; scheduleNextIntro() })
+  if (current !== 'home' || !ytPlayer) { scheduleNextIntro(); return }
+  ytPlayer.loadVideoById(VIDEO_IDS[videoIdx])
+  ytPlayer.playVideo()
+  introWrap.style.opacity = '1'
 }
 
 function scheduleNextIntro() {
   clearTimeout(introTimer)
   introTimer = setTimeout(() => {
-    videoIdx = (videoIdx + 1) % 2
+    videoIdx = (videoIdx + 1) % VIDEO_IDS.length
     playIntro()
   }, 45000)
 }
-
-videos.forEach(vid => {
-  vid.addEventListener('ended', () => {
-    vid.style.opacity = '0'
-    scheduleNextIntro()
-  })
-})
-
-setTimeout(playIntro, 500)
 
 // ── ACCESS REQUEST ────────────────────────────────────────────────────────
 function requestAccess(type) {
