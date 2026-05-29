@@ -79,16 +79,23 @@ html, body {
 }
 .section.active { opacity:1; pointer-events:all; }
 
-/* ── CANVAS (particles + tree) ──────────────────────────────────────────── */
-#canvas-particles { position:fixed; inset:0; z-index:1; }
-#canvas-particles::after {
-  content:'';
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.0) 90%);
-  z-index:2;
+/* ── CANVAS (tree) ───────────────────────────────────────────────────────── */
+
+/* ── VIDEO INTRO ────────────────────────────────────────────────────────── */
+#intro-v1, #intro-v2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  max-height: 70vh;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  border-radius: 16px;
 }
+
 #canvas-tree {
   position:fixed; inset:0; z-index:100;
   pointer-events:none;
@@ -466,9 +473,6 @@ html, body {
   <button id="lang-en" class="lang-btn" onclick="setLang('en', this)" title="English" type="button">🇺🇸</button>
   <button id="lang-es" class="lang-btn" onclick="setLang('es', this)" title="Español" type="button">🇪🇸</button>
 </div>
-<!-- Particle canvas -->
-<canvas id="canvas-particles"></canvas>
-
 <!-- Waves background (simplex noise + mouse reactive) -->
 <div id="waves-bg" style="position:fixed;inset:0;z-index:2;opacity:0;transition:opacity 1.2s ease;pointer-events:none;">
   <svg id="waves-svg" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"></svg>
@@ -478,6 +482,10 @@ html, body {
 <!-- Tree transition canvas -->
 <canvas id="canvas-tree"></canvas>
 <div id="tree-click-hint">click to grow a new tree</div>
+
+<!-- Video intro elements -->
+<video id="intro-v1" src="intro1.mp4" muted playsinline preload="auto"></video>
+<video id="intro-v2" src="intro2.mp4" muted playsinline preload="auto"></video>
 
 <!-- ── SECTIONS ──────────────────────────────────────────────────────────── -->
 
@@ -812,133 +820,38 @@ function growBranch(b, tree) {
 }
 function drawBranch(b, tree) {}
 
-// ── PARTICLE TEXT ────────────────────────────────────────────────────────
-const pCanvas = document.getElementById('canvas-particles')
-const pCtx    = pCanvas.getContext('2d')
-const WORDS   = {
-  pt: ['Bem-vindo', 'Eu sou Eric', 'Data Analyst', 'USP / ESALQ', 'SQL & Dados'],
-  en: ['Welcome',   "I'm Eric",    'Data Analyst', 'USP / ESALQ', 'SQL & Data'],
-  es: ['Bienvenido','Soy Eric',    'Data Analyst', 'USP / ESALQ', 'SQL & Datos']
-}
-const PALETTES = [
-  {r:255,g:255,b:255},{r:220,g:220,b:220},
-  {r:200,g:200,b:200},{r:240,g:240,b:240},{r:255,g:255,b:255}
+// ── VIDEO INTRO ───────────────────────────────────────────────────────────
+const videos = [
+  document.getElementById('intro-v1'),
+  document.getElementById('intro-v2')
 ]
+let videoIdx = 0
+let introTimer = null
 
-let pW, pH, particles=[], wIdx=0, pFrame=0, pRunning=false
-
-class P {
-  constructor(){
-    const a=Math.random()*Math.PI*2
-    const r=(pW+pH)*0.6
-    this.x=pW/2+Math.cos(a)*r; this.y=pH/2+Math.sin(a)*r
-    this.vx=0; this.vy=0
-    this.tx=0; this.ty=0
-    this.spd=Math.random()*5+3
-    this.frc=this.spd*0.06
-    this.sz=Math.random()*2+1.2
-    this.sr={r:0,g:0,b:0}; this.tr={r:0,g:0,b:0}
-    this.cw=0; this.br=Math.random()*0.025+0.005
-    this.killed=false
-  }
-  cur(){
-    const w=this.cw
-    return{
-      r:Math.round(this.sr.r+(this.tr.r-this.sr.r)*w),
-      g:Math.round(this.sr.g+(this.tr.g-this.sr.g)*w),
-      b:Math.round(this.sr.b+(this.tr.b-this.sr.b)*w)
-    }
-  }
-  setTarget(x,y,col){
-    this.tx=x; this.ty=y
-    this.sr=this.cur(); this.tr=col
-    this.cw=0; this.killed=false
-  }
-  kill(){
-    const a=Math.random()*Math.PI*2, r=(pW+pH)*0.6
-    this.tx=pW/2+Math.cos(a)*r; this.ty=pH/2+Math.sin(a)*r
-    this.sr=this.cur(); this.tr={r:0,g:0,b:0}; this.cw=0; this.killed=true
-  }
-  update(){
-    const dx=this.tx-this.x, dy=this.ty-this.y
-    const d=Math.sqrt(dx*dx+dy*dy)||1
-    const pr=d<80?d/80:1
-    const dvx=(dx/d)*this.spd*pr, dvy=(dy/d)*this.spd*pr
-    const sx=dvx-this.vx, sy=dvy-this.vy
-    const sm=Math.sqrt(sx*sx+sy*sy)||1
-    this.vx+=(sx/sm)*this.frc; this.vy+=(sy/sm)*this.frc
-    this.x+=this.vx; this.y+=this.vy
-    if(this.cw<1)this.cw=Math.min(this.cw+this.br,1)
-  }
-  draw(){
-    const c=this.cur()
-    pCtx.fillStyle=`rgb(${c.r},${c.g},${c.b})`
-    pCtx.beginPath(); pCtx.arc(this.x,this.y,this.sz,0,Math.PI*2); pCtx.fill()
-  }
-  oob(){return this.x<-50||this.x>pW+50||this.y<-50||this.y>pH+50}
+function playIntro() {
+  if (current !== 'home') { scheduleNextIntro(); return }
+  const vid = videos[videoIdx]
+  vid.currentTime = 0
+  vid.style.opacity = '1'
+  vid.play().catch(() => { vid.style.opacity = '0'; scheduleNextIntro() })
 }
 
-function pResize(){
-  pW=pCanvas.width=window.innerWidth
-  pH=pCanvas.height=window.innerHeight
-  showWord()
+function scheduleNextIntro() {
+  clearTimeout(introTimer)
+  introTimer = setTimeout(() => {
+    videoIdx = (videoIdx + 1) % 2
+    playIntro()
+  }, 45000)
 }
 
-function getPixels(word){
-  const off=document.createElement('canvas')
-  off.width=pW; off.height=pH
-  const oc=off.getContext('2d')
-  const fs=Math.min(pW/6,110)
-  oc.font=`bold ${fs}px 'Bebas Neue',Impact,sans-serif`
-  oc.textAlign='center'; oc.textBaseline='middle'
-  oc.fillStyle='#fff'
-  oc.fillText(word,pW/2,pH/2)
-  return oc.getImageData(0,0,pW,pH)
-}
+videos.forEach(vid => {
+  vid.addEventListener('ended', () => {
+    vid.style.opacity = '0'
+    scheduleNextIntro()
+  })
+})
 
-
-function showWord(){
-  const words=WORDS[currentLang]||WORDS.pt
-  const word=words[wIdx%words.length]
-  const id=getPixels(word), px=id.data
-  const col=PALETTES[wIdx%PALETTES.length]
-  const coords=[]
-  for(let i=0;i<px.length;i+=5*4){if(px[i+3]>0)coords.push({x:(i/4)%pW,y:Math.floor(i/4/pW)})}
-  for(let i=coords.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[coords[i],coords[j]]=[coords[j],coords[i]]}
-  let pi=0
-  for(const{x,y}of coords){
-    if(pi<particles.length){particles[pi].setTarget(x,y,col)}
-    else{const p=new P();p.setTarget(x,y,col);particles.push(p)}
-    pi++
-  }
-  for(let i=pi;i<particles.length;i++)particles[i].kill()
-}
-
-function pAnimate(){
-  if(current!=='home'){pFrame++;requestAnimationFrame(pAnimate);return}
-  pCtx.fillStyle='rgba(0,0,0,0.28)'; pCtx.fillRect(0,0,pW,pH)
-  for(let i=particles.length-1;i>=0;i--){
-    const p=particles[i]; p.update(); p.draw()
-    if(p.killed&&p.oob())particles.splice(i,1)
-  }
-  pFrame++
-  if(pFrame===220 && !networkShown){
-    networkShown = true
-    setTimeout(()=>{
-      particles.forEach(p=>p.kill())
-      setTimeout(()=>{
-        pCanvas.style.transition='opacity 0.8s'
-        pCanvas.style.opacity='0'
-        showNetworkBg()
-        document.getElementById('dock').style.opacity='1'
-        document.getElementById('dock').style.transform='translateX(-50%) translateY(0)'
-      }, 800)
-    }, 400)
-  }
-  if(pFrame>220 && networkShown){requestAnimationFrame(pAnimate);return}
-  if(pFrame%220===0 && !networkShown){wIdx=(wIdx+1)%5;showWord()}
-  requestAnimationFrame(pAnimate)
-}
+setTimeout(playIntro, 500)
 
 // ── ACCESS REQUEST ────────────────────────────────────────────────────────
 function requestAccess(type) {
@@ -1060,18 +973,10 @@ window.addEventListener('resize',initWaves)
 initWaves()
 
 // ── INIT ──────────────────────────────────────────────────────────────────
-let networkShown = false
+let networkShown = true
+showNetworkBg()
 
 setTimeout(()=>{ document.getElementById('lang-pt').style.opacity='1'; document.getElementById('lang-en').style.opacity='0.4'; document.getElementById('lang-es').style.opacity='0.4'; },100)
-
-const dock = document.getElementById('dock')
-dock.style.opacity = '0'
-dock.style.transform = 'translateX(-50%) translateY(20px)'
-dock.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
-
-window.addEventListener('resize', () => { pResize() })
-pResize()
-pAnimate()
 </script>
 
 <!-- GoatCounter visitor badge -->
