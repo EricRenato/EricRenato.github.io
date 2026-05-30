@@ -9,7 +9,7 @@
         async src="//gc.zgo.at/count.js"></script>
 
 <style>
-/* ── RESET & VARIABLES ─────────────────────────────────────────────────── */
+/* ── RESET & VARIABLES --  */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
 :root {
@@ -49,7 +49,7 @@ html, body {
   cursor: none;
 }
 
-/* ── CUSTOM CURSOR ──────────────────────────────────────────────────────── */
+/* --- CUSTOM CURSOR  --- */
 .cursor {
   position:fixed; width:10px; height:10px;
   background: var(--gold); border-radius:50%;
@@ -68,7 +68,7 @@ html, body {
   opacity:0.5;
 }
 
-/* ── SECTIONS (com scroll) ──────────────────────────────────────────────── */
+/* --- SECTIONS (com scroll) --- */
 .section {
   position:fixed; inset:0;
   display:flex; align-items:center; justify-content:center;
@@ -79,7 +79,7 @@ html, body {
 }
 .section.active { opacity:1; pointer-events:all; }
 
-/* ── CANVAS (particles + tree) ──────────────────────────────────────────── */
+/* --- CANVAS (particles + tree) --- */
 #canvas-particles { position:fixed; inset:0; z-index:1; }
 #canvas-particles::after {
   content:'';
@@ -97,7 +97,7 @@ html, body {
 }
 #canvas-tree.visible { pointer-events:all; opacity:1; }
 
-/* ── DOCK (médio ~60px) ────────────────────────────────────────────────── */
+/* --- DOCK (médio ~60px) --- */
 #dock {
   position:fixed; bottom:20px; left:50%;
   transform:translateX(-50%);
@@ -191,7 +191,7 @@ html, body {
   margin:0 6px; align-self:center;
 }
 
-/* ── THEME SWITCHER ─────────────────────────────────────────────────────── */
+/* --- THEME SWITCHER --- */
 #theme-btn {
   position:fixed; top:20px; left:20px; z-index:300;
   width:36px; height:36px; border-radius:50%;
@@ -229,14 +229,14 @@ html, body {
   box-shadow: 0 0 24px rgba(255,215,0,0.28);
 }
 
-/* ── SECTION: HOME ──────────────────────────────────────────────────────── */
+/* --- SECTION: HOME --- */
 #sec-home { z-index:5; }
 #sec-home .home-content {
   position:relative; z-index:10;
   text-align:center; pointer-events:none;
 }
 
-/* ── SECTION: PROJETOS ──────────────────────────────────────────────────── */
+/* --- SECTION: PROJETOS --- */
 #sec-projetos { z-index:5; padding:40px 40px 120px; }
 .projetos-grid {
   display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -280,7 +280,7 @@ html, body {
 }
 .projeto-link:hover { background:var(--gold); color:#000; border-color:var(--gold); }
 
-/* ── STARDUST BUTTON ────────────────────────────────────────────────────── */
+/* --- STARDUST BUTTON --- */
 .stardust-btn {
   outline:none; cursor:none; border:0;
   position:relative; border-radius:100px;
@@ -301,7 +301,7 @@ html, body {
 }
 .stardust-btn:hover { box-shadow: inset 0 0.3rem 0.5rem rgba(129,216,255,0.4), inset 0 -0.4rem 0.9rem rgba(64,180,255,0.6), 0 1rem 1rem -0.6rem rgba(0,0,0,0.8); }
 
-/* ── SECTION: CURRÍCULO ─────────────────────────────────────────────────── */
+/* --- SECTION: CURRÍCULO --- */
 #sec-curriculo { z-index:5; padding:40px 40px 120px; }
 .cv-container { max-width:800px; width:100%; }
 .cv-header {
@@ -320,7 +320,7 @@ html, body {
 }
 .cv-title { font-size:13px; color:var(--text-dim); letter-spacing:2px; margin-top:6px; }
 
-/* ── LOCKED CONTENT (V6 style) ──────────────────────────────────────────── */
+/* --- LOCKED CONTENT (V6 style) --- */
 .cv-locked {
   margin-top:32px; padding:20px;
   background:var(--glass-bg);
@@ -342,7 +342,7 @@ html, body {
 .lock-btn:hover { border-color:var(--gold); color:var(--gold); }
 .lock-icon { font-size:14px; }
 
-/* ── SECTION: QUEM EU SOU ───────────────────────────────────────────────── */
+/* --- SECTION: QUEM EU SOU --- */
 #sec-sobre { z-index:5; padding:40px 40px 120px; }
 .sobre-container {
   max-width:900px; width:100%;
@@ -384,7 +384,7 @@ html, body {
 }
 .hobby-tag:hover { border-color:var(--gold); color:var(--gold); }
 
-/* ── SECTION: LIVROS ────────────────────────────────────────────────────── */
+/* --- SECTION: LIVROS --- */
 #sec-livros { z-index:5; padding:40px 40px 120px; }
 .livros-grid {
   display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
@@ -417,7 +417,7 @@ html, body {
   color:var(--gold); letter-spacing:1px;
 }
 
-/* ── SECTION TITLES ─────────────────────────────────────────────────────── */
+/* --- SECTION TITLES --- */
 .sec-title {
   position:absolute; top:32px; left:50%; transform:translateX(-50%);
   font-family:'Bebas Neue',sans-serif;
@@ -426,15 +426,15 @@ html, body {
   z-index:10;
 }
 
-/* ── GLASS SVG FILTER ───────────────────────────────────────────────────── */
+/* ── GLASS SVG FILTER --- */
 .glass-filter { display:none; }
 
-/* ── SCROLLBAR ──────────────────────────────────────────────────────────– */
+/* --- SCROLLBAR --- */
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
 
-/* ── TREE TRANSITION ────────────────────────────────────────────────────── */
+/* --- TREE TRANSITION --- */
 #tree-click-hint {
   position:fixed; bottom:100px; right:20px;
   font-size:10px; letter-spacing:2px;
@@ -442,7 +442,7 @@ html, body {
   pointer-events:none;
 }
 
-/* ── HOME RETURN GIF ────────────────────────────────────────────────────── */
+/* --- HOME RETURN GIF --- */
 #home-gif-wrap {
   position: fixed;
   inset: 0;
@@ -502,7 +502,7 @@ html, body {
 <canvas id="canvas-tree"></canvas>
 <div id="tree-click-hint">click to grow a new tree</div>
 
-<!-- ── SECTIONS ──────────────────────────────────────────────────────────── -->
+<!-- --- SECTIONS --- -->
 
 <!-- HOME -->
 <section id="sec-home" class="section active">
@@ -568,15 +568,42 @@ html, body {
       <img src="IMG_7217.jpeg" alt="Eric Renato" class="cv-photo" onerror="this.style.display='none'">
       <div>
         <div class="cv-name">Eric Renato</div>
-        <div class="cv-title" data-pt="ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS"
-             data-en="DATA ANALYST · SQL · FINANCIAL SYSTEMS"
-             data-es="ANALISTA DE DATOS · SQL · SISTEMAS FINANCIEROS">
-          ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS
+        <div class="cv-title" 
+        
+        data-pt="ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS
+        Analista Sênior com 14 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos.
+Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. 
+Meu lema: "Dados são fatos; a análise revela a história."
+        
+        
+        
+        
+        data-en="DATA ANALYST · SQL · FINANCIAL SYSTEMS
+        Senior Analyst with 14 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. 
+        Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science,
+         AI and Analytics from USP/ESALQ (2026). Fluent in English and Spanish, with ERP experience (Treasury, NetSuite) and process automation. 
+         Seeking Data Analyst/Business Analyst position focused on financial analytics, remote or hybrid work, and competitive compensation. 
+         My motto: "Data is facts; analysis reveals the story."   
+        
+        
+        
+        
+        data-es="ANALISTA DE DATOS · SQL · SISTEMAS FINANCIEROS
+        Analista Senior con 14 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. 
+Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). Fluido en inglés y español, con experiencia en ERP (Tesorería, NetSuite) y automatización de procesos. 
+Busco posición como Data Analyst/Business Analyst enfocado en analytics financiero, trabajo remoto o híbrido y compensación competitiva.
+Mi lema: "Los datos son hechos; el análisis revela la historia.">
+           
+
+Analista Sênior com 14 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos.
+Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. 
+Meu lema: "Dados são fatos; a análise revela a história.
+
         </div>
       </div>
     </div>
 
-    <!-- LOCKED CONTENT (V6 STYLE - SÓ OS 3 BOTÕES) -->
+    <!-- conteudo bloqueado -->
     <div class="cv-locked">
       <p data-pt="🔒 Conteúdo exclusivo — solicite acesso ao candidato"
          data-en="🔒 Exclusive content — request access from the candidate"
@@ -588,14 +615,22 @@ html, body {
           <span class="lock-icon">🎧</span>
           <span data-pt="Ouvir em Português" data-en="Listen in Portuguese" data-es="Escuchar en Portugués">Ouvir em Português</span>
         </button>
+
         <button class="lock-btn" onclick="requestAccess('audio-en')">
+          <span class="lock-icon">🎧</span>
+          <span data-pt="Escuchar em espanhol" data-en="Escuchar em espanhol" data-es="Listen in English">Escuchar em espanhol</span>
+        </button>
+
+        <button class="lock-btn" onclick="requestAccess('audio-es')">
           <span class="lock-icon">🎧</span>
           <span data-pt="Listen in English" data-en="Listen in English" data-es="Listen in English">Listen in English</span>
         </button>
+
         <button class="lock-btn" onclick="requestAccess('video')">
           <span class="lock-icon">🎬</span>
           <span data-pt="Ver apresentação em vídeo" data-en="Watch video presentation" data-es="Ver presentación en video">Ver apresentação em vídeo</span>
         </button>
+
       </div>
     </div>
 
@@ -611,25 +646,44 @@ html, body {
     </div>
     <div>
       <div class="sobre-name">Eric<br>Renato</div>
-      <div class="sobre-role" data-pt="DATA ANALYST · SÃO PAULO" data-en="DATA ANALYST · SÃO PAULO" data-es="ANALISTA DE DATOS · SÃO PAULO">DATA ANALYST · SÃO PAULO</div>
-      <p class="sobre-bio" data-pt="Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence. Apaixonado por transformar dados em decisões — e por Michael Jackson."
-         data-en="Professional with 15+ years in corporate financial systems, transitioning into Data Analytics and Business Intelligence. Passionate about turning data into decisions — and about Michael Jackson."
-         data-es="Profesional con más de 15 años en sistemas financieros corporativos, en transición hacia Data Analytics. Apasionado por transformar datos en decisiones — y por Michael Jackson.">
-        Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence.
+      <div class="sobre-role" 
+      data-pt="Analista de Dados · São Paulo · BRASIL" 
+      data-en="DATA ANALYST · SÃO PAULO · BRAZIL" 
+      data-es="ANALISTA DE DATOS · SÃO PAULO · BRAZIL ">DATA ANALYST · SÃO PAULO - BRAZIL</div>
+      <p class="sobre-bio" 
+      
+      
+      data-pt="Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence.
+      Eu adoro ler livros! Após muita meditação, refletir, errar, meditar, repensar, me encontrei!
+      O processo contínuo de evolução que persigo, só será possível através dos grandes clássicos literários da humanidade, assim como obras monumentais da filosofia! "
+      
+      
+      
+      data-en="Professional with 15+ years of experience in corporate financial systems, transitioning to Data Analytics and Business Intelligence.
+      Loves to read books! After much meditation, reflecting, failing, meditating, rethinking, I found myself!
+      The continuous process of evolution I pursue will only be possible through the great literary classics of humanity, as well as monumental works of philosophy!"
+      
+      
+      data-es="Profesional con más de 15 años en sistemas financieros corporativos, en transición hacia Data Analytics. Apasionado por transformar datos en decisiones.
+      ¡Adoro leer libros! Después de mucha meditación, reflexionar, errar, meditar, repensar, ¡me encontré!
+      El proceso continuo de evolución que persigo, solo será posible a través de los grandes clásicos literarios de la humanidad, así como obras monumentales de la filosofía!">
+       
+      
+      Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence.
+        Eu adoro ler livros! Após muita meditação, refletir, errar, meditar, repensar, me encontrei!
+        O processo contínuo de evolução que persigo, só será possível através dos grandes clássicos literários da humanidade, assim como obras monumentais da filosofia! 
       </p>
       <div class="hobbies">
         <span class="hobby-tag">🎵 Michael Jackson</span>
         <span class="hobby-tag">📊 Data Analytics</span>
         <span class="hobby-tag">📚 Leitura</span>
-        <span class="hobby-tag">🏍️ Motos</span>
-        <span class="hobby-tag">☕ Café</span>
         <span class="hobby-tag">🎬 Cinema</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LIVROS -->
+<!-- Sessão de LIVROS -->
 <section id="sec-livros" class="section">
   <span class="sec-title" data-pt="Livros" data-en="Books" data-es="Libros">Livros</span>
   <div class="livros-grid">
@@ -647,14 +701,51 @@ html, body {
     </a>
     <a class="livro-card" href="#" target="_blank">
       <div class="livro-cover">📚</div>
-      <div class="livro-title">Adicione seus livros aqui</div>
-      <div class="livro-author">—</div>
+      <div class="livro-title">Storytelling com Dados</div>
+      <div class="livro-author">Knaflic</div>
       <span class="livro-badge">EM BREVE</span>
     </a>
+
+     <a class="livro-card" href="#" target="_blank">
+      <div class="livro-cover">📚</div>
+      <div class="livro-title">Storytelling com Dados</div>
+      <div class="livro-author">Knaflic</div>
+      <span class="livro-badge">EM BREVE</span>
+    </a>
+
+     <a class="livro-card" href="#" target="_blank">
+      <div class="livro-cover">📚</div>
+      <div class="livro-title">Storytelling com Dados</div>
+      <div class="livro-author">Knaflic</div>
+      <span class="livro-badge">EM BREVE</span>
+    </a>
+
+     <a class="livro-card" href="#" target="_blank">
+      <div class="livro-cover">📚</div>
+      <div class="livro-title">Storytelling com Dados</div>
+      <div class="livro-author">Knaflic</div>
+      <span class="livro-badge">EM BREVE</span>
+    </a>
+
+     <a class="livro-card" href="#" target="_blank">
+      <div class="livro-cover">📚</div>
+      <div class="livro-title">Storytelling com Dados</div>
+      <div class="livro-author">Knaflic</div>
+      <span class="livro-badge">EM BREVE</span>
+    </a>
+
+     <! --<a class="livro-card" href="#" target="_blank"> -->
+      <div class="livro-cover">📚</div>
+      <div class="livro-title">Storytelling com Dados</div>
+      <div class="livro-author">Knaflic</div>
+      <span class="livro-badge">EM BREVE</span>
+    </a> -->
+
+
   </div>
 </section>
 
-<!-- ── DOCK ────────────────────────────────────────────────────────────── -->
+<!-- --- Dentro da DOCK botões --- -->
 <nav id="dock">
   <div class="dock-item active-section" onclick="showSection('home')" id="dock-home">
     <div class="dock-icon">🏠</div>
@@ -698,7 +789,7 @@ html, body {
 </nav>
 
 <script>
-// ── CURSOR ───────────────────────────────────────────────────────────────
+// --- CURSOR ---
 const cursor = document.getElementById('cursor')
 const ring   = document.getElementById('cursor-ring')
 document.addEventListener('mousemove', e => {
@@ -710,7 +801,7 @@ document.addEventListener('mousemove', e => {
   }, 80)
 })
 
-// ── THEME ────────────────────────────────────────────────────────────────
+// --- THEME ---
 let isDark = true
 function toggleTheme() {
   isDark = !isDark
@@ -718,7 +809,7 @@ function toggleTheme() {
   document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️'
 }
 
-// ── LANGUAGE ─────────────────────────────────────────────────────────────
+// --- Idiomas ---
 let currentLang = 'pt'
 function setLang(lang, btn) {
   currentLang = lang
@@ -730,7 +821,7 @@ function setLang(lang, btn) {
   })
 }
 
-// ── SECTION NAVIGATION ───────────────────────────────────────────────────
+// --- SECTION NAVIGATION ---
 let current = 'home'
 let leftHome = false
 let gifTimer = null
@@ -763,7 +854,7 @@ function showSection(id) {
   })
 }
 
-// ── TREE TRANSITION ───────────────────────────────────────────────────────
+// --- TREE TRANSITION ---
 const treeCanvas = document.getElementById('canvas-tree')
 const treeCtx    = treeCanvas.getContext('2d')
 let treeAnim, treeCallback
@@ -853,13 +944,13 @@ function growBranch(b, tree) {
 }
 function drawBranch(b, tree) {}
 
-// ── PARTICLE TEXT ────────────────────────────────────────────────────────
+// --- Entrada Particulas Explode no primeiro acesso ---
 const pCanvas = document.getElementById('canvas-particles')
 const pCtx    = pCanvas.getContext('2d')
 const WORDS   = {
-  pt: ['Bem-vindo', 'Eu sou Eric', 'Data Analyst', 'USP / ESALQ', 'SQL & Dados'],
-  en: ['Welcome',   "I'm Eric",    'Data Analyst', 'USP / ESALQ', 'SQL & Data'],
-  es: ['Bienvenido','Soy Eric',    'Data Analyst', 'USP / ESALQ', 'SQL & Datos']
+  pt: ['Bem-vindo', 'Eu sou Eric', ],
+  en: ['Welcome',   "I'm Eric",    ],
+  es: ['Bienvenido','Soy Eric',    ]
 }
 const PALETTES = [
   {r:255,g:255,b:255},{r:220,g:220,b:220},
@@ -981,7 +1072,7 @@ function pAnimate(){
   requestAnimationFrame(pAnimate)
 }
 
-// ── ACCESS REQUEST ────────────────────────────────────────────────────────
+// --- ACCESS REQUEST ---
 function requestAccess(type) {
   const pwd = prompt('🔑 Digite o código de acesso / Enter access code:')
   if (pwd === 'eric2025') {
@@ -991,7 +1082,7 @@ function requestAccess(type) {
   }
 }
 
-// ── WAVE BACKGROUND (simplex noise) ──────────────────────────────────────
+// --- WAVE BACKGROUND (simplex noise) ---
 (function(){
   function buildPermutationTable(r){const t=new Uint8Array(256);for(let i=0;i<256;i++)t[i]=i;for(let i=255;i>0;i--){const j=r()*( i+1)|0;[t[i],t[j]]=[t[j],t[i]]}return t}
   const F2=.5*(Math.sqrt(3)-1),G2=(3-Math.sqrt(3))/6
@@ -1100,7 +1191,7 @@ document.addEventListener('touchmove',e=>{
 window.addEventListener('resize',initWaves)
 initWaves()
 
-// ── INIT ──────────────────────────────────────────────────────────────────
+// --- INIT ---
 let networkShown = false
 
 setTimeout(()=>{ document.getElementById('lang-pt').style.opacity='1'; document.getElementById('lang-en').style.opacity='0.4'; document.getElementById('lang-es').style.opacity='0.4'; },100)
