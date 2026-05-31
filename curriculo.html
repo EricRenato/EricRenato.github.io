@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Currículo — Eric Renato</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Syne:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script data-goatcounter="https://ericrenato.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
@@ -110,9 +111,9 @@ html, body {
   gap:8px; padding:10px 16px 12px;
   background:rgba(20,20,20,0.85);
   backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border);
+  border:1.25px solid rgba(160,175,190,0.55);
   border-radius:24px;
-  box-shadow:0 8px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+  box-shadow:0 0 0 1px rgba(100,130,155,0.2), 0 8px 40px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.3);
   max-width:calc(100vw - 24px);
   overflow-x:auto; scrollbar-width:none;
 }
@@ -260,6 +261,7 @@ main {
 
 <!-- Botão de tema -->
 <button id="theme-btn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+<a href="index.html" style="position:fixed;top:60px;right:16px;z-index:300;background:rgba(20,20,20,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:7px 14px;font-size:12px;color:#E8E8E0;text-decoration:none;font-family:'Syne',sans-serif;letter-spacing:1px;display:flex;align-items:center;gap:6px;cursor:none;transition:all 0.3s;">🏠 Home</a>
 
 <!-- Seletor de idioma -->
 <div id="lang-switcher">
@@ -294,6 +296,9 @@ main {
           data-es="ANALISTA DE DATOS · SQL · SISTEMAS FINANCIEROS">
           ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS
         </div>
+        <a href="https://linkedin.com/in/eric-renato" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 16px;border-radius:20px;border:1px solid rgba(10,102,194,0.4);background:rgba(10,102,194,0.12);color:#6ab0f5;text-decoration:none;font-size:12px;letter-spacing:1px;cursor:none;transition:all 0.2s;">
+          <i class="fab fa-linkedin" style="font-size:16px;"></i> LinkedIn
+        </a>
       </div>
     </div>
 
@@ -409,7 +414,7 @@ main {
     <div class="dock-dot"></div>
   </a>
   <a class="dock-item" href="quem-sou.html" id="dock-sobre">
-    <div class="dock-icon">👤</div>
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="IMG_7217.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14px;"></div>
     <div class="dock-tooltip" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</div>
     <div class="dock-dot"></div>
   </a>
@@ -419,18 +424,6 @@ main {
     <div class="dock-dot"></div>
   </a>
 
-  <div class="dock-separator"></div>
-
-  <a class="dock-item" href="https://github.com/EricRenato" target="_blank" id="dock-github">
-    <div class="dock-icon">🐙</div>
-    <div class="dock-tooltip">GitHub</div>
-    <div class="dock-dot"></div>
-  </a>
-  <a class="dock-item" href="https://linkedin.com/in/" target="_blank" id="dock-linkedin">
-    <div class="dock-icon">💼</div>
-    <div class="dock-tooltip">LinkedIn</div>
-    <div class="dock-dot"></div>
-  </a>
 </nav>
 
 <!-- GoatCounter visitor badge -->
