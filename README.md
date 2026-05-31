@@ -2,16 +2,20 @@
 
 > Personal portfolio & interactive resume — Data Analyst | USP/ESALQ
 
-🚧 **Status: Em construção** 
+### Status
+🚧 Em evolução constante V2 (31/05/2026)
+
+### Últimas atualizações
+- [Data] Dividido em múltiplas páginas
+- [Data] Adicionado vídeo de apresentação
+- [Data] Reescrito texto "Quem sou eu"
 
 -----
 
 ## 🎯 Sobre o Site
 
 Site pessoal de portfólio com currículo interativo.
-Construído do zero em HTML, CSS e JavaScript puro —
-hospedado gratuitamente via GitHub Pages.
-
+Construído do zero em HTML, CSS e JavaScript puro, hospedado gratuitamente via GitHub Pages.
 **Acesse:** [ericrenato.github.io](https://ericrenato.github.io)
 
 -----
@@ -19,21 +23,15 @@ hospedado gratuitamente via GitHub Pages.
 ## ✨ Funcionalidades
 
 ### Públicas — qualquer visitante
-
 - Apresentação pessoal
 - Portfólio de projetos com links para GitHub
 - Currículo em texto completo
 - Links LinkedIn e GitHub
 
-### Bloqueadas — acesso sob solicitação
+### Bloqueadas — acesso sob solicitação - ideia em desenvolvimento 
 
-- 🔒 Áudio de apresentação em **Português**
-- 🔒 Áudio de apresentação em **Inglês**
-- 🔒 Vídeo de apresentação pessoal
-
-> O desbloqueio é feito por senha temporária —
-> solicite acesso diretamente ao autor.
-
+- 🔒 Áudio de apresentação em Português, Espanhol e Inglês.
+- 🔒 Vídeo de apresentação pessoal em Português, Espanhol e Inglês.
 -----
 
 ## 🛠️ Stack
@@ -47,18 +45,21 @@ hospedado gratuitamente via GitHub Pages.
 
 ## 📂 Estrutura do Projeto
 
-```
-EricRenato.github.io/
-│
-├── index.html          ← Página principal
+projeto/
+├── index.html (Home)
+├── curriculo.html
+├── projetos.html
+├── quem-sou.html
+├── Livros.html
+├── Github.html
+├── Linkedin.html
 ├── css/
-│   └── style.css       ← Estilos e layout
+│   └── style.css
 ├── js/
-│   └── main.js         ← Interatividade e fundo animado
-├── assets/
-│   ├── audio/          ← Áudios de apresentação (bloqueados)
-│   └── video/          ← Vídeo de apresentação (bloqueado)
-└── README.md
+│   └── main.js
+└── assets/
+    ├── images/
+    └── video/
 ```
 
 -----
