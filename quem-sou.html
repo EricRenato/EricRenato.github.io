@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quem eu sou — Eric Renato</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script data-goatcounter="https://ericrenato.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold:#C9A84C; --dark:#080808; --panel:#111111;
+  --border:rgba(255,255,255,0.08); --text:#E8E8E0; --text-dim:#888;
+  --radius:16px; --glass-bg:rgba(255,255,255,0.07);
+  --glass-border:rgba(255,255,255,0.15);
+  --transition:0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+[data-theme="light"] {
+  --dark:#F0EDE6; --panel:#FAF8F4;
+  --border:rgba(0,0,0,0.08); --text:#1A1A1A; --text-dim:#666;
+  --glass-bg:rgba(0,0,0,0.05); --glass-border:rgba(0,0,0,0.12);
+}
+html, body { width:100%; min-height:100%; background:var(--dark); color:var(--text); font-family:'Syne',sans-serif; cursor:none; }
+.cursor { position:fixed; width:8px; height:8px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; }
+.cursor-ring { position:fixed; width:32px; height:32px; border:1px solid var(--gold); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:all 0.15s ease; opacity:0.5; }
+#waves-bg { position:fixed; inset:0; z-index:1; pointer-events:none; }
+#theme-btn { position:fixed; top:16px; right:16px; z-index:300; background:rgba(20,20,20,0.85); backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:8px 12px; font-size:16px; cursor:none; transition:all 0.3s; }
+#theme-btn:hover { background:rgba(255,255,255,0.15); transform:scale(1.1); }
+#lang-switcher { position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:300; display:flex; gap:8px; background:rgba(20,20,20,0.85); backdrop-filter:blur(18px); padding:8px 16px; border-radius:24px; border:1px solid rgba(255,215,0,0.18); box-shadow:0 12px 30px rgba(0,0,0,0.35); }
+.lang-btn { background:rgba(255,215,0,0.16); color:#ffd700; border:1px solid rgba(255,215,0,0.35); cursor:none; padding:8px 10px; border-radius:12px; opacity:0.8; transition:opacity 0.2s, transform 0.2s; font-size:18px; }
+.lang-btn.active, .lang-btn:hover { opacity:1; transform:scale(1.12); }
+#dock { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:200; display:flex; align-items:flex-end; gap:8px; padding:10px 16px 12px; background:rgba(20,20,20,0.85); backdrop-filter:blur(20px); border:1px solid var(--glass-border); border-radius:24px; box-shadow:0 8px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1); max-width:calc(100vw - 24px); overflow-x:auto; scrollbar-width:none; }
+#dock::-webkit-scrollbar { display:none; }
+.dock-item { display:flex; flex-direction:column; align-items:center; cursor:none; position:relative; transition:transform var(--transition); text-decoration:none; color:inherit; }
+.dock-item:hover { transform:translateY(-14px) scale(1.2); }
+.dock-item.active-page > .dock-icon { box-shadow:0 0 0 2px var(--gold); }
+.dock-icon { width:54px; height:54px; background:var(--glass-bg); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; border:1px solid var(--glass-border); }
+.dock-dot { width:4px; height:4px; background:var(--text); border-radius:50%; margin-top:4px; opacity:0; }
+.dock-item.active-page .dock-dot { opacity:1; }
+.dock-tooltip { position:absolute; bottom:calc(100% + 10px); background:rgba(20,20,20,0.9); color:var(--text); padding:5px 10px; border-radius:8px; font-size:11px; white-space:nowrap; pointer-events:none; opacity:0; transform:translateY(4px); transition:opacity 0.2s, transform 0.2s; }
+.dock-item:hover .dock-tooltip { opacity:1; transform:translateY(0); }
+.dock-separator { width:1px; height:40px; background:var(--border); margin:0 4px; align-self:center; }
+main { position:relative; z-index:5; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:80px 40px 120px; }
+.sec-title { position:fixed; top:72px; left:50%; transform:translateX(-50%); font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; z-index:10; white-space:nowrap; }
+
+/* ── SOBRE ── */
+.sobre-container { max-width:900px; width:100%; display:grid; grid-template-columns:260px 1fr; gap:48px; align-items:start; }
+.sobre-photo-wrap { position:relative; }
+.sobre-photo { width:240px; height:300px; object-fit:cover; object-position:top; border-radius:var(--radius); border:1px solid var(--border); filter:grayscale(20%); transition:filter 0.3s; }
+.sobre-photo:hover { filter:grayscale(0%); }
+.sobre-photo-wrap::after { content:''; position:absolute; inset:8px -8px -8px 8px; border:1px solid var(--gold); border-radius:var(--radius); z-index:-1; opacity:0.4; }
+.sobre-name { font-family:'Bebas Neue',sans-serif; font-size:48px; letter-spacing:4px; color:var(--gold); line-height:1; margin-bottom:6px; }
+.sobre-role { font-size:12px; letter-spacing:3px; color:var(--text-dim); margin-bottom:28px; }
+.sobre-bio { font-size:14px; line-height:1.9; color:var(--text-dim); margin-bottom:20px; }
+.hobbies { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.hobby-tag { padding:6px 14px; border-radius:20px; border:1px solid var(--border); font-size:11px; letter-spacing:1px; color:var(--text-dim); transition:all 0.2s; }
+.hobby-tag:hover { border-color:var(--gold); color:var(--gold); }
+@media (max-width:700px) { .sobre-container { grid-template-columns:1fr; } .sobre-photo { width:180px; height:220px; } main { padding:80px 20px 120px; } }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<button id="theme-btn" onclick="toggleTheme()">🌙</button>
+<div id="lang-switcher">
+  <button id="lang-pt" class="lang-btn active" onclick="setLang('pt',this)" type="button">🇧🇷</button>
+  <button id="lang-en" class="lang-btn" onclick="setLang('en',this)" type="button">🇺🇸</button>
+  <button id="lang-es" class="lang-btn" onclick="setLang('es',this)" type="button">🇪🇸</button>
+</div>
+<div id="waves-bg">
+  <svg id="waves-svg" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;position:absolute;inset:0;"></svg>
+</div>
+<span class="sec-title" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</span>
+
+<main>
+  <div class="sobre-container">
+    <div class="sobre-photo-wrap">
+      <img src="IMG_7217.jpeg" alt="Eric Renato" class="sobre-photo" onerror="this.style.background='var(--panel)'">
+    </div>
+    <div>
+      <div class="sobre-name">Eric<br>Renato</div>
+      <div class="sobre-role"
+        data-pt="DATA ANALYST · SÃO PAULO"
+        data-en="DATA ANALYST · SÃO PAULO"
+        data-es="ANALISTA DE DATOS · SÃO PAULO">DATA ANALYST · SÃO PAULO</div>
+      <p class="sobre-bio"
+        data-pt="Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence. Apaixonado por transformar dados em decisões — e por Michael Jackson."
+        data-en="Professional with 15+ years in corporate financial systems, transitioning into Data Analytics and Business Intelligence. Passionate about turning data into decisions — and about Michael Jackson."
+        data-es="Profesional con más de 15 años en sistemas financieros corporativos, en transición hacia Data Analytics. Apasionado por transformar datos en decisiones — y por Michael Jackson.">
+        Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence.
+      </p>
+      <div class="hobbies">
+        <span class="hobby-tag">🎵 Michael Jackson</span>
+        <span class="hobby-tag">📊 Data Analytics</span>
+        <span class="hobby-tag">📚 Leitura</span>
+        <span class="hobby-tag">🏍️ Motos</span>
+        <span class="hobby-tag">☕ Café</span>
+        <span class="hobby-tag">🎬 Cinema</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<nav id="dock">
+  <a class="dock-item" href="index.html"><div class="dock-icon">🏠</div><div class="dock-tooltip" data-pt="Início" data-en="Home" data-es="Inicio">Início</div><div class="dock-dot"></div></a>
+  <a class="dock-item" href="projetos.html"><div class="dock-icon">💼</div><div class="dock-tooltip" data-pt="Projetos" data-en="Projects" data-es="Proyectos">Projetos</div><div class="dock-dot"></div></a>
+  <a class="dock-item" href="curriculo.html"><div class="dock-icon">📄</div><div class="dock-tooltip" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</div><div class="dock-dot"></div></a>
+  <a class="dock-item active-page" href="quem-sou.html"><div class="dock-icon">👤</div><div class="dock-tooltip" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</div><div class="dock-dot"></div></a>
+  <a class="dock-item" href="livros.html"><div class="dock-icon">📚</div><div class="dock-tooltip" data-pt="Livros" data-en="Books" data-es="Libros">Livros</div><div class="dock-dot"></div></a>
+  <div class="dock-separator"></div>
+  <a class="dock-item" href="https://github.com/EricRenato" target="_blank"><div class="dock-icon">🐙</div><div class="dock-tooltip">GitHub</div><div class="dock-dot"></div></a>
+  <a class="dock-item" href="https://linkedin.com/in/" target="_blank"><div class="dock-icon">💼</div><div class="dock-tooltip">LinkedIn</div><div class="dock-dot"></div></a>
+</nav>
+
+<div id="gc-badge" style="position:fixed;bottom:24px;right:24px;z-index:500;display:flex;align-items:center;gap:8px;background:rgba(20,20,20,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:6px 14px 6px 10px;font-family:'Syne',sans-serif;font-size:12px;color:#E8E8E0;box-shadow:0 4px 20px rgba(0,0,0,0.4);opacity:0;transition:opacity 0.6s;">
+  <span style="font-size:15px;">👁</span><span id="gc-count" style="letter-spacing:1px;">—</span>
+</div>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring')
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'},80)})
+let isDark=true
+function toggleTheme(){isDark=!isDark;document.documentElement.setAttribute('data-theme',isDark?'dark':'light');document.getElementById('theme-btn').textContent=isDark?'🌙':'☀️'}
+function setLang(lang,btn){document.documentElement.setAttribute('data-lang',lang);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');document.querySelectorAll('[data-'+lang+']').forEach(el=>el.textContent=el.getAttribute('data-'+lang))}
+;(function(){function buildPerm(r){const t=new Uint8Array(256);for(let i=0;i<256;i++)t[i]=i;for(let i=255;i>0;i--){const j=r()*(i+1)|0;[t[i],t[j]]=[t[j],t[i]];}return t}const F2=.5*(Math.sqrt(3)-1),G2=(3-Math.sqrt(3))/6,g3=[[1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0],[1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1],[0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1]];window._noise2D=function(){const p=buildPerm(Math.random),perm=new Uint8Array(512),pm12=new Uint8Array(512);for(let i=0;i<512;i++){perm[i]=p[i&255];pm12[i]=perm[i]%12}return function(x,y){let n0,n1,n2;const s=(x+y)*F2,i=Math.floor(x+s),j=Math.floor(y+s),t=(i+j)*G2,X0=i-t,Y0=j-t,x0=x-X0,y0=y-Y0,i1=x0>y0?1:0,j1=x0>y0?0:1,x1=x0-i1+G2,y1=y0-j1+G2,x2=x0-1+2*G2,y2=y0-1+2*G2,ii=i&255,jj=j&255,gi0=pm12[ii+perm[jj]],gi1=pm12[ii+i1+perm[jj+j1]],gi2=pm12[ii+1+perm[jj+1]];let t0=.5-x0*x0-y0*y0;if(t0<0)n0=0;else{t0*=t0;n0=t0*t0*(g3[gi0][0]*x0+g3[gi0][1]*y0)}let t1=.5-x1*x1-y1*y1;if(t1<0)n1=0;else{t1*=t1;n1=t1*t1*(g3[gi1][0]*x1+g3[gi1][1]*y1)}let t2=.5-x2*x2-y2*y2;if(t2<0)n2=0;else{t2*=t2;n2=t2*t2*(g3[gi2][0]*x2+g3[gi2][1]*y2)}return 70*(n0+n1+n2)}}})()
+const wavesBg=document.getElementById('waves-bg'),wavesSvg=document.getElementById('waves-svg'),noise2D=window._noise2D()
+let wW=0,wH=0,wavesLines=[],wavesPaths=[],wavesRaf,wM={x:-10,y:0,lx:0,ly:0,sx:0,sy:0,v:0,vs:0,a:0,set:false}
+function initWaves(){wW=window.innerWidth;wH=window.innerHeight;wavesSvg.setAttribute('viewBox',`0 0 ${wW} ${wH}`);wavesSvg.style.width=wW+'px';wavesSvg.style.height=wH+'px';wavesPaths.forEach(p=>p.remove());wavesPaths=[];wavesLines=[];const xGap=10,yGap=10,cols=Math.ceil((wW+200)/xGap),rows=Math.ceil((wH+30)/yGap),xs=(wW-xGap*cols)/2,ys=(wH-yGap*rows)/2;for(let i=0;i<cols;i++){const pts=[];for(let j=0;j<rows;j++)pts.push({x:xs+xGap*i,y:ys+yGap*j,wx:0,wy:0,cx:0,cy:0,cvx:0,cvy:0});const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('fill','none');path.setAttribute('stroke','rgba(255,255,255,0.15)');path.setAttribute('stroke-width','0.8');wavesSvg.appendChild(path);wavesPaths.push(path);wavesLines.push(pts)}cancelAnimationFrame(wavesRaf);wavesRaf=requestAnimationFrame(wavesTick)}
+function wavesTick(t){wM.sx+=(wM.x-wM.sx)*0.1;wM.sy+=(wM.y-wM.sy)*0.1;const dx=wM.x-wM.lx,dy=wM.y-wM.ly;wM.v=Math.hypot(dx,dy);wM.vs+=(wM.v-wM.vs)*0.1;wM.vs=Math.min(100,wM.vs);wM.lx=wM.x;wM.ly=wM.y;wM.a=Math.atan2(dy,dx);wavesLines.forEach(pts=>pts.forEach(p=>{const mv=noise2D((p.x+t*0.008)*0.003,(p.y+t*0.003)*0.002)*8;p.wx=Math.cos(mv)*12;p.wy=Math.sin(mv)*6;const dx=p.x-wM.sx,dy=p.y-wM.sy,d=Math.hypot(dx,dy),l=Math.max(175,wM.vs);if(d<l){const s=1-d/l,f=Math.cos(d*0.001)*s;p.cvx+=Math.cos(wM.a)*f*l*wM.vs*0.00035;p.cvy+=Math.sin(wM.a)*f*l*wM.vs*0.00035}p.cvx+=(0-p.cx)*0.01;p.cvy+=(0-p.cy)*0.01;p.cvx*=0.95;p.cvy*=0.95;p.cx+=p.cvx;p.cy+=p.cvy;p.cx=Math.min(50,Math.max(-50,p.cx));p.cy=Math.min(50,Math.max(-50,p.cy))}));wavesLines.forEach((pts,li)=>{if(pts.length<2||!wavesPaths[li])return;const f=pts[0];let d=`M ${f.x+f.wx} ${f.y+f.wy}`;for(let i=1;i<pts.length;i++){const p=pts[i];d+=`L ${p.x+p.wx+p.cx} ${p.y+p.wy+p.cy}`}wavesPaths[li].setAttribute('d',d)});wavesRaf=requestAnimationFrame(wavesTick)}
+document.addEventListener('mousemove',e=>{wM.x=e.clientX;wM.y=e.clientY;if(!wM.set){wM.sx=e.clientX;wM.sy=e.clientY;wM.lx=e.clientX;wM.ly=e.clientY;wM.set=true}})
+document.addEventListener('touchmove',e=>{wM.x=e.touches[0].clientX;wM.y=e.touches[0].clientY;if(!wM.set){wM.sx=wM.x;wM.sy=wM.y;wM.lx=wM.x;wM.ly=wM.y;wM.set=true}},{passive:true})
+window.addEventListener('resize',initWaves)
+initWaves()
+fetch('https://ericrenato.goatcounter.com/counter/TOTAL.json').then(r=>r.json()).then(d=>{document.getElementById('gc-count').textContent=d.count;document.getElementById('gc-badge').style.opacity='1'}).catch(()=>{document.getElementById('gc-badge').style.display='none'})
+setTimeout(()=>{document.getElementById('lang-pt').style.opacity='1';document.getElementById('lang-en').style.opacity='0.4';document.getElementById('lang-es').style.opacity='0.4'},100)
+</script>
+</body>
+</html>
