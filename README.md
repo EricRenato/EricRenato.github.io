@@ -46,7 +46,7 @@ Construído do zero em HTML, CSS e JavaScript puro, hospedado gratuitamente via 
 ## 📂 Estrutura do Projeto
 
 projeto/
-├── index.html (Home)
+-├── index.html (Home)
 ├── curriculo.html
 ├── projetos.html
 ├── quem-sou.html
