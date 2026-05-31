@@ -1,26 +1,27 @@
-# # EricRenato.github.io 🌐
+# EricRenato.github.io 🌐
 
-> Personal portfolio & interactive resume — Data Analyst | USP/ESALQ
+- #### Data is a real fact ... even though I'm trying to figure them out
 
-### Status
+- ####  Dados são fatos ... mesmo assim estou tentando entendê-los
+
+- #### Los datos son hechos reales ... sin embargo estoy tratando de entenderlos
+
+- **Check:** [ericrenato.github.io](https://ericrenato.github.io)
+
+- **Check** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eric-renato)
+
+-----
+## Status
 🚧 Em evolução constante V2 (31/05/2026)
 
-### Últimas atualizações
+#### Últimas atualizações
 - [Data] Dividido em múltiplas páginas
 - [Data] Adicionado vídeo de apresentação
 - [Data] Reescrito texto "Quem sou eu"
 
 -----
 
-### 🎯 Sobre o Site
-
-Site pessoal de portfólio com currículo interativo.
-Construído do zero em HTML, CSS e JavaScript puro, hospedado gratuitamente via GitHub Pages.
-**Acesse:** [ericrenato.github.io](https://ericrenato.github.io)
-
------
-
-### ✨ Funcionalidades
+## ✨ Funcionalidades
 
 ### Públicas — qualquer visitante
 - Apresentação pessoal
@@ -34,7 +35,7 @@ Construído do zero em HTML, CSS e JavaScript puro, hospedado gratuitamente via 
 - 🔒 Vídeo de apresentação pessoal em Português, Espanhol e Inglês.
 -----
 
-### 🛠️ Stack
+## 🛠️ Stack
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
@@ -43,7 +44,7 @@ Construído do zero em HTML, CSS e JavaScript puro, hospedado gratuitamente via 
 
 -----
 
-### 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```
 projeto/
@@ -52,8 +53,6 @@ projeto/
 ├── projetos.html
 ├── quem-sou.html
 ├── Livros.html
-├── Github.html
-├── Linkedin.html
 ├── css/
 │   └── style.css
 ├── js/
@@ -65,7 +64,7 @@ projeto/
 
 -----
 
-###🎨 Design
+## 🎨 Design
 
 - Fundo interativo que reage ao movimento do mouse
 - Layout responsivo — funciona em desktop e mobile
@@ -73,31 +72,24 @@ projeto/
 
 -----
 
-### 📂 Projetos em Destaque
+## 📂 Projetos Futuros
 
 ### 🎵 [dangerous_data_mj_statistics](https://github.com/EricRenato/dangerous_data_mj_statistics)
 
-Análise estatística nos números de vendas do cantor Michael Jackson.
-Teremos estatísticas descritivas, testes de hipóteses, correlação e regressão.*(comming soon)*
-`Excel` `Statistics` `USP/ESALQ`
+Análise estatística dos números de vendas do cantor Michael Jackson.
+- Decidi utilizar essa abordagem, para auxiliar nos exercícios do curos de Data Science!
+- Teremos estatísticas descritivas, testes de hipóteses, correlação e regressão.*(comming soon)*
+- `Excel` - `Statistics`- `USP/ESALQ`
 
 ### 🏦 cash_investment_reconciliation
 (https://github.com/EricRenato/cash_investment_reconciliation) *(comming soon)*
-Farei um modelo automatizado de conciliação em um contrato de investimento atrelado ao CDI.
-`Oracle SQL` `Financial Analytics` `Data Quality`
+- Este é um projeto que tenho em mentes há anos!
+- Uma dor real que usuários de Tesouraria possuem.
+- Farei um modelo automatizado de conciliação em um contrato de investimento atrelado ao CDI.
+- `Oracle SQL`- `Financial Analytics`- `Data Quality`
 
 -----
 
-## 👤 Autor
-
-**Eric Renato **
-Data Analyst | 15+ anos em sistemas financeiros corporativos
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eric-renato)
-
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/EricRenato)
-
------
 
 ## 📋 Licença
 
