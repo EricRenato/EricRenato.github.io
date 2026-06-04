@@ -656,33 +656,31 @@ html, body {
 
 <!-- ── DOCK ────────────────────────────────────────────────────────────── -->
 <nav id="dock">
-  <div class="dock-item active-section" onclick="showSection('home')" id="dock-home">
+  <div class="dock-item active-section" id="dock-home">
     <div class="dock-icon">🏠</div>
     <div class="dock-tooltip" data-pt="Início" data-en="Home" data-es="Inicio">Início</div>
     <div class="dock-dot"></div>
   </div>
-  <div class="dock-item" onclick="showSection('projetos')" id="dock-projetos">
+  <a class="dock-item" href="projetos.html" id="dock-projetos">
     <div class="dock-icon">💼</div>
     <div class="dock-tooltip" data-pt="Projetos" data-en="Projects" data-es="Proyectos">Projetos</div>
     <div class="dock-dot"></div>
-  </div>
-  <div class="dock-item" onclick="showSection('curriculo')" id="dock-curriculo">
+  </a>
+  <a class="dock-item" href="curriculo.html" id="dock-curriculo">
     <div class="dock-icon">📄</div>
     <div class="dock-tooltip" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</div>
     <div class="dock-dot"></div>
-  </div>
-  <div class="dock-item" onclick="showSection('sobre')" id="dock-sobre">
+  </a>
+  <a class="dock-item" href="quem-sou.html" id="dock-sobre">
     <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="IMG_7217.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14px;"></div>
     <div class="dock-tooltip" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</div>
     <div class="dock-dot"></div>
-  </div>
-  <div class="dock-item" onclick="showSection('livros')" id="dock-livros">
+  </a>
+  <a class="dock-item" href="livros.html" id="dock-livros">
     <div class="dock-icon">📚</div>
     <div class="dock-tooltip" data-pt="Livros" data-en="Books" data-es="Libros">Livros</div>
     <div class="dock-dot"></div>
-  </div>
-
-
+  </a>
 </nav>
 
 <script>
