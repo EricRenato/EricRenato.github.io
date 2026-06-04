@@ -131,6 +131,7 @@ document.addEventListener('touchmove',e=>{wM.x=e.touches[0].clientX;wM.y=e.touch
 window.addEventListener('resize',initWaves)
 initWaves()
 fetch('https://ericrenato.goatcounter.com/counter/TOTAL.json').then(r=>r.json()).then(d=>{document.getElementById('gc-count').textContent=d.count;document.getElementById('gc-badge').style.opacity='1'}).catch(()=>{document.getElementById('gc-badge').style.display='none'})
+sessionStorage.setItem('voltouHome', 'true')
 setTimeout(()=>{document.getElementById('lang-pt').style.opacity='1';document.getElementById('lang-en').style.opacity='0.4';document.getElementById('lang-es').style.opacity='0.4'},100)
 </script>
 </body>

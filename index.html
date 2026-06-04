@@ -1183,13 +1183,24 @@ let networkShown = false
 setTimeout(()=>{ document.getElementById('lang-pt').style.opacity='1'; document.getElementById('lang-en').style.opacity='0.4'; document.getElementById('lang-es').style.opacity='0.4'; },100)
 
 const dock = document.getElementById('dock')
-dock.style.opacity = '0'
-dock.style.transform = 'translateX(-50%) translateY(20px)'
-dock.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
 
-window.addEventListener('resize', () => { pResize() })
-pResize()
-pAnimate()
+if (sessionStorage.getItem('voltouHome')) {
+  // Voltou de outra página — pula partículas, mostra tudo imediatamente
+  document.getElementById('canvas-particles').style.display = 'none'
+  networkShown = true
+  showNetworkBg()
+  dock.style.opacity = '1'
+  dock.style.transform = 'translateX(-50%) translateY(0)'
+  setTimeout(showHomeGif, 500)
+} else {
+  // Primeira visita — animação normal de partículas
+  dock.style.opacity = '0'
+  dock.style.transform = 'translateX(-50%) translateY(20px)'
+  dock.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
+  window.addEventListener('resize', () => { pResize() })
+  pResize()
+  pAnimate()
+}
 </script>
 
 <!-- Home return GIF -->
