@@ -578,6 +578,7 @@ fetch('https://ericrenato.goatcounter.com/counter/TOTAL.json')
   })
   .catch(() => { document.getElementById('gc-badge').style.display = 'none' })
 
+sessionStorage.setItem('voltouHome', 'true')
 // Idioma inicial
 setTimeout(() => {
   document.getElementById('lang-pt').style.opacity = '1'
