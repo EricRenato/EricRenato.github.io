@@ -9,7 +9,7 @@
         async src="//gc.zgo.at/count.js"></script>
 
 <style>
-/* ── RESET & VARIABLES --  */
+/* ── RESET & VARIABLES ─────────────────────────────────────────────────── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
 :root {
@@ -49,7 +49,7 @@ html, body {
   cursor: none;
 }
 
-/* --- CUSTOM CURSOR  --- */
+/* ── CUSTOM CURSOR ──────────────────────────────────────────────────────── */
 .cursor {
   position:fixed; width:10px; height:10px;
   background: var(--gold); border-radius:50%;
@@ -68,7 +68,7 @@ html, body {
   opacity:0.5;
 }
 
-/* --- SECTIONS (com scroll) --- */
+/* ── SECTIONS (com scroll) ──────────────────────────────────────────────── */
 .section {
   position:fixed; inset:0;
   display:flex; align-items:center; justify-content:center;
@@ -79,7 +79,7 @@ html, body {
 }
 .section.active { opacity:1; pointer-events:all; }
 
-/* --- CANVAS (particles + tree) --- */
+/* ── CANVAS (particles + tree) ──────────────────────────────────────────── */
 #canvas-particles { position:fixed; inset:0; z-index:1; }
 #canvas-particles::after {
   content:'';
@@ -89,15 +89,7 @@ html, body {
   background: radial-gradient(circle at center, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.0) 90%);
   z-index:2;
 }
-#canvas-tree {
-  position:fixed; inset:0; z-index:100;
-  pointer-events:none;
-  opacity:0;
-  transition: opacity 0.3s;
-}
-#canvas-tree.visible { pointer-events:all; opacity:1; }
-
-/* --- DOCK (médio ~60px) --- */
+/* ── DOCK (médio ~60px) ────────────────────────────────────────────────── */
 #dock {
   position:fixed; bottom:20px; left:50%;
   transform:translateX(-50%);
@@ -124,6 +116,7 @@ html, body {
   .dock-separator { height:32px; margin:0 3px; }
   .dock-tooltip { display:block; }
   .dock-item:hover { transform: translateY(-10px) scale(1.15); }
+  #gc-badge { display:none !important; }
 }
 
 .dock-item {
@@ -191,7 +184,7 @@ html, body {
   margin:0 6px; align-self:center;
 }
 
-/* --- THEME SWITCHER --- */
+/* ── THEME SWITCHER ─────────────────────────────────────────────────────── */
 #theme-btn {
   position:fixed; top:20px; left:20px; z-index:300;
   width:36px; height:36px; border-radius:50%;
@@ -229,220 +222,22 @@ html, body {
   box-shadow: 0 0 24px rgba(255,215,0,0.28);
 }
 
-/* --- SECTION: HOME --- */
+/* ── SECTION: HOME ──────────────────────────────────────────────────────── */
 #sec-home { z-index:5; }
 #sec-home .home-content {
   position:relative; z-index:10;
   text-align:center; pointer-events:none;
 }
 
-/* --- SECTION: PROJETOS --- */
-#sec-projetos { z-index:5; padding:40px 40px 120px; }
-.projetos-grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px; max-width:1000px; width:100%;
-}
-.projeto-card {
-  background: var(--glass-bg);
-  border:1px solid var(--glass-border);
-  border-radius:var(--radius);
-  padding:28px;
-  transition:transform 0.3s, box-shadow 0.3s;
-  position:relative; overflow:hidden;
-}
-.projeto-card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.3);
-}
-.projeto-card::before {
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(135deg,rgba(201,168,76,0.05) 0%,transparent 60%);
-  pointer-events:none;
-}
-.projeto-tag {
-  display:inline-block; padding:4px 10px;
-  border-radius:20px; font-size:11px;
-  letter-spacing:1px; text-transform:uppercase;
-  margin-bottom:12px;
-}
-.projeto-card h3 {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:22px; letter-spacing:2px;
-  color:var(--gold); margin-bottom:10px;
-}
-.projeto-card p { font-size:13px; color:var(--text-dim); line-height:1.7; }
-.projeto-links { display:flex; gap:10px; margin-top:16px; }
-.projeto-link {
-  padding:7px 16px; border-radius:20px;
-  font-size:12px; letter-spacing:1px;
-  text-decoration:none; border:1px solid var(--border);
-  color:var(--text); transition:all 0.2s;
-}
-.projeto-link:hover { background:var(--gold); color:#000; border-color:var(--gold); }
-
-/* --- STARDUST BUTTON --- */
-.stardust-btn {
-  outline:none; cursor:none; border:0;
-  position:relative; border-radius:100px;
-  background:#0a1929;
-  transition:all 0.2s ease;
-  box-shadow:
-    inset 0 0.3rem 0.9rem rgba(255,255,255,0.3),
-    inset 0 -0.1rem 0.3rem rgba(0,0,0,0.7),
-    inset 0 -0.4rem 0.9rem rgba(255,255,255,0.5),
-    0 1rem 1rem -0.6rem rgba(0,0,0,0.8);
-}
-.stardust-btn .sw {
-  font-size:13px; font-weight:500;
-  color:rgba(129,216,255,0.9);
-  padding:12px 22px; border-radius:inherit;
-  position:relative; overflow:hidden;
-  display:flex; align-items:center; gap:8px;
-}
-.stardust-btn:hover { box-shadow: inset 0 0.3rem 0.5rem rgba(129,216,255,0.4), inset 0 -0.4rem 0.9rem rgba(64,180,255,0.6), 0 1rem 1rem -0.6rem rgba(0,0,0,0.8); }
-
-/* --- SECTION: CURRÍCULO --- */
-#sec-curriculo { z-index:5; padding:40px 40px 120px; }
-.cv-container { max-width:800px; width:100%; }
-.cv-header {
-  display:flex; gap:24px; align-items:center; margin-bottom:40px;
-  padding-bottom:24px; border-bottom:1px solid var(--border);
-}
-.cv-photo {
-  width:80px; height:80px; border-radius:50%;
-  object-fit:cover; border:2px solid var(--gold);
-  flex-shrink:0;
-}
-.cv-name {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:40px; letter-spacing:4px; color:var(--gold);
-  line-height:1;
-}
-.cv-title { font-size:13px; color:var(--text-dim); letter-spacing:2px; margin-top:6px; }
-
-/* --- LOCKED CONTENT (V6 style) --- */
-.cv-locked {
-  margin-top:32px; padding:20px;
-  background:var(--glass-bg);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  text-align:center;
-}
-.cv-locked p { font-size:13px; color:var(--text-dim); margin-bottom:16px; }
-.cv-lock-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-.lock-btn {
-  display:flex; align-items:center; gap:8px;
-  padding:10px 20px; border-radius:20px;
-  border:1px solid var(--border);
-  background:var(--glass-bg); color:var(--text-dim);
-  font-size:12px; letter-spacing:1px;
-  cursor:none; transition:all 0.2s;
-  font-family:'Syne',sans-serif;
-}
-.lock-btn:hover { border-color:var(--gold); color:var(--gold); }
-.lock-icon { font-size:14px; }
-
-/* --- SECTION: QUEM EU SOU --- */
-#sec-sobre { z-index:5; padding:40px 40px 120px; }
-.sobre-container {
-  max-width:900px; width:100%;
-  display:grid; grid-template-columns:260px 1fr; gap:48px;
-  align-items:start;
-}
-.sobre-photo-wrap { position:relative; }
-.sobre-photo {
-  width:240px; height:300px;
-  object-fit:cover; object-position:top;
-  border-radius:var(--radius);
-  border:1px solid var(--border);
-  filter:grayscale(20%);
-  transition:filter 0.3s;
-}
-.sobre-photo:hover { filter:grayscale(0%); }
-.sobre-photo-wrap::after {
-  content:''; position:absolute;
-  inset:8px -8px -8px 8px;
-  border:1px solid var(--gold);
-  border-radius:var(--radius);
-  z-index:-1; opacity:0.4;
-}
-.sobre-name {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:48px; letter-spacing:4px;
-  color:var(--gold); line-height:1;
-  margin-bottom:6px;
-}
-.sobre-role { font-size:12px; letter-spacing:3px; color:var(--text-dim); margin-bottom:28px; }
-.sobre-bio { font-size:14px; line-height:1.9; color:var(--text-dim); margin-bottom:20px; }
-.hobbies { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
-.hobby-tag {
-  padding:6px 14px; border-radius:20px;
-  border:1px solid var(--border);
-  font-size:11px; letter-spacing:1px;
-  color:var(--text-dim);
-  transition:all 0.2s;
-}
-.hobby-tag:hover { border-color:var(--gold); color:var(--gold); }
-
-/* --- SECTION: LIVROS --- */
-#sec-livros { z-index:5; padding:40px 40px 120px; }
-.livros-grid {
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:20px; max-width:900px; width:100%;
-}
-.livro-card {
-  background:var(--glass-bg);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:20px 16px; text-align:center;
-  transition:transform 0.3s, box-shadow 0.3s;
-  text-decoration:none; color:var(--text);
-  display:flex; flex-direction:column; align-items:center; gap:10px;
-}
-.livro-card:hover { transform:translateY(-6px); box-shadow:0 16px 32px rgba(0,0,0,0.3); }
-.livro-cover {
-  width:80px; height:110px;
-  background:var(--panel2);
-  border-radius:6px;
-  display:flex; align-items:center; justify-content:center;
-  font-size:32px;
-  border:1px solid var(--border);
-}
-.livro-title { font-size:12px; font-weight:600; line-height:1.4; }
-.livro-author { font-size:10px; color:var(--text-dim); }
-.livro-badge {
-  font-size:9px; padding:3px 8px;
-  border-radius:20px;
-  background:rgba(201,168,76,0.15);
-  color:var(--gold); letter-spacing:1px;
-}
-
-/* --- SECTION TITLES --- */
-.sec-title {
-  position:absolute; top:32px; left:50%; transform:translateX(-50%);
-  font-family:'Bebas Neue',sans-serif;
-  font-size:13px; letter-spacing:6px;
-  color:var(--text-dim); text-transform:uppercase;
-  z-index:10;
-}
-
-/* ── GLASS SVG FILTER --- */
+/* ── GLASS SVG FILTER ───────────────────────────────────────────────────── */
 .glass-filter { display:none; }
 
-/* --- SCROLLBAR --- */
+/* ── SCROLLBAR ──────────────────────────────────────────────────────────– */
 ::-webkit-scrollbar { width:4px; }
 ::-webkit-scrollbar-track { background:transparent; }
 ::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
 
-/* --- TREE TRANSITION --- */
-#tree-click-hint {
-  position:fixed; bottom:100px; right:20px;
-  font-size:10px; letter-spacing:2px;
-  color:rgba(0,0,0,0.2); z-index:101;
-  pointer-events:none;
-}
-
-/* --- HOME RETURN GIF --- */
+/* ── HOME RETURN GIF ────────────────────────────────────────────────────── */
 #home-gif-wrap {
   position: fixed;
   inset: 0;
@@ -498,254 +293,11 @@ html, body {
   <div id="waves-dot" style="position:absolute;top:0;left:0;width:6px;height:6px;background:rgba(255,255,255,0.6);border-radius:50%;transform:translate3d(calc(var(--wx,50%) - 50%),calc(var(--wy,50%) - 50%),0);will-change:transform;pointer-events:none;"></div>
 </div>
 
-<!-- Tree transition canvas -->
-<canvas id="canvas-tree"></canvas>
-<div id="tree-click-hint">click to grow a new tree</div>
-
-<!-- --- SECTIONS --- -->
-
-<!-- HOME -->
+<!-- ── HOME ──────────────────────────────────────────────────────────────── -->
 <section id="sec-home" class="section active">
   <div class="home-content"></div>
 </section>
-
-<!-- PROJETOS -->
-<section id="sec-projetos" class="section">
-  <span class="sec-title" data-pt="Projetos" data-en="Projects" data-es="Proyectos">Projetos</span>
-  <div class="projetos-grid">
-
-    <div class="projeto-card">
-      <span class="projeto-tag" style="background:rgba(201,168,76,0.15);color:var(--gold)">🎵 Statistics</span>
-      <h3>Dangerous MJ Statistics</h3>
-      <p data-pt="Análise estatística aplicada ao dataset real do Michael Jackson. Descritivas, testes de hipóteses, correlação e regressão."
-         data-en="Statistical analysis applied to a real Michael Jackson dataset. Descriptive stats, hypothesis testing, correlation and regression."
-         data-es="Análisis estadístico aplicado al dataset real de Michael Jackson. Estadísticas descriptivas, pruebas de hipótesis, correlación y regresión.">
-        Análise estatística aplicada ao dataset real do Michael Jackson.
-      </p>
-      <div class="projeto-links">
-        <a class="projeto-link" href="https://github.com/EricRenato/dangerous_data_mj_statistics" target="_blank">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="projeto-card">
-      <span class="projeto-tag" style="background:rgba(74,144,217,0.15);color:var(--blue)">🏦 Finance</span>
-      <h3>Cash Investment Reconciliation</h3>
-      <p data-pt="Modelo de reconciliação de contratos CDI em Oracle SQL. Validação automática de saldos vs extrato bancário."
-         data-en="CDI contract reconciliation model in Oracle SQL. Automatic balance validation vs bank statements."
-         data-es="Modelo de reconciliación de contratos CDI en Oracle SQL. Validación automática de saldos vs extracto bancario.">
-        Modelo de reconciliação de contratos CDI em Oracle SQL.
-      </p>
-      <div class="projeto-links">
-        <button class="stardust-btn">
-          <span class="sw">✧ <span data-pt="Em breve" data-en="Launching Soon" data-es="Próximamente">Em breve</span></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="projeto-card">
-      <span class="projeto-tag" style="background:rgba(27,188,156,0.15);color:var(--teal)">🌐 Site</span>
-      <h3>EricRenato.github.io</h3>
-      <p data-pt="Site pessoal de portfólio com currículo interativo, áudio em PT/EN e conteúdo desbloqueável."
-         data-en="Personal portfolio site with interactive resume, audio in PT/EN and unlockable content."
-         data-es="Sitio personal de portafolio con currículum interactivo, audio en PT/EN y contenido desbloqueable.">
-        Site pessoal de portfólio com currículo interativo.
-      </p>
-      <div class="projeto-links">
-        <button class="stardust-btn">
-          <span class="sw">✧ <span data-pt="Em construção" data-en="Building" data-es="En construcción">Em construção</span></span>
-        </button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CURRÍCULO -->
-<section id="sec-curriculo" class="section">
-  <span class="sec-title" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</span>
-  <div class="cv-container">
-    <div class="cv-header">
-      <img src="IMG_7217.jpeg" alt="Eric Renato" class="cv-photo" onerror="this.style.display='none'">
-      <div>
-        <div class="cv-name">Eric Renato</div>
-        <div class="cv-title" 
-        
-        data-pt="ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS
-        Analista Sênior com 14 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos.
-Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. 
-Meu lema: "Dados são fatos; a análise revela a história."
-        
-        
-        
-        
-        data-en="DATA ANALYST · SQL · FINANCIAL SYSTEMS
-        Senior Analyst with 14 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. 
-        Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science,
-         AI and Analytics from USP/ESALQ (2026). Fluent in English and Spanish, with ERP experience (Treasury, NetSuite) and process automation. 
-         Seeking Data Analyst/Business Analyst position focused on financial analytics, remote or hybrid work, and competitive compensation. 
-         My motto: "Data is facts; analysis reveals the story."   
-        
-        
-        
-        
-        data-es="ANALISTA DE DATOS · SQL · SISTEMAS FINANCIEROS
-        Analista Senior con 14 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. 
-Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). Fluido en inglés y español, con experiencia en ERP (Tesorería, NetSuite) y automatización de procesos. 
-Busco posición como Data Analyst/Business Analyst enfocado en analytics financiero, trabajo remoto o híbrido y compensación competitiva.
-Mi lema: "Los datos son hechos; el análisis revela la historia.">
-           
-
-Analista Sênior com 14 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos.
-Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. 
-Meu lema: "Dados são fatos; a análise revela a história.
-
-        </div>
-      </div>
-    </div>
-
-    <!-- conteudo bloqueado -->
-    <div class="cv-locked">
-      <p data-pt="🔒 Conteúdo exclusivo — solicite acesso ao candidato"
-         data-en="🔒 Exclusive content — request access from the candidate"
-         data-es="🔒 Contenido exclusivo — solicite acceso al candidato">
-        🔒 Conteúdo exclusivo — solicite acesso ao candidato
-      </p>
-      <div class="cv-lock-btns">
-        <button class="lock-btn" onclick="requestAccess('audio-pt')">
-          <span class="lock-icon">🎧</span>
-          <span data-pt="Ouvir em Português" data-en="Listen in Portuguese" data-es="Escuchar en Portugués">Ouvir em Português</span>
-        </button>
-
-        <button class="lock-btn" onclick="requestAccess('audio-en')">
-          <span class="lock-icon">🎧</span>
-          <span data-pt="Escuchar em espanhol" data-en="Escuchar em espanhol" data-es="Listen in English">Escuchar em espanhol</span>
-        </button>
-
-        <button class="lock-btn" onclick="requestAccess('audio-es')">
-          <span class="lock-icon">🎧</span>
-          <span data-pt="Listen in English" data-en="Listen in English" data-es="Listen in English">Listen in English</span>
-        </button>
-
-        <button class="lock-btn" onclick="requestAccess('video')">
-          <span class="lock-icon">🎬</span>
-          <span data-pt="Ver apresentação em vídeo" data-en="Watch video presentation" data-es="Ver presentación en video">Ver apresentação em vídeo</span>
-        </button>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section id="sec-sobre" class="section">
-  <span class="sec-title" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</span>
-  <div class="sobre-container">
-    <div class="sobre-photo-wrap">
-      <img src="IMG_7217.jpeg" alt="Eric Renato" class="sobre-photo" onerror="this.style.background='var(--panel2)'">
-    </div>
-    <div>
-      <div class="sobre-name">Eric<br>Renato</div>
-      <div class="sobre-role" 
-      data-pt="Analista de Dados · São Paulo · BRASIL" 
-      data-en="DATA ANALYST · SÃO PAULO · BRAZIL" 
-      data-es="ANALISTA DE DATOS · SÃO PAULO · BRAZIL ">DATA ANALYST · SÃO PAULO - BRAZIL</div>
-      <p class="sobre-bio" 
-      
-      
-      data-pt="Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence.
-      Eu adoro ler livros! Após muita meditação, refletir, errar, meditar, repensar, me encontrei!
-      O processo contínuo de evolução que persigo, só será possível através dos grandes clássicos literários da humanidade, assim como obras monumentais da filosofia! "
-      
-      
-      
-      data-en="Professional with 15+ years of experience in corporate financial systems, transitioning to Data Analytics and Business Intelligence.
-      Loves to read books! After much meditation, reflecting, failing, meditating, rethinking, I found myself!
-      The continuous process of evolution I pursue will only be possible through the great literary classics of humanity, as well as monumental works of philosophy!"
-      
-      
-      data-es="Profesional con más de 15 años en sistemas financieros corporativos, en transición hacia Data Analytics. Apasionado por transformar datos en decisiones.
-      ¡Adoro leer libros! Después de mucha meditación, reflexionar, errar, meditar, repensar, ¡me encontré!
-      El proceso continuo de evolución que persigo, solo será posible a través de los grandes clásicos literarios de la humanidad, así como obras monumentales de la filosofía!">
-       
-      
-      Profissional com mais de 15 anos em sistemas financeiros corporativos, em transição para Data Analytics e Business Intelligence.
-        Eu adoro ler livros! Após muita meditação, refletir, errar, meditar, repensar, me encontrei!
-        O processo contínuo de evolução que persigo, só será possível através dos grandes clássicos literários da humanidade, assim como obras monumentais da filosofia! 
-      </p>
-      <div class="hobbies">
-        <span class="hobby-tag">🎵 Michael Jackson</span>
-        <span class="hobby-tag">📊 Data Analytics</span>
-        <span class="hobby-tag">📚 Leitura</span>
-        <span class="hobby-tag">🎬 Cinema</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Sessão de LIVROS -->
-<section id="sec-livros" class="section">
-  <span class="sec-title" data-pt="Livros" data-en="Books" data-es="Libros">Livros</span>
-  <div class="livros-grid">
-    <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📊</div>
-      <div class="livro-title">Seja uma Analista de Dados</div>
-      <div class="livro-author">—</div>
-      <span class="livro-badge">RECOMENDO</span>
-    </a>
-    <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">🤖</div>
-      <div class="livro-title">Manual de Análise de Dados</div>
-      <div class="livro-author">Fávero & Belfiore</div>
-      <span class="livro-badge">MBA USP</span>
-    </a>
-    <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
-    </a>
-
-     <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
-    </a>
-
-     <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
-    </a>
-
-     <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
-    </a>
-
-     <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
-    </a>
-
-     <! --<a class="livro-card" href="#" target="_blank"> -->
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
-    </a> -->
-
-
-  </div>
-</section>
-
-<!-- --- Dentro da DOCK botões --- -->
+<!-- ── DOCK ────────────────────────────────────────────────────────────── -->
 <nav id="dock">
   <div class="dock-item active-section" id="dock-home">
     <div class="dock-icon">🏠</div>
@@ -775,7 +327,7 @@ Meu lema: "Dados são fatos; a análise revela a história.
 </nav>
 
 <script>
-// --- CURSOR ---
+// ── CURSOR ───────────────────────────────────────────────────────────────
 const cursor = document.getElementById('cursor')
 const ring   = document.getElementById('cursor-ring')
 document.addEventListener('mousemove', e => {
@@ -787,7 +339,7 @@ document.addEventListener('mousemove', e => {
   }, 80)
 })
 
-// --- THEME ---
+// ── THEME ────────────────────────────────────────────────────────────────
 let isDark = true
 function toggleTheme() {
   isDark = !isDark
@@ -795,7 +347,7 @@ function toggleTheme() {
   document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️'
 }
 
-// --- Idiomas ---
+// ── LANGUAGE ─────────────────────────────────────────────────────────────
 let currentLang = 'pt'
 function setLang(lang, btn) {
   currentLang = lang
@@ -807,9 +359,8 @@ function setLang(lang, btn) {
   })
 }
 
-// --- SECTION NAVIGATION ---
+// ── HOME GIF ──────────────────────────────────────────────────────────────
 let current = 'home'
-let leftHome = false
 let gifTimer = null
 
 function showHomeGif() {
@@ -826,117 +377,13 @@ function hideHomeGif() {
   clearTimeout(gifTimer)
 }
 
-function showSection(id) {
-  if (id === current) return
-  if (current === 'home') leftHome = true
-  triggerTreeTransition(() => {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'))
-    document.querySelectorAll('.dock-item').forEach(d => d.classList.remove('active-section'))
-    document.getElementById('sec-' + id).classList.add('active')
-    document.getElementById('dock-' + id)?.classList.add('active-section')
-    current = id
-    if (id === 'home' && leftHome) showHomeGif()
-    if(networkShown) showNetworkBg()
-  })
-}
-
-// --- TREE TRANSITION ---
-const treeCanvas = document.getElementById('canvas-tree')
-const treeCtx    = treeCanvas.getContext('2d')
-let treeAnim, treeCallback
-
-function triggerTreeTransition(cb) {
-  treeCallback = cb
-  treeCanvas.width  = window.innerWidth
-  treeCanvas.height = window.innerHeight
-  treeCtx.clearRect(0, 0, treeCanvas.width, treeCanvas.height)
-  treeCanvas.classList.add('visible')
-  document.getElementById('tree-click-hint').style.display = 'none'
-
-  const tree = createTree()
-  let frame = 0
-  let hasAlive = true
-
-  function drawTree() {
-    hasAlive = false
-    tree.branches.forEach(b => {
-      if (b.alive) {
-        hasAlive = true
-        growBranch(b, tree)
-        drawBranch(b, tree)
-      }
-    })
-    frame++
-    if (frame === 30 && treeCallback) { treeCallback(); treeCallback = null; }
-    if (hasAlive || frame < 80) {
-      setTimeout(() => { treeAnim = requestAnimationFrame(drawTree) }, 1000/90)
-    } else {
-      setTimeout(() => {
-        treeCanvas.classList.remove('visible')
-        treeCtx.clearRect(0, 0, treeCanvas.width, treeCanvas.height)
-      }, 400)
-    }
-  }
-  drawTree()
-}
-
-function createTree() {
-  const W = treeCanvas.width, H = treeCanvas.height
-  const sx = W/2, sy = H*0.78
-  return {
-    branches: [{
-      pos:{x:sx,y:sy}, vel:{x:0,y:-3.2}, age:0,
-      stw:20, gen:1, alive:true, angle:0,
-      maxlife:18*(0.7+Math.random()*0.5),
-      dev:0.5+Math.random()*0.3,
-      p1:0.8+Math.random()*0.15,
-      p2:0.8+Math.random()*0.15,
-    }],
-    sx, sy, W, H,
-    hue: 20 + Math.random()*20,
-    coeff: sy/H
-  }
-}
-
-function growBranch(b, tree) {
-  if (!b.alive) return
-  b.age++
-  b.vel.x += (Math.random()-0.5)*0.3
-  if (b.age >= Math.floor(b.maxlife/b.gen) || Math.random()<0.025*b.gen) {
-    b.alive = false
-    if (b.stw > 0.4 && b.gen < 5) {
-      const pos = {x:b.pos.x, y:b.pos.y}
-      const nb = (stw,angle,gen) => ({
-        pos:{...pos}, vel:{x:0,y:-3.2}, age:0,
-        stw, gen, alive:true, angle,
-        maxlife:18*(0.5+Math.random()*0.5),
-        dev:b.dev, p1:b.p1, p2:b.p2
-      })
-      if (Math.random()<b.p1/Math.pow(b.gen,0.9))
-        tree.branches.push(nb(b.stw*(0.5+Math.random()*0.25), b.angle+(0.6+Math.random()*0.4)*b.dev, b.gen+0.2))
-      if (Math.random()<b.p2/Math.pow(b.gen,0.9))
-        tree.branches.push(nb(b.stw*(0.5+Math.random()*0.25), b.angle-(0.6+Math.random()*0.4)*b.dev, b.gen+0.2))
-    }
-  } else {
-    const x0 = b.pos.x, y0 = b.pos.y
-    b.pos.x += -b.vel.x*Math.cos(b.angle)+b.vel.y*Math.sin(b.angle)
-    b.pos.y +=  b.vel.x*Math.sin(b.angle)+b.vel.y*Math.cos(b.angle)
-    const c = tree.coeff
-    const alpha = (22*c)/100
-    treeCtx.strokeStyle = `rgba(${Math.round(180*c)},${Math.round(100*c+15*b.gen)},${Math.round(70+12*b.gen)},${alpha})`
-    treeCtx.lineWidth = Math.max(0.2, b.stw-(b.age/b.maxlife)*(b.stw*0.4))
-    treeCtx.beginPath(); treeCtx.moveTo(x0,y0); treeCtx.lineTo(b.pos.x,b.pos.y); treeCtx.stroke()
-  }
-}
-function drawBranch(b, tree) {}
-
-// --- Entrada Particulas Explode no primeiro acesso ---
+// ── PARTICLE TEXT ────────────────────────────────────────────────────────
 const pCanvas = document.getElementById('canvas-particles')
 const pCtx    = pCanvas.getContext('2d')
 const WORDS   = {
-  pt: ['Bem-vindo', 'Eu sou Eric', ],
-  en: ['Welcome',   "I'm Eric",    ],
-  es: ['Bienvenido','Soy Eric',    ]
+  pt: ['Bem-vindo', 'Eu sou Eric', 'Data Analyst', 'USP / ESALQ', 'SQL & Dados'],
+  en: ['Welcome',   "I'm Eric",    'Data Analyst', 'USP / ESALQ', 'SQL & Data'],
+  es: ['Bienvenido','Soy Eric',    'Data Analyst', 'USP / ESALQ', 'SQL & Datos']
 }
 const PALETTES = [
   {r:255,g:255,b:255},{r:220,g:220,b:220},
@@ -1058,17 +505,7 @@ function pAnimate(){
   requestAnimationFrame(pAnimate)
 }
 
-// --- ACCESS REQUEST ---
-function requestAccess(type) {
-  const pwd = prompt('🔑 Digite o código de acesso / Enter access code:')
-  if (pwd === 'eric2025') {
-    alert('✅ Acesso concedido! / Access granted!')
-  } else if (pwd !== null) {
-    alert('❌ Código inválido. Solicite ao candidato. / Invalid code.')
-  }
-}
-
-// --- WAVE BACKGROUND (simplex noise) ---
+// ── WAVE BACKGROUND (simplex noise) ──────────────────────────────────────
 (function(){
   function buildPermutationTable(r){const t=new Uint8Array(256);for(let i=0;i<256;i++)t[i]=i;for(let i=255;i>0;i--){const j=r()*( i+1)|0;[t[i],t[j]]=[t[j],t[i]]}return t}
   const F2=.5*(Math.sqrt(3)-1),G2=(3-Math.sqrt(3))/6
@@ -1177,7 +614,7 @@ document.addEventListener('touchmove',e=>{
 window.addEventListener('resize',initWaves)
 initWaves()
 
-// --- INIT ---
+// ── INIT ──────────────────────────────────────────────────────────────────
 let networkShown = false
 
 setTimeout(()=>{ document.getElementById('lang-pt').style.opacity='1'; document.getElementById('lang-en').style.opacity='0.4'; document.getElementById('lang-es').style.opacity='0.4'; },100)
@@ -1210,7 +647,7 @@ if (sessionStorage.getItem('voltouHome')) {
 
 <!-- GoatCounter visitor badge -->
 <div id="gc-badge" style="
-  position:fixed; bottom:96px; right:24px; z-index:500;
+  position:fixed; bottom:20px; right:16px; z-index:500;
   display:flex; align-items:center; gap:8px;
   background:rgba(20,20,20,0.85); backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,0.12); border-radius:20px;
