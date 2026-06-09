@@ -229,9 +229,6 @@ Eu lembro de alguns nomes que apareciam em programas de ”perguntas e respostas
   <a class="dock-item" href="livros.html"><div class="dock-icon">📚</div><div class="dock-tooltip" data-pt="Livros" data-en="Books" data-es="Libros">Livros</div><div class="dock-dot"></div></a>
 </nav>
 
-<div id="gc-badge" style="position:fixed;bottom:24px;right:24px;z-index:500;display:flex;align-items:center;gap:8px;background:rgba(20,20,20,0.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:6px 14px 6px 10px;font-family:'Syne',sans-serif;font-size:12px;color:#E8E8E0;box-shadow:0 4px 20px rgba(0,0,0,0.4);opacity:0;transition:opacity 0.6s;">
-  <span style="font-size:15px;">👁</span><span id="gc-count" style="letter-spacing:1px;">—</span>
-</div>
 
 <script>
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring')
@@ -248,7 +245,6 @@ document.addEventListener('mousemove',e=>{wM.x=e.clientX;wM.y=e.clientY;if(!wM.s
 document.addEventListener('touchmove',e=>{wM.x=e.touches[0].clientX;wM.y=e.touches[0].clientY;if(!wM.set){wM.sx=wM.x;wM.sy=wM.y;wM.lx=wM.x;wM.ly=wM.y;wM.set=true}},{passive:true})
 window.addEventListener('resize',initWaves)
 initWaves()
-fetch('https://ericrenato.goatcounter.com/counter/TOTAL.json').then(r=>r.json()).then(d=>{document.getElementById('gc-count').textContent=d.count;document.getElementById('gc-badge').style.opacity='1'}).catch(()=>{document.getElementById('gc-badge').style.display='none'})
 sessionStorage.setItem('voltouHome', 'true')
 setTimeout(()=>{document.getElementById('lang-pt').style.opacity='1';document.getElementById('lang-en').style.opacity='0.4';document.getElementById('lang-es').style.opacity='0.4'},100)
 </script>
