@@ -401,7 +401,7 @@ class P {
     this.tx=0; this.ty=0
     this.spd=Math.random()*5+4
     this.frc=this.spd*0.06
-    this.sz=Math.random()*2+1.2
+    this.sz=Math.random()*0.8+0.7
     this.sr={r:0,g:0,b:0}; this.tr={r:0,g:0,b:0}
     this.cw=0; this.br=Math.random()*0.04+0.05
     this.killed=false
@@ -493,7 +493,7 @@ function pAnimate(){
     if(p.killed&&p.oob())particles.splice(i,1)
   }
   pFrame++
-  if(pFrame===240 && !networkShown){
+  if(pFrame===180 && !networkShown){
     networkShown = true
     setTimeout(()=>{
       particles.forEach(p=>p.kill())
@@ -506,8 +506,8 @@ function pAnimate(){
       }, 800)
     }, 400)
   }
-  if(pFrame>240 && networkShown){requestAnimationFrame(pAnimate);return}
-  if(pFrame%240===0 && !networkShown){wIdx=(wIdx+1)%5;showWord()}
+  if(pFrame>180 && networkShown){requestAnimationFrame(pAnimate);return}
+  if(pFrame%180===0 && !networkShown){wIdx=(wIdx+1)%5;showWord()}
   requestAnimationFrame(pAnimate)
 }
 
