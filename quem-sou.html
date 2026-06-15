@@ -1,5 +1,4 @@
-<!--V3 - 09/06/2026-->
-
+<!--V4 - 13/06/2026-->
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark" data-lang="pt">
 <head>
@@ -32,33 +31,53 @@ html, body { width:100%; min-height:100%; background:var(--dark); color:var(--te
 #lang-switcher { position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:300; display:flex; gap:8px; background:rgba(20,20,20,0.85); backdrop-filter:blur(18px); padding:8px 16px; border-radius:24px; border:1px solid rgba(255,215,0,0.18); box-shadow:0 12px 30px rgba(0,0,0,0.35); }
 .lang-btn { background:rgba(255,215,0,0.16); color:#ffd700; border:1px solid rgba(255,215,0,0.35); cursor:none; padding:8px 10px; border-radius:12px; opacity:0.8; transition:opacity 0.2s, transform 0.2s; font-size:18px; }
 .lang-btn.active, .lang-btn:hover { opacity:1; transform:scale(1.12); }
-#dock { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:200; display:flex; align-items:flex-end; gap:8px; padding:10px 16px 12px; background:rgba(20,20,20,0.85); backdrop-filter:blur(20px); border:1.25px solid rgba(160,175,190,0.55); border-radius:24px; box-shadow:0 0 0 1px rgba(100,130,155,0.2), 0 8px 40px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.3); max-width:calc(100vw - 24px); overflow-x:auto; scrollbar-width:none; }
+#dock { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:200; display:flex; align-items:flex-end; gap:10px; padding:12px 19px 14px; background:rgba(20,20,20,0.85); backdrop-filter:blur(20px); border:1.25px solid rgba(160,175,190,0.55); border-radius:29px; box-shadow:0 0 0 1px rgba(100,130,155,0.2), 0 8px 40px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.3); max-width:calc(100vw - 24px); overflow-x:auto; scrollbar-width:none; }
 #dock::-webkit-scrollbar { display:none; }
 .dock-item { display:flex; flex-direction:column; align-items:center; cursor:none; position:relative; transition:transform var(--transition); text-decoration:none; color:inherit; }
 .dock-item:hover { transform:translateY(-14px) scale(1.2); }
 .dock-item.active-page > .dock-icon { box-shadow:0 0 0 2px var(--gold); }
-.dock-icon { width:54px; height:54px; background:var(--glass-bg); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; border:1px solid var(--glass-border); }
+.dock-icon { width:65px; height:65px; background:var(--glass-bg); border-radius:17px; display:flex; align-items:center; justify-content:center; font-size:29px; border:1px solid var(--glass-border); }
 .dock-dot { width:4px; height:4px; background:var(--text); border-radius:50%; margin-top:4px; opacity:0; }
 .dock-item.active-page .dock-dot { opacity:1; }
 .dock-tooltip { position:absolute; bottom:calc(100% + 10px); background:rgba(20,20,20,0.9); color:var(--text); padding:5px 10px; border-radius:8px; font-size:11px; white-space:nowrap; pointer-events:none; opacity:0; transform:translateY(4px); transition:opacity 0.2s, transform 0.2s; }
 .dock-item:hover .dock-tooltip { opacity:1; transform:translateY(0); }
-.dock-separator { width:1px; height:40px; background:var(--border); margin:0 4px; align-self:center; }
-main { position:relative; z-index:5; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:80px 40px 120px; }
+.dock-separator { width:1px; height:48px; background:var(--border); margin:0 4px; align-self:center; }
+main { position:relative; z-index:5; display:flex; align-items:flex-start; justify-content:center; min-height:100vh; padding:80px 40px 120px; }
 .sec-title { position:fixed; top:72px; left:50%; transform:translateX(-50%); font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; z-index:10; white-space:nowrap; }
 
 /* ── SOBRE ── */
-.sobre-container { max-width:900px; width:100%; display:grid; grid-template-columns:260px 1fr; gap:48px; align-items:start; }
-.sobre-photo-wrap { position:relative; }
-.sobre-photo { width:240px; height:300px; object-fit:cover; object-position:top; border-radius:var(--radius); border:1px solid var(--border); filter:grayscale(20%); transition:filter 0.3s; }
+.sobre-container { max-width:960px; width:100%; display:grid; grid-template-columns:230px 1fr; gap:48px; align-items:start; }
+.sobre-photo-wrap { position:sticky; top:80px; }
+.sobre-photo { width:210px; height:265px; object-fit:cover; object-position:top; border-radius:var(--radius); border:1px solid var(--border); filter:grayscale(20%); transition:filter 0.3s; }
 .sobre-photo:hover { filter:grayscale(0%); }
 .sobre-photo-wrap::after { content:''; position:absolute; inset:8px -8px -8px 8px; border:1px solid var(--gold); border-radius:var(--radius); z-index:-1; opacity:0.4; }
 .sobre-name { font-family:'Bebas Neue',sans-serif; font-size:48px; letter-spacing:4px; color:var(--gold); line-height:1; margin-bottom:6px; }
-.sobre-role { font-size:12px; letter-spacing:3px; color:var(--text-dim); margin-bottom:28px; }
-.sobre-bio { font-size:14px; line-height:1.9; color:var(--text-dim); margin-bottom:20px; }
-.hobbies { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
-.hobby-tag { padding:6px 14px; border-radius:20px; border:1px solid var(--border); font-size:11px; letter-spacing:1px; color:var(--text-dim); transition:all 0.2s; }
-.hobby-tag:hover { border-color:var(--gold); color:var(--gold); }
-@media (max-width:700px) { .sobre-container { grid-template-columns:1fr; } .sobre-photo { width:180px; height:220px; } main { padding:80px 20px 120px; } }
+.sobre-role { font-size:12px; letter-spacing:3px; color:var(--text-dim); margin-bottom:24px; }
+
+/* ── BIO CONTENT ── */
+.bio-content { font-size:14px; line-height:1.9; color:var(--text-dim); }
+.bio-content p { margin-bottom:14px; }
+.bio-content a { color:var(--gold); text-decoration:none; }
+.bio-content a:hover { text-decoration:underline; }
+.topic-list { list-style:none; margin:10px 0 18px; }
+.topic-list li { font-size:13px; line-height:1.8; padding:1px 0; }
+.topic-list a { color:var(--gold); }
+.summary-block { margin:20px 0; padding:14px 16px; border-left:2px solid var(--border); transition:border-color 0.2s; }
+.summary-block:hover { border-left-color:var(--gold); }
+.summary-heading { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--text); margin-bottom:8px; }
+.text-divider { text-align:center; color:var(--text-dim); font-size:10px; letter-spacing:4px; margin:36px 0; opacity:0.4; scroll-margin-top:90px; }
+.full-section { margin-top:36px; scroll-margin-top:90px; }
+.full-section-title { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:3px; color:var(--gold); margin-bottom:14px; }
+.lang-pt, .lang-en, .lang-es { display:none; }
+[data-lang="pt"] .lang-pt { display:block; }
+[data-lang="en"] .lang-en { display:block; }
+[data-lang="es"] .lang-es { display:block; }
+@media (max-width:700px) {
+  .sobre-container { grid-template-columns:1fr; }
+  .sobre-photo-wrap { position:relative; top:0; }
+  .sobre-photo { width:160px; height:200px; }
+  main { padding:80px 20px 120px; }
+}
 </style>
 </head>
 <body>
@@ -85,150 +104,239 @@ main { position:relative; z-index:5; display:flex; align-items:center; justify-c
       <div class="sobre-name">Eric<br>Renato</div>
       <div class="sobre-role"
         data-pt="Quem sou eu?"
-        data-en="Who am I ?"
-        data-es="?Quien soy yo?">Quem sou eu?</div>
-      <p class="sobre-bio"
+        data-en="Who am I?"
+        data-es="¿Quién soy yo?">Quem sou eu?</div>
 
+      <!-- ── PORTUGUÊS ── -->
+      <div class="lang-pt bio-content">
+        <p>Olá, espero que esteja tudo bem com você!</p>
+        <p>Muito obrigado por estar aqui, pelo interesse de conhecer um pouco mais sobre quem sou eu, porém de uma forma mais introspectiva...mais pessoal...mais humana!</p>
+        <p>Resolvi dividir o texto em assuntos, acho que ficará mais interessante, com pontos chaves, sendo eles:</p>
+        <ul class="topic-list">
+          <li>— <a href="#busca-pt">Em busca de respostas</a> — quando, quem e por que "eu sou";</li>
+          <li>— <a href="#refinamento-pt">Refinamento contínuo</a> — meus estudos contínuos;</li>
+          <li>— <a href="#caos-pt">Caos e Silêncio</a> — achei a "Origem" porém preciso de mais!</li>
+          <li>— <a href="#suar-pt">Tem que suar</a> — esporte também é a chave!</li>
+        </ul>
+        <p>Se estiver com minutos de sobra e o seu café em mãos, sugiro a leitura na sua totalidade, <a href="#inicio-pt">desde o início</a>, ou selecione o tema que for de mais interesse, caso não, tudo bem, tenho aqui embaixo um resumo show:</p>
 
-	  data-pt="Olá, espero que esteja tudo bem com você!<br>
-	  
-Muito obrigado por estar aqui, pelo interesse de conhecer um pouco mais sobre quem sou eu, porém de uma forma mais introspectiva...mais pessoal...mais humana!
-<br>
-Resolvi dividir o texto em assuntos, acho que ficará mais “interessante, ou com pontos mais importantes, sendo eles:<br>
--Em busca de respostas - quando, quem e porque ”eu sou“;<br>
--Refinamento contínuo - meus estudos;<br>
--Caos e Silêncio - achei a ”Origem“ porém quero mais!<br>
--Tem que suar - por que a musculação?<br>
+        <div class="summary-block">
+          <div class="summary-heading">Resumo: Em busca de respostas</div>
+          <p>Entre 16 e 17 anos percebi que era intelectualmente pobre, e decidi fazer algo a respeito. A solução estaria em milhares de textos escritos ao longo de séculos pela humanidade, mas por onde começar? A resposta veio de forma simples: solicitei acesso à biblioteca da escola, que estava fechada. O livro que escolhi foi "O Incêndio de Troia". A partir dali, a jornada de me reeducar havia começado.</p>
+        </div>
 
-Se tiver alguns minutos de sobra e o com o cafézinho em mãos, sugiro a leitura corrida, desde o início, então borá lá clicando aqui (link do texto completo), caso não, tudo bem, tenho aqui embaixo, um resumo show:
-<br><br>
-De 22 para 23 anos, identifiquei que possuía diversas fraquezas em diversas áreas, comecei a jornada <strong>”#Em busca de respostas“</strong>, e a solução ”definitiva, temporária ou alternativa“ 
-estaria fragmentada em milhares de textos, registros realizados ao longo de milhares de anos pela humanidade, porém o que exatamente eu deveria ler? Eu lembro de alguns nomes que apareciam em programas de 
-”perguntas e respostas“, lembro que no colegial o professor de filosofia fez um ”desfavor“ ao proferir:<br>-Filosofia não serve para nada! Mas na mesma época, eu fiz algo que inédito pra mim e entre aos meus próximos:
-<br>
--Eu perguntei se poderia ter acesso a biblioteca da escola, porque ela estava fechada. 
-Com isso, lembro de ter recebido alguns elogios, e até o diretor da escola disse ”ótima ideias, temos que organizá-la e incentivar os demais alunos a frequentá-la!“ 
-O livro que eu escolhi foi ”O incêndio da Tróia“! Não recordo o motivo, talvez eu tenha tido alguma aula que remetesse ao tema, então, devo ter ficado super curioso, coloquei o ”Tico e Teco“ para trabalhar um pouco, e fui atrás na biblioteca.
-<br><br>
-Ainda hoje, carrego a grande tristeza de saber que há milhares de ótimos livros, que infelizmente, devido a ”gravidade“ e outros fatores biológicos, não poderei lê-los! 
-”#Refinamento contínuo“ internamente eu tenho um paradoxo; alegria e medo, adoração e ódio, fazem parte do meu processo de meditação e reflexão em temas que estão intrinsecamente conectados em evolução intelectual!
-<br><br>
+        <div class=”summary-block”>
+          <div class=”summary-heading”>Resumo: Refinamento contínuo</div>
+          <p>Carrego a tristeza honesta de saber que não viverei o suficiente para ler tudo o que gostaria. Alegria e medo, adoração e ódio pelo conhecimento coexistem em mim. Um dos meus sonhos-objetivos é ter uma biblioteca elegante integrada ao escritório, livros de todas as áreas, uma poltrona confortável, meu espaço. Sonhos que viram objetivos ensinam sobre potencial e limitação ao mesmo tempo. Um desses objetivos foi o intercâmbio em San Diego, em 2016, estudo, aventura, decisões difíceis e ótimas memórias. Detalhes completos na leitura completa.</p>
+        </div>
 
-Quando se há criança e os adultos em modo de repetição sobre 'o dever de ser obediente e temeroso a Deus' é complicado! Se não explicado com carinho e paciência, talvez seja desnecessário. Hoje ”#Caos e Silêncio“ 
-sinto-me agraciado por ter sentido ”Deus“, conhecido a filosofia e estilo de vida do ”Budismo“ e ter tido a capacidade de ler a bíblia.
-<br><br>
-A primeira memória que tenho sobre esporte, é junto ao meu pai; 
-lembro que ele jogava futebol de campo, e no sábado de manhã, eu estava junto a ele para presenciar esse momento de descontração junto aos amigos. A partir de então ”#Tem que suar“ esporte esteve presente em grande parte da minha vida. 
-Os momentos que não estavam, foi introduzido por sugestão médica (que geralmente é uma ordem). Hoje eu, com 43 anos, adoro e pratico musculação, aquele esporte que o objetivo a maioria não entende e confunde com levantamento de peso…
-porém o objetivo é ”contrair o músculo com pequeno grau de dificuldade“."
+        <div class=”summary-block”>
+          <div class=”summary-heading”>Resumo: Caos e Silêncio</div>
+          <p>Crescer ouvindo que se deve ser “obediente e temeroso a Deus” sem explicação é abstrato demais para uma criança. Hoje me sinto agraciado por ter sentido “Deus”, conhecido o Budismo e lido a Bíblia, três caminhos distintos mas com muitas respostas. Quanto mais a ciência avança, mais claro fica que a força que cria e destrói não é acidente, é uma consciência.</p>
+        </div>
 
+        <div class="summary-block">
+          <div class="summary-heading">Resumo: Tem que suar</div>
+          <p>Minha primeira memória de esporte é junto ao meu pai, num sábado de manhã na beira do campo. Desde então o esporte nunca saiu da minha vida, às vezes por vontade, às vezes por ordem médica. Joguei futebol sem habilidade, basquete sem dominar os mais velhos, e hoje pratico musculação, aquele esporte que a maioria confunde com levantamento de peso, mas cujo objetivo real é contração muscular com foco, técnica e hipertrofia. Acompanho NBA e NFL: esportes de impacto e estratégia que exigem planejamento a cada passo.</p>
+        </div>
 
-data-en="Hello, I hope everything is well with you!<br>
+        <div class="text-divider" id="inicio-pt">— texto completo —</div>
 
-Thank you very much for being here, for your interest in getting to know a bit more about who I am, but in a more introspective...more personal...more human way!<br>
-I decided to divide the text into topics, I think it will be more interesting, with more important points, which are:<br>
--Seeking Answers - when, who and why “I am”;<br>
--Continuous Refinement - my studies;<br>
--Chaos and Silence - I found the “Origin” but I want more!<br>
--Gotta Sweat - why weightlifting?<br>
-If you have a few minutes to spare and your coffee in hand, I suggest reading straight through from the beginning, so let“s go:<br><br>
-Between 22 and 23 years old, I identified that I had various weaknesses in different areas, I started the journey <strong>”#Seeking Answers“</strong>, and the solution ”definitive, temporary or alternative“ 
-would be scattered across thousands of texts, records made over thousands of years by humanity, but what exactly should I read? I remember some names that appeared in ”question and answer“ programs, 
-I remember that in high school the philosophy teacher did a ”disservice“ by saying:<br>-Philosophy is useless! But around the same time, I did something unprecedented for me and among my peers:
-<br>
--I asked if I could access the school library, because it was closed. With that, I remember receiving some compliments, and even the school principal said ”great idea, we need to organize it and encourage other students to use it!
-“ The book I chose was ”The Burning of Troy“! I don”t remember why, maybe I had some class that dealt with the topic, so I must have gotten really curious, I put in some effort, and went looking for it in the library.
-<br><br>
-Even today, I carry the deep sadness of knowing that there are thousands of great books that, unfortunately, due to “gravity” and other biological factors, I will not be able to read! “#Continuous Refinement” 
-internally I have a paradox; joy and fear, adoration and hatred, are part of my process of meditation and reflection on topics that are intrinsically connected to intellectual evolution!
-<br><br>
-When you are a child and you hear from adults about the duty to be obedient and fearful of God, it is complicated! If not explained with care and patience, it may be unnecessary. 
-Today “#Chaos and Silence” I feel blessed to have felt “God”, to have known the philosophy and lifestyle of “Buddhism” and to have had the ability to read the Bible.
-<br><br>
-My first memory about sports is with my father; I remember he played field football, and on Saturday mornings, I was with him to witness this moment of relaxation with his friends. 
-From then on “#Gotta Sweat” sports have been present for much of my life. The moments it wasn“t, it was introduced by medical suggestion (which is usually an order). 
-Today, at 43 years old, I love and practice weightlifting, that sport whose purpose most people don”t understand and confuse with weight lifting…but the goal is “to contract the muscle with a small degree of difficulty”."
+        <div class="full-section" id="busca-pt">
+          <div class="full-section-title">Em busca de respostas</div>
+          <p>Entre 16 e 17 anos, identifiquei que possuía diversas fraquezas em diversas áreas, comecei a minha jornada, e a solução "definitiva, temporária ou alternativa" estaria fragmentada em milhares de textos, registros realizados ao longo de milhares de anos pela humanidade, por pensadores, inventores, religiosos, pessoas simples, mas o que exatamente eu deveria ler? Por onde começar?</p>
+          <p>Eu lembro de alguns nomes que apareciam em programas de "perguntas e respostas", lembro que no colegial o professor de filosofia fez um "desfavor" ao proferir:<br>— Filosofia não serve para nada!<br>Mas na mesma época, eu fiz algo inédito pra mim e entre meus próximos:<br>— Eu perguntei se poderia ter acesso à biblioteca da escola, porque ela estava fechada.<br>Com isso, lembro de ter recebido alguns elogios, e até o diretor da escola disse "ótima ideia, temos que organizá-la e incentivar os demais alunos a frequentá-la!"</p>
+          <p>O livro que eu escolhi foi "O Incêndio de Troia"! Não recordo o motivo, talvez eu tenha tido alguma aula que remetesse ao tema, então, devo ter ficado super curioso, coloquei o "Tico e Teco" para trabalhar um pouco, e fui atrás na biblioteca. Fiquei encantado com a história, e claro que acreditei que havia acontecido exatamente conforme narrado (foi e todo mundo sabe 🙂) e fui atingido pelo raio que destrói e reconstrói algo incontestavelmente melhor;</p>
+          <p>eu senti e reconheci que realmente eu não sabia de nada, era intelectualmente pobre, meu ensino básico não cobriu tudo, e o mais importante, não fui um bom aluno, até chegar no colegial, e agora com o renascimento, eu deveria me reeducar, conhecer ao máximo das maravilhas registradas e descobertas até então pelo "Homo sapiens".</p>
+        </div>
 
+        <div class="full-section" id="refinamento-pt">
+          <div class="full-section-title">Refinamento contínuo</div>
+          <p>Ainda hoje, carrego a tristeza de saber que há milhares de ótimos livros, que infelizmente, devido à "gravidade" e outros fatores biológicos, não poderei lê-los! Internamente eu tenho um paradoxo; alegria e medo, adoração e ódio, fazem parte do meu processo de meditação e reflexão em temas que estão intrinsecamente conectados à evolução intelectual! Um dos sonhos que possuo é ter uma elegante (e grande) biblioteca integrada ao meu escritório. Isso sim seria o "meu espaço". Livros de todas as áreas de conhecimento para serem degustados numa poltrona hiper confortável…A realização de "sonhos-objetivos" faz com que entendamos nosso potencial e limitação ao mesmo tempo, um paradoxo, mas no mundo de verdade, a quantidade de variáveis que estão ao nosso redor, conflitando entre si e podem influenciar a favor ou contra, são imensuráveis! Então compartilharei o que por anos foi um sonho, depois se tornou um objetivo que era fazer um intercâmbio.</p>
+          <p>Outubro de 2016 — após 6 horas de voo, eu aterrissei no maior aeroporto de conexões dos Estados Unidos em Atlanta, para assim, pegar outro voo para San Diego, California! Na minha mochila, tinha meu passaporte, dólar e o comprovante de que eu estava matriculado por um mês na escola "ESL" (English as Second Language); meu passaporte recebeu com prazer o carimbo e ouvi "Welcome Eric" do responsável por me atender na alfândega.</p>
+          <p>Eu decidi que esse intercâmbio seria um dos melhores investimentos e escolhas da minha vida, ao invés de aceitar uma proposta com quase 50% de defasagem do que eu era naquele momento.</p>
+          <p>Eu incorporei o que o revolucionário Steve Jobs disse no seu famoso discurso em Stanford em 2005:<br>— "Se hoje fosse o último dia da minha vida, eu iria querer fazer o que estou prestes a fazer hoje?" e com isso, cada dia de aula, na ensolarada e bonita San Diego, eu aproveitava ao máximo.</p>
+          <p>Fiquei um final de semana na badalada "Los Angeles". Andava pra cima e pra baixo na famosa "Sunset Boulevard"; foi uma excursão com duas escolas distintas de idiomas, havia gente de todo lugar do mundo; eu tive que fazer uma escolha difícil, porém certeira: resolvi não ficar com a galera; a maioria dos estudantes ficavam em grupos; eu queria olhar todas as estrelas da calçada da fama; conversar com o vendedor de lanches! Quando eu disse que falava espanhol e que era brasileiro, o hot dog que era $5, passou para $2! rsrsrs</p>
+          <p>Entrei em dois bares/festa, e algumas pessoas me convidaram pra ficar na mesa deles, percebi que nessa cidade as pessoas eram receptivas; eu estava com uma camisa verde da marca Oakley, o símbolo tinha na sua parte interna a bandeira do Brasil, e de repente um cara adorador do Jiu Jitsu brasileiro, ficou maluco quando me viu, veio falar comigo, e me "obrigou" a sentar, comer e beber na mesa dele!</p>
+          <p>Outro final de semana marcante, resolvi ir para um famoso outlet que tem na fronteira, então eu estava no México, na famosa cidade "Tijuana"! Fiquei algumas horas apenas, mesmo sabendo que eu deveria ter ficado o final de semana.</p>
+          <p>Porém, após 30 dias estudando de segunda a sexta feira, das 08:30 até as 14:30, o meu roteiro contemplava um presente: Big Apple — a famosa cidade "New York"! Deixei a ensolarada West Coast, para ficar no frio (5°C) de Manhattan. Totalmente diferente da Califórnia, no outro lado do mapa, na "East Coast" menos amigável, tive um baita choque cultural, que em nada me abalou e aproveitei em todos os seus detalhes!</p>
+          <p>E aqui nessa cidade, foi realizado o sonho de assistir um jogo de basquete pela NBA, estive duas vezes na meca do basquetebol, o imponente e único "Madison Square Garden"! Estar no local que tantas vezes eu assisti pela tv que grandes batalhas ocorreram, e agora eu estava lá, vida zerada! Eu tentei comprar um jogo em Los Angeles, e teria sido épico porque na época o Kobe Bryant (RIP) ainda jogava, sua última temporada. Mas a Califórnia ainda iria me compensar com outra lenda.</p>
+          <p>Em "NY" é como estar em um filme, mesmo que nunca tenha ido, você conhece:<br>— Times Square, Central Park, Estátua da Liberdade, Empire State Building, Rockefeller Center, Ponte do Brooklyn, Memorial e Museu do 11 de Setembro, Museu de Cera e Museu Americano de História Natural, fui em todos e muito mais, porém o tempo urgia, acabava…</p>
+          <p>Então no primeiro domingo de novembro, embarquei de volta para San Diego, pois a lenda do hip-hop, o cantor "Ice Cube", iria se apresentar, próximo de onde eu estudei! Bom, eu usei as milhas acumuladas e ocorreu um novo evento marcante, tecnicamente chamado de core memory: sentir o grave das caixas de som baterem no meu peito na entrada dele no palco! Finalizo essa parte da viagem "Today was a good day", vida zerada (2).</p>
+          <p>Eu tinha condições de ficar mais tempo estudando, porém dei prioridade a voltar à vida profissional, mas agora seria com um projeto independente, que está mais detalhado lá na seção <a href="curriculo.html">Currículo</a>.</p>
+        </div>
 
-  data-es="¡Hola, espero que todo esté bien contigo!<br>
-¡Muchas gracias por estar aquí, por tu interés en conocer un poco más sobre quién soy yo, pero de una manera más introspectiva...más personal...más humana!<br>
-Decidí dividir el texto en temas, creo que será más interesante, con puntos más importantes, que son:<br>
--En busca de respuestas - cuándo, quién y por qué “soy”;<br>
--Refinamiento continuo - mis estudios;<br>
--Caos y Silencio - ¡encontré el “Origen” pero quiero más!<br>
--Hay que sudar - ¿por qué el levantamiento de pesas?<br>
+        <div class="full-section" id="caos-pt">
+          <div class="full-section-title">Caos e Silêncio</div>
+          <p>Quando se é criança, se ouve dos adultos o "dever de ser obediente e temeroso a Deus", não é suficiente, muito abstrato. Se não for explicado com carinho e paciência, talvez seja desnecessário. Hoje sinto-me agraciado por ter sentido "Deus", conhecido a filosofia e estilo de vida do "Budismo" e ter tido a capacidade de ler a Bíblia. Questionamentos existenciais são constantes, o que ocorreu e ocorre agora há bilhões de anos-luz no universo, é o que mais me fascina em pensar e saber que simplesmente, tanto eu, quanto Elon Musk, não temos como saber! Mas a curiosidade, paixão pelo assunto, pode simplesmente mudar nossa visão de mundo. Acredito que quanto mais a ciência avança, mais claro fica que a força que "gerencia, cria e destrói" não é um acidente ou aleatoriedade, é algo maior e tem consciência.</p>
+        </div>
 
-Si tienes unos minutos libres y tu café en mano, te sugiero leer de corrido desde el principio, así que vamos:
-<br><br>
-Entre los 22 y 23 años, identifiqué que tenía varias debilidades en diferentes áreas, comencé el viaje <strong>“#En busca de respuestas”</strong>, 
-y la solución “definitiva, temporal o alternativa” estaría dispersa en miles de textos, registros hechos durante miles de años por la humanidad, 
-pero ¿qué exactamente debería leer? Recuerdo algunos nombres que aparecían en programas de “preguntas y respuestas”, recuerdo que en la escuela secundaria el profesor de filosofía hizo un “desservicio” al decir:
-<br>
--¡La filosofía no sirve para nada! Pero alrededor de la misma época, hice algo sin precedentes para mí y entre mis compañeros:
-<br>
--Pregunté si podía acceder a la biblioteca de la escuela, 
-porque estaba cerrada. Con eso, recuerdo haber recibido algunos cumplidos, e incluso el director de la escuela dijo “¡gran idea, necesitamos organizarla e incentivar a otros estudiantes a usarla!” El libro que elegí fue “El incendio de Troya”.
- ¡No recuerdo por qué, tal vez tuve alguna clase que trataba el tema, así que debo haber sentido mucha curiosidad, me esforcé, y fui a buscarlo a la biblioteca!
- <br><br>
- ¡Incluso hoy, cargo la profunda tristeza de saber que hay miles de grandes libros que, desafortunadamente, debido a la “gravedad” y otros factores biológicos, no podré leer!
- “#Refinamiento continuo” internamente tengo una paradoja; alegría y miedo, adoración y odio, son parte de mi proceso de meditación y reflexión sobre temas que están intrínsecamente conectados a la evolución intelectual!
- <br><br>
- Cuando eres niño y escuchas de los adultos sobre el deber de ser obediente y temeroso de Dios, ¡es complicado! Si no se explica con cuidado y paciencia, puede ser innecesario.
- Hoy “#Caos y Silencio” me siento bendecido por haber sentido a “Dios”, haber conocido la filosofía y estilo de vida del “Budismo” y haber tenido la capacidad de leer la Biblia.
- <br><br>
- Mi primer recuerdo sobre deportes es con mi padre; recuerdo que jugaba fútbol de campo, y los sábados por la mañana, estaba con él para presenciar este momento de relajación con sus amigos.
- A partir de entonces “#Hay que sudar” el deporte ha estado presente durante gran parte de mi vida. Los momentos en que no estaba, fue introducido por sugerencia médica (que generalmente es una orden).
- Hoy, a los 43 años, amo y practico levantamiento de pesas, ese deporte cuyo propósito la mayoría de la gente no entiende y confunde con el levantamiento de peso…pero el objetivo es “contraer el músculo con un pequeño grado de dificultad”."
- 
->Olá, espero que esteja tudo bem com você!<br>
-Muito obrigado por estar aqui, pelo interesse de conhecer um pouco mais sobre quem sou eu, porém de uma forma mais introspectiva...mais pessoal...mais humana!<br>
-Resolvi dividir o texto em assuntos, acho que ficará mais “interessante, ou com pontos mais importantes, sendo eles:<br>
--Em busca de respostas - quando, quem e porque ”eu sou“;<br>
--Refinamento contínuo - meus estudos;<br>
--Caos e Silêncio - achei a ”Origem“ porém quero mais!<br>
--Tem que suar - por que a musculação?<br>
-Se estiver com minutos de sobra e o seu café em mãos, sugiro a leitura corrida, desde o início, então borá lá clicando aqui (link do texto completo), caso não, tudo bem, tenho aqui embaixo, um resumo show:<br><br>
-Entre de 22 para 23 anos, identifiquei que possuía diversas fraquezas em diversas áreas, comecei a jornada <strong>”#Em busca de respostas“</strong>, 
-e a solução ”definitiva, temporária ou alternativa“ estaria fragmentada em milhares de textos, registros realizados ao longo de milhares de anos pela humanidade, porém o que exatamente eu deveria ler? 
-Eu lembro de alguns nomes que apareciam em programas de ”perguntas e respostas“, lembro que no colegial o professor de filosofia fez um ”desfavor“ ao proferir
-:<br>
--Filosofia não serve para nada! Mas na mesma época, eu fiz algo que inédito pra mim e entre aos meus próximos:
-<br>
--Eu perguntei se poderia ter acesso a biblioteca da escola, porque ela estava fechada.
- Com isso, lembro de ter recebido alguns elogios, e até o diretor da escola disse ”ótima ideias, temos que organizá-la e incentivar os demais alunos a frequentá-la!“ O livro que eu escolhi foi ”O incêndio da Tróia“!
- Não recordo o motivo, talvez eu tenha tido alguma aula que remetesse ao tema, então, devo ter ficado super curioso, coloquei o ”Tico e Teco“ para trabalhar um pouco, e fui atrás na biblioteca.
- <br><br>
- Ainda hoje, carrego a grande tristeza de saber que há milhares de ótimos livros, que infelizmente, devido a ”gravidade“ e outros fatores biológicos, não poderei lê-los!
- ”#Refinamento contínuo“ internamente eu tenho um paradoxo; alegria e medo, adoração e ódio, fazem parte do meu processo de meditação e reflexão em temas que estão intrinsecamente conectados em evolução intelectual!
- <br><br>
- Quando se há criança e se ouve dos adultos sobre o dever de ser obediente e temeroso a Deus, é complicado! Se não explicado com carinho e paciência, talvez seja desnecessário. 
- Hoje ”#Caos e Silêncio“ sinto-me agraciado por ter sentido ”Deus“, conhecido a filosofia e estilo de vida do ”Budismo“ e ter tido a capacidade de ler a bíblia.
- <br><br>
- A primeira memória que tenho sobre esporte, é junto ao meu pai; lembro que ele jogava futebol de campo, e no sábado de manhã, eu estava junto a ele para presenciar esse momento de descontração junto aos amigos. 
- A partir de então ”#Tem que suar“ esporte esteve presente em grande parte da minha vida. 
- Os momentos que não estavam, foi introduzido por sugestão médica (que geralmente é uma ordem). 
- Hoje eu, com 43 anos, adoro e pratico musculação, aquele esporte que o objetivo a maioria não entende e confunde com levantamento de peso…porém o objetivo é ”contrair o músculo com pequeno grau de dificuldade“.</p>
-      
-	  <!--
-	  <div class="hobbies">
-        <span class="hobby-tag">🎵 Michael Jackson</span>
-        <span class="hobby-tag">📊 Data Analytics</span>
-        <span class="hobby-tag">📚 Leitura</span>
-        <span class="hobby-tag">🎬 Cinema</span>
-      </div>
+        <div class="full-section" id="suar-pt">
+          <div class="full-section-title">Tem que suar</div>
+          <p>A primeira memória que tenho sobre esporte, é junto ao meu pai; lembro que ele jogava futebol de campo, e aos sábados de manhã, eu estava junto a ele para presenciar esse momento de descontração junto aos seus amigos. A partir de então o esporte esteve presente em grande parte da minha vida. Os momentos que não estavam na prática, foi introduzido por sugestão médica (que geralmente é uma ordem). Hoje eu, com 43 anos, adoro e pratico musculação, aquele esporte cujo objetivo maior grande parte das pessoas não entende e confunde com levantamento de peso, porém o objetivo é "contração muscular com foco e técnica, com certo grau de dificuldade" e com isso, teremos a hipertrofia.</p>
+          <p>Futebol, quando criança eu não era um bom jogador, sabia os fundamentos, mas não era habilidoso, talvez se tivesse insistido, seria um bom zagueiro, nada além disso.</p>
+          <p>Basquete, com 14 anos eu tinha 1,85 de altura, então já tinha vantagem numa visão básica, mas esse esporte requer muito mais que isso. Adorava jogar e assistir, mas nunca conseguia jogar bem com os mais velhos! Muito comum quando "pulava o muro da escola, e fazia uma 'pelada' com quem quisesse jogar", tinha: jovem, adulto, velho, alto, baixo, magro, gordo e bombado. Eu desempenhava super bem entre os que estavam na minha idade, mas em algum momento durante a fase de evolução profissional, ir até a quadra no final de semana, perdeu prioridade.</p>
+          <p>Hoje assisto aos jogos da NBA e NFL: jogos extremamente de impacto e de estratégia! Demora um pouco para entender as regras, porém extremamente compensador, porque ao contrário dos demais esportes populares, você não move um passo pra frente ou para trás, sem ter planejamentos e previsões do que poderá acontecer!</p>
+        </div>
+      </div><!-- /.lang-pt -->
+
+      <!-- ── ENGLISH ── -->
+      <div class="lang-en bio-content">
+        <p>Hello, I hope you're doing well!</p>
+        <p>Thank you so much for being here, for taking interest in getting to know a little more about who I am, but in a more introspective way... more personal... more human!</p>
+        <p>I decided to divide the text into topics, I think it'll be more interesting, with key points:</p>
+        <ul class="topic-list">
+          <li>— <a href="#busca-en">In Search of Answers</a> — when, who, and why "I am";</li>
+          <li>— <a href="#refinamento-en">Continuous Refinement</a> — my ongoing studies;</li>
+          <li>— <a href="#caos-en">Chaos and Silence</a> — I found the "Origin" but I need more!</li>
+          <li>— <a href="#suar-en">You've Got to Sweat</a> — sports is also key!</li>
+        </ul>
+        <p>If you have a few minutes, sit down and pick your coffee. I suggest reading it in full <a href="#inicio-en">from the beginning</a>, or select the topic that interests you most. If not, no problem, I have a quick summary below:</p>
+
+        <div class="summary-block">
+          <div class="summary-heading">Summary: In Search of Answers</div>
+          <p>Between ages 16 and 17, I realized I was intellectually poor and decided to do something about it. The solution was deep down across thousands of texts written over centuries by humanity, but where should I start? The answer came simply: I asked for access to the school library, which was closed at the time. The book I chose was "The Fall of Troy." From that point on, my journey to re-educate myself had begun.</p>
+        </div>
+
+        <div class="summary-block">
+          <div class="summary-heading">Summary: Continuous Refinement</div>
+          <p>I carry the honest sadness of knowing I won't live long enough to read everything I'd like to. Joy and fear, adoration and hate for knowledge coexist within me. One of my dream-goals is to have an elegant library integrated into my office, books from every field, a comfortable armchair, my space. Dreams that become goals teach us about potential and limitation at the same time. One of those goals was the exchange program in San Diego in 2016, study, adventure, hard decisions, and great memories. Full details in the complete reading.</p>
+        </div>
+
+        <div class="summary-block">
+          <div class="summary-heading">Summary: Chaos and Silence</div>
+          <p>Growing up hearing that you must be "obedient and fearful of God" without explanation is too abstract for a child. Today I feel blessed to have felt "God," learned about Buddhism, and read the Bible, three distinct paths but with many answers. The more science advances, the clearer it becomes that the force that creates and destroys isn't an accident, it's a consciousness.</p>
+        </div>
+
+        <div class="summary-block">
+          <div class="summary-heading">Summary: You've Got to Sweat</div>
+          <p>My first memory of sports is alongside my father, on a Saturday morning by the field. From then on, sports never left my life, sometimes by choice, sometimes by doctor's orders. I played soccer without skill, basketball without dominating the older guys, and today I lift weight, whose real goal is muscle contraction with focus, technique, and hypertrophy. I follow the NBA and NFL: high-impact, strategic sports that demand planning every step of the way.</p>
+        </div>
+
+        <div class="text-divider" id="inicio-en">— full text —</div>
+
+        <div class="full-section" id="busca-en">
+          <div class="full-section-title">In Search of Answers</div>
+          <p>Between ages 16 and 17, I identified that I had several weaknesses in different areas. I started my journey, and the solution "definitive, temporary, or alternative", would be fragmented across thousands of texts, records made over thousands of years by humanity, by thinkers, inventors, religious figures, ordinary people. But what exactly should I read? Where to begin?</p>
+          <p>I remember some names that came up on the "questions and answers" TV shows. I remember that in high school, the philosophy teacher did a "disservice" by stating:<br>— "Philosophy is useless!"<br>But around the same time, I did something unprecedented for me and among those close to me:<br>— I asked if I could have access to the school library, since it was closed.<br>I remember receiving some compliments, and even the school principal said: "Great idea! We need to organize it and encourage other students to use it!"</p>
+          <p>The book I chose was "The Fall of Troy"! I don't recall why, maybe I had a class that touched on the topic, so I must have been super curious. I got my brain working and headed to the library. I was captivated by the story, and of course I believed it had happened exactly as told (it did, and everyone knows 🙂), and I was struck by lightning, the kind that destroys and rebuilds something undeniably better.</p>
+          <p>I felt and recognized that I truly knew nothing, I was intellectually poor. My basic education hadn't covered a lot of things, and more importantly, I hadn't been a good student until high school. Now, with this rebirth, I should re-educate myself, learn as much as possible about the marvels recorded and discovered by "Homo sapiens."</p>
+        </div>
+
+        <div class="full-section" id="refinamento-en">
+          <div class="full-section-title">Continuous Refinement</div>
+          <p>Even today, I carry the sadness of knowing there are thousands of incredible books that, due to "gravity" and other biological factors, I won't be able to read! Internally, I have a paradox: joy and fear, adoration and hate are part of my process of meditation and reflection on topics intrinsically connected to intellectual evolution! One of my dreams is to have an elegant (and large) library integrated into my office. That would truly be "my space." Books from every field of knowledge to be enjoyed in a hyper-comfortable armchair... Achieving "dream-goals" makes us understand our potential and limitations at the same time, a paradox. But in the real world, the number of variables around us, conflicting with each other and influencing for or against, is immeasurable! So I'll share what was a dream for years and then became a goal: doing an exchange program.</p>
+          <p>October 2016 — after a 6-hour flight, I landed at the largest connection airport in the United States, in Atlanta, to then catch another flight to San Diego, California! In my backpack: my passport, US dollars, and proof I was enrolled for a month at the "ESL" school (English as Second Language). My passport gladly received its stamp, and I heard "Welcome, Eric" from the customs officer.</p>
+          <p>I decided this exchange would be one of the best investments and choices of my life, rather than accepting a job offer with nearly a 50% pay cut from what I was earning at the time.</p>
+          <p>I incorporated what the revolutionary Steve Jobs said in his famous Stanford speech in 2005:<br>— "If today were the last day of my life, would I want to do what I'm about to do today?"<br>With that in mind, every class day in sunny, beautiful San Diego, I made the most of it.</p>
+          <p>I spent a weekend in the buzzing "Los Angeles." I walked up and down on the famous "Sunset Boulevard." It was an excursion with two different language schools, with people from all over the world. I had to make a tough but right call: I decided not to stick with the crowd. Most students stayed in groups; I wanted to look at every star on the Walk of Fame, chat with the hot dog vendor! When I said I spoke Spanish and was Brazilian, the $5 hot dog dropped to $2! lol</p>
+          <p>I went to two bars, and some people invited me to sit at their table. I noticed people in this city were welcoming. I was wearing a green Oakley t-shirt with the Brazilian flag inside the logo, and suddenly a guy who loved Brazilian Jiu-Jitsu went crazy when he saw me, came over to talk and "lovely forced" me to sit, eat, and drink at his table!</p>
+          <p>Another memorable weekend: I decided to visit a famous outlet on the border, so I was in Mexico, in the famous city of "Tijuana"! I only stayed a few hours, even though I knew I should have stayed the whole weekend.</p>
+          <p>After 30 days studying Monday through Friday, from 8:30 AM to 2:30 PM, my itinerary included a gift: Big Apple, the famous city of "New York"! I left the sunny West Coast for the cold (5°C / 41°F) of Manhattan. Completely different from California, on the other side of the map, in the "East Coast", less welcoming, I had a real culture shock, which didn't shake me at all and I enjoyed every detail!</p>
+          <p>And in this city, the dream of watching an NBA basketball game came true. I went twice to the mecca of basketball, the imposing and unique "Madison Square Garden"! Being in the place where I had watched so many epic battles on TV, and now being there myself, my life is complete! I tried to buy a ticket for a Lakers game in "LA", and it would have been epic because Kobe Bryant (RIP) was still playing in his last season. But Cali told me: 'You haven't seen anything yet.'</p>
+          <p>In "NY," it's like being in a movie, even if you've never been there, you know it:<br>— Times Square, Central Park, Statue of Liberty, Empire State Building, Rockefeller Center, Brooklyn Bridge, 9/11 Memorial and Museum, Wax Museum, and the American Museum of Natural History. I went to all of them and more, but time was running out, slipping away...</p>
+          <p>Then on the first Sunday of November, I flew back to San Diego, because the hip-hop legend "Ice Cube" was about to perform near where I was studying! I used my accumulated miles, and another memorable event happened, a new core memory: feeling the bass from the speakers hit my chest as he stepped on stage! I close this part of the trip with "Today was a good day", if you know what I mean. I can die happy now!</p>
+          <p>I could afford to stay longer studying, but I prioritized returning to professional life, now with an independent project, detailed in the <a href="curriculo.html">Resume</a> section.</p>
+        </div>
+
+        <div class="full-section" id="caos-en">
+          <div class="full-section-title">Chaos and Silence</div>
+          <p>When you're a child and you hear from adults about the "duty to be obedient and fearful of God," it's not enough, it's too abstract. If not explained with care and patience, it might be unnecessary. Today I feel blessed to have felt "God," learned about the philosophy and way of life of "Buddhism," and been able to read the Bible. Existential questions are constant, what happened and what's happening right now, billions of light-years away in the universe, is what fascinates me most to think about. And knowing that neither I nor Elon Musk has the answer, paradoxically, fascinates me even more! But curiosity and passion for the subject can simply change our view of the world. I believe that the more science advances, the clearer it becomes that the force that "manages, creates, and destroys" isn't accident or randomness, it's something greater, and it has consciousness.</p>
+        </div>
+
+        <div class="full-section" id="suar-en">
+          <div class="full-section-title">You've Got to Sweat</div>
+          <p>My first memory of sports is alongside my father. I remember he played soccer on a regular field, and on Saturday mornings I'd be there with him, watching this moment of relaxation among his friends. From then on, sports were present throughout most of my life. The times they weren't, they were reintroduced by doctor's recommendation (which is usually an order). Today, at 43, I love lifting weight, whose real goal most people don't understand and confuse with weightlifting. But the goal is "muscular contraction with focus and technique, at a certain level of difficulty" and from that, hypertrophy.</p>
+          <p>Soccer: as a kid I wasn't a good player. I knew the fundamentals, but I wasn't skilled. Maybe if I had stuck with it, I'd have been a decent defender, nothing more.</p>
+          <p>Basketball: at 14 I was 1.85 m tall (about 6'1"), so I had a basic advantage, but this sport requires much more than that. I loved playing and watching, but I could never play well against the older guys. Common scene: "jumping the school fence to play a pickup game with whoever showed up" — there'd be: young, old, tall, short, skinny, heavy, and jacked. I performed well among guys my age, but at some point during my professional development phase, going to the court on weekends lost priority.</p>
+          <p>Today I follow the NBA and NFL: high-impact, highly strategic sports! Takes a while to learn the rules, but it's extremely rewarding, because unlike other popular sports, you can't take a step forward or backward without planning and predicting what might happen!</p>
+        </div>
+      </div><!-- /.lang-en -->
+
+      <!-- ── ESPAÑOL ── -->
+      <div class="lang-es bio-content">
+        <p>¡Hola, espero que todo esté bien contigo!</p>
+        <p>¡Muchas gracias por estar aquí, por interesarte en conocer un poco más sobre quién soy, pero de una manera más introspectiva... más personal... más humana!</p>
+        <p>Decidí dividir el texto por temas, creo que será más interesante, con puntos clave:</p>
+        <ul class="topic-list">
+          <li>— <a href="#busca-es">En busca de respuestas</a> — cuándo, quién y por qué "yo soy";</li>
+          <li>— <a href="#refinamento-es">Refinamiento continuo</a> — mis estudios continuos;</li>
+          <li>— <a href="#caos-es">Caos y Silencio</a> — ¡encontré el "Origen" pero necesito más!</li>
+          <li>— <a href="#suar-es">Hay que sudar</a> — ¡el deporte también es clave!</li>
+        </ul>
+        <p>Si tienes unos minutos y tu café en mano, te sugiero leer el texto completo <a href="#inicio-es">desde el principio</a>, o seleccionar el tema que más te interese. Si no, no hay problema, aquí abajo tengo un resumen rápido:</p>
+
+        <div class="summary-block">
+          <div class="summary-heading">Resumen: En busca de respuestas</div>
+          <p>Entre los 16 y 17 años me di cuenta de que era intelectualmente pobre y decidí hacer algo al respecto. La solución estaría dispersa en miles de textos escritos a lo largo de siglos por la humanidad, pero ¿por dónde empezar? La respuesta llegó de forma simple: solicité acceso a la biblioteca de la escuela, que estaba cerrada. El libro que elegí fue "La Caída de Troya". A partir de ahí, mi camino para reeducarme había comenzado.</p>
+        </div>
+
+        <div class="summary-block">
+          <div class="summary-heading">Resumen: Refinamiento continuo</div>
+          <p>Cargo la tristeza honesta de saber que no viviré lo suficiente para leer todo lo que me gustaría. Alegría y miedo, adoración y odio por el conocimiento coexisten en mí. Uno de mis sueños-objetivos es tener una biblioteca elegante integrada a mi oficina, libros de todas las áreas, un sillón cómodo, mi espacio. Los sueños que se vuelven objetivos enseñan sobre potencial y limitación al mismo tiempo. Uno de esos objetivos fue el intercambio en San Diego, en 2016, estudio, aventura, decisiones difíciles y grandes recuerdos. Detalles completos en la lectura completa.</p>
+        </div>
+
+        <div class="summary-block">
+          <div class="summary-heading">Resumen: Caos y Silencio</div>
+          <p>Crecer escuchando que uno debe ser "obediente y temeroso de Dios" sin explicación es demasiado abstracto para un niño. Hoy me siento agraciado por haber sentido a "Dios", conocido el Budismo y leído la Biblia, tres caminos distintos pero con muchas respuestas. Cuanto más avanza la ciencia, más claro queda que la fuerza que crea y destruye no es accidente, es una consciencia.</p>
+        </div>
+
+        <div class="summary-block">
+          <div class="summary-heading">Resumen: Hay que sudar</div>
+          <p>Mi primer recuerdo del deporte es junto a mi padre, un sábado por la mañana al borde del campo. Desde entonces, el deporte nunca dejó mi vida, a veces por gusto, a veces por orden médica. Jugué fútbol sin habilidad, baloncesto sin dominar a los mayores, y hoy practico musculación, ese deporte que la mayoría confunde con levantar pesas, pero cuyo verdadero objetivo es la contracción muscular con foco, técnica e hipertrofia. Sigo la NBA y la NFL: deportes de impacto y estrategia que exigen planificación a cada paso.</p>
+        </div>
+
+        <div class="text-divider" id="inicio-es">— texto completo —</div>
+
+        <div class="full-section" id="busca-es">
+          <div class="full-section-title">En busca de respuestas</div>
+          <p>Entre los 16 y 17 años, identifiqué que tenía varias debilidades en distintas áreas. Comencé mi camino, y la solución, "definitiva, temporal o alternativa", estaría fragmentada en miles de textos, registros realizados a lo largo de milenios por la humanidad, por pensadores, inventores, religiosos, gente sencilla. Pero, ¿qué exactamente debería leer? ¿Por dónde empezar?</p>
+          <p>Recuerdo algunos nombres que aparecían en programas de "preguntas y respuestas". Recuerdo que en la secundaria, el profesor de filosofía hizo un "deservicio" al decir:<br>— ¡La filosofía no sirve para nada!<br>Pero en la misma época, hice algo inédito para mí y entre mis cercanos:<br>— Pregunté si podía tener acceso a la biblioteca de la escuela, porque estaba cerrada.<br>Recuerdo haber recibido algunos elogios, e incluso el director de la escuela dijo: "¡Gran idea! ¡Tenemos que organizarla e incentivar a los demás alumnos a frecuentarla!"</p>
+          <p>El libro que elegí fue "La Caída de Troya". No recuerdo el motivo, quizás había tenido alguna clase que tocara el tema, así que debí haber quedado muy curioso. Puse las neuronas a trabajar y fui a la biblioteca. Quedé encantado con la historia, y por supuesto creí que había ocurrido exactamente como se narraba (ocurrió, y todos lo saben 🙂), y fui alcanzado por el rayo, ese que destruye y reconstruye algo indiscutiblemente mejor.</p>
+          <p>Sentí y reconocí que realmente no sabía nada, era intelectualmente pobre. Mi educación básica no había cubierto todo, y lo más importante: no había sido un buen estudiante hasta llegar a la secundaria. Ahora, con este renacimiento, debía reeducarme, conocer al máximo las maravillas registradas y descubiertas por el "Homo sapiens".</p>
+        </div>
+
+        <div class="full-section" id="refinamento-es">
+          <div class="full-section-title">Refinamiento continuo</div>
+          <p>Aún hoy cargo la tristeza de saber que hay miles de excelentes libros que, lamentablemente, debido a la "gravedad" y otros factores biológicos, no podré leer. Internamente tengo una paradoja: alegría y miedo, adoración y odio forman parte de mi proceso de meditación y reflexión sobre temas intrínsecamente conectados a la evolución intelectual. Uno de los sueños que tengo es tener una elegante (y grande) biblioteca integrada a mi oficina. Eso sí sería "mi espacio". Libros de todas las áreas del conocimiento para ser saboreados en un sillón hiper cómodo... La realización de "sueños-objetivos" hace que entendamos nuestro potencial y limitación al mismo tiempo, una paradoja. Pero en el mundo real, la cantidad de variables a nuestro alrededor, en conflicto entre sí y que pueden influir a favor o en contra, son inmensurables. Entonces compartiré lo que durante años fue un sueño, y luego se volvió un objetivo: hacer un intercambio.</p>
+          <p>Octubre de 2016 — después de 6 horas de vuelo, aterricé en el mayor aeropuerto de conexiones de los Estados Unidos, en Atlanta, para tomar otro vuelo hacia San Diego, California. En mi mochila: mi pasaporte, dólares y el comprobante de matrícula por un mes en la escuela "ESL" (English as Second Language). Mi pasaporte recibió con gusto su sello, y escuché "Welcome, Eric" del oficial de migración.</p>
+          <p>Decidí que este intercambio sería una de las mejores inversiones y elecciones de mi vida, en lugar de aceptar una propuesta de trabajo con casi un 50% de rebaja respecto a lo que ganaba en ese momento.</p>
+          <p>Incorporé lo que el revolucionario Steve Jobs dijo en su famoso discurso en Stanford en 2005:<br>— "Si hoy fuera el último día de mi vida, ¿querría hacer lo que estoy a punto de hacer hoy?"<br>Con eso en mente, cada día de clase en la soleada y hermosa San Diego, lo aproveché al máximo.</p>
+          <p>Pasé un fin de semana en la animada "Los Angeles". Caminaba de un lado para otro por la famosa "Sunset Boulevard"; fue una excursión con dos escuelas distintas de idiomas, había gente de todas partes del mundo. Tuve que tomar una decisión difícil, pero acertada: decidí no quedarme con el grupo; la mayoría de los estudiantes andaba en grupos; yo quería mirar todas las estrellas del "Paseo de la Fama", hablar con el vendedor de hot dogs. Cuando dije que hablaba español y era brasileño, el hot dog que costaba $5 ¡bajó a $2! jajaja</p>
+          <p>Entré en dos bares/fiestas, y algunas personas me invitaron a su mesa, noté que en esta ciudad la gente era acogedora. Yo llevaba una camiseta verde de la marca Oakley; el logo tenía por dentro la bandera de Brasil, y de repente un tipo fanático del Jiu Jitsu brasileño se volvió loco cuando me vio, vino a hablar conmigo y me "obligó" a sentarme, comer y beber en su mesa.</p>
+          <p>Otro fin de semana memorable: decidí ir a un famoso outlet en la frontera, así que estuve en México, en la famosa ciudad de "Tijuana". Sólo me quedé unas horas, a pesar de saber que debía haberme quedado el fin de semana completo.</p>
+          <p>Después de 30 días estudiando de lunes a viernes, de 8:30 a 14:30, mi itinerario incluía un regalo: Big Apple, ¡la famosa ciudad de "New York"! Dejé la soleada West Coast para estar en el frío (5°C) de Manhattan. Totalmente diferente de California, al otro lado del mapa, en la "East Coast", menos amigable, tuve un gran choque cultural, que en nada me afectó y disfruté en todos sus detalles.</p>
+          <p>Y en esta ciudad se realizó el sueño de ver un partido de baloncesto de la NBA. Estuve dos veces en la meca del baloncesto, el imponente y único "Madison Square Garden". Estar en el lugar donde tantas veces vi por televisión que ocurrieron grandes batallas, y ahora estar yo ahí, ¡Toqué el cielo con las manos! Intenté comprar entrada a un partido en Los Angeles, y habría sido épico porque en esa época Kobe Bryant (RIP) aún jugaba, su última temporada. Pero California aún me compensaría con otra leyenda.</p>
+          <p>En "NY" es como estar en una película, aunque nunca hayas ido, la conoces:<br>— Times Square, Central Park, Estatua de la Libertad, Empire State Building, Rockefeller Center, Puente de Brooklyn, Memorial y Museo del 11 de Septiembre, Museo de Cera y Museo Americano de Historia Natural. Fui a todos y más, pero el tiempo apremiaba, se acababa...</p>
+          <p>Entonces el primer domingo de noviembre embarqué de vuelta a San Diego, porque la leyenda del hip-hop "Ice Cube" se presentaría cerca de donde estudiaba. Usé las millas acumuladas, y ocurrió otro evento memorable, lo que técnicamente se llama core memory: sentir el bajo de los parlantes golpeando en mi pecho cuando entró al escenario. Cierro esta parte del viaje con "Today was a good day", ya posso morir en paz.</p>
+          <p>Podía haberme quedado más tiempo estudiando, pero prioricé volver a la vida profesional, ahora con un proyecto independiente, más detallado en la sección <a href="curriculo.html">Currículum</a>.</p>
+        </div>
+
+        <div class="full-section" id="caos-es">
+          <div class="full-section-title">Caos y Silencio</div>
+          <p>Cuando uno es niño y escucha de los adultos sobre el "deber de ser obediente y temeroso de Dios", no es suficiente, es demasiado abstracto. Si no se explica con cariño y paciencia, quizás sea innecesario. Hoy me siento agraciado por haber sentido a "Dios", conocido la filosofía y el estilo de vida del "Budismo" y haber podido leer la Biblia. Los cuestionamientos existenciales son constantes, lo que ocurrió y ocurre ahora mismo, a miles de millones de años-luz en el universo, es lo que más me fascina pensar. Y saber que ni yo ni Elon Musk tenemos cómo saberlo, paradójicamente, me fascina aún más. Pero la curiosidad, la pasión por el tema, puede simplemente cambiar nuestra visión del mundo. Creo que cuanto más avanza la ciencia, más claro queda que la fuerza que "gestiona, crea y destruye" no es accidente o aleatoriedad, es algo mayor y tiene consciencia.</p>
+        </div>
+
+        <div class="full-section" id="suar-es">
+          <div class="full-section-title">Hay que sudar</div>
+          <p>Mi primer recuerdo del deporte es junto a mi padre. Recuerdo que él jugaba fútbol de campo, y los sábados por la mañana yo estaba con él para presenciar ese momento de descontracción con sus amigos. Desde entonces el deporte estuvo presente en gran parte de mi vida. Los momentos en que no estuvo en la práctica, fue reintroducido por sugerencia médica (que generalmente es una orden). Hoy, a los 43 años, amo y practico musculación, ese deporte cuyo objetivo mayor gran parte de la gente no entiende y confunde con levantar pesas, pero el objetivo es la "contracción muscular con foco y técnica, con cierto grado de dificultad", y con eso, tendremos hipertrofia.</p>
+          <p>Fútbol: cuando era niño no era un buen jugador. Sabía los fundamentos, pero no era hábil. Tal vez si hubiera insistido, habría sido un buen defensa, nada más.</p>
+          <p>Baloncesto: a los 14 años medía 1.85 m, así que ya tenía ventaja en una visión básica, pero este deporte requiere mucho más que eso. Amaba jugar y mirar, pero nunca lograba jugar bien con los mayores. Era muy común "saltar el muro de la escuela y armar una 'pichanga' con quien quisiera jugar": había jóvenes, adultos, mayores, altos, bajos, flacos, gordos y musculosos. Yo rendía muy bien entre los que eran de mi edad, pero en algún momento durante la fase de evolución profesional, ir a la cancha el fin de semana perdió prioridad.</p>
+          <p>Hoy sigo la NBA y la NFL: deportes extremadamente de impacto y estrategia. Toma un poco entender las reglas, pero es extremadamente gratificante, porque al contrario de los otros deportes populares, no das un paso adelante o atrás sin planear y prever lo que podría suceder.</p>
+        </div>
+      </div><!-- /.lang-es -->
+
     </div>
-  </div>-->
-  
+  </div>
 </main>
 
 <nav id="dock">
   <a class="dock-item" href="index.html"><div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Home.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:14px;"></div><div class="dock-tooltip" data-pt="Início" data-en="Home" data-es="Inicio">Início</div><div class="dock-dot"></div></a>
-  <a class="dock-item" href="projetos.html"><div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div><div class="dock-tooltip" data-pt="Projetos" data-en="Projects" data-es="Proyectos">Projetos</div><div class="dock-dot"></div></a>
-  <a class="dock-item" href="curriculo.html"><div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div class="dock-tooltip" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</div><div class="dock-dot"></div></a>
+  <a class="dock-item" href="projetos.html"><div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div><div class="dock-tooltip" data-pt="Projetos" data-en="Projects" data-es="Proyectos">Projetos</div><div class="dock-dot"></div></a>
+  <a class="dock-item" href="curriculo.html"><div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div class="dock-tooltip" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</div><div class="dock-dot"></div></a>
   <a class="dock-item active-page" href="quem-sou.html"><div class="dock-icon" style="overflow:hidden;padding:0;"><img src="IMG_7217.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14px;"></div><div class="dock-tooltip" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</div><div class="dock-dot"></div></a>
   <a class="dock-item" href="livros.html"><div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Midia.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:14px;"></div><div class="dock-tooltip" data-pt="Mídia" data-en="Media" data-es="Medios">Mídia</div><div class="dock-dot"></div></a>
 </nav>
-
 
 <script>
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring')
@@ -250,4 +358,3 @@ setTimeout(()=>{document.getElementById('lang-pt').style.opacity='1';document.ge
 </script>
 </body>
 </html>
-
