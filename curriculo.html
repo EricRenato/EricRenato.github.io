@@ -108,7 +108,7 @@ html, body {
   transform:translateX(-50%);
   z-index:200;
   display:flex; align-items:flex-end;
-  gap:10px; padding:12px 19px 14px;
+  gap:10px; padding:12px 19px 15px;
   background:rgba(20,20,20,0.85);
   backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
   border:1.25px solid rgba(160,175,190,0.55);
@@ -125,7 +125,7 @@ html, body {
   transition:transform var(--transition);
   text-decoration:none; color:inherit;
 }
-.dock-item:hover { transform:translateY(-14px) scale(1.2); }
+.dock-item:hover { transform:translateY(-15px) scale(1.2); }
 .dock-item.active-page > .dock-icon {
   box-shadow:0 0 0 2px var(--gold);
 }
@@ -163,7 +163,7 @@ html, body {
   margin:0 4px; align-self:center;
 }
 
-/* ── CONTEÚDO PRINCIPAL ─────────────────────────────────────────────────── */
+/* ── CONTEÚDO PRINCIPAL  */
 main {
   position:relative; z-index:5;
   display:flex; align-items:center; justify-content:center;
@@ -179,7 +179,7 @@ main {
   z-index:10; white-space:nowrap;
 }
 
-/* ── CURRÍCULO ──────────────────────────────────────────────────────────── */
+/* ── CURRÍCULO  */
 .cv-container { max-width:800px; width:100%; }
 
 .cv-header {
@@ -223,7 +223,7 @@ main {
 [data-lang="es"] .lang-es { display:block; }
 
 .journey-body { font-size:13px; color:var(--text-dim); line-height:1.85; }
-.journey-body p { margin-bottom:14px; }
+.journey-body p { margin-bottom:15px; }
 .journey-year {
   display:inline-block;
   color:var(--gold);
@@ -235,7 +235,7 @@ main {
 /* Skills */
 .skills-grid { display:flex; flex-wrap:wrap; gap:8px; }
 .skill-tag {
-  padding:6px 14px; border-radius:20px;
+  padding:6px 15px; border-radius:20px;
   border:1px solid var(--border);
   font-size:12px; letter-spacing:1px;
   color:var(--text-dim);
@@ -277,7 +277,7 @@ main {
 
 <!-- Botão de tema -->
 <button id="theme-btn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
-<a href="index.html" style="position:fixed;top:60px;right:16px;z-index:300;background:rgba(20,20,20,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:7px 14px;font-size:12px;color:#E8E8E0;text-decoration:none;font-family:'Syne',sans-serif;letter-spacing:1px;display:flex;align-items:center;gap:6px;cursor:none;transition:all 0.3s;">🏠 Home</a>
+<a href="index.html" style="position:fixed;top:60px;right:16px;z-index:300;background:rgba(20,20,20,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:7px 15px;font-size:12px;color:#E8E8E0;text-decoration:none;font-family:'Syne',sans-serif;letter-spacing:1px;display:flex;align-items:center;gap:6px;cursor:none;transition:all 0.3s;">🏠 Home</a>
 
 <!-- Seletor de idioma -->
 <div id="lang-switcher">
@@ -297,7 +297,7 @@ main {
   data-en="Resume"
   data-es="Currículum">Currículo</span>
 
-<!-- ── CONTEÚDO ─────────────────────────────────────────────────────────── -->
+<!-- ── CONTEÚDO  -->
 <main>
   <div class="cv-container">
 
@@ -307,10 +307,10 @@ main {
       <div>
         <div class="cv-name">Eric Renato</div>
         <div class="cv-subtitle"
-          data-pt="ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS"
-          data-en="DATA ANALYST · SQL · FINANCIAL SYSTEMS"
-          data-es="ANALISTA DE DATOS · SQL · SISTEMAS FINANCIEROS">
-          ANALISTA DE DADOS · SQL · SISTEMAS FINANCEIROS
+          data-pt="ANALISTA DE DADOS FINANCEIROS· SQL · SISTEMA DE TESOURARIA "
+          data-en="FINANCIAL DATA ANALYST · SQL · TREASURY SYSTEM"
+          data-es="ANALISTA DE DATOS FINANCIEROS · SQL · SISTEMAS TESORERÍA">
+          ANALISTA DE DADOS FINANCEIROS· SQL · SISTEMA DE TESOURARIA
         </div>
         <a href="https://linkedin.com/in/eric-renato" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 16px;border-radius:20px;border:1px solid rgba(10,102,194,0.4);background:rgba(10,102,194,0.12);color:#6ab0f5;text-decoration:none;font-size:12px;letter-spacing:1px;cursor:none;transition:all 0.2s;">
           <i class="fab fa-linkedin" style="font-size:16px;"></i> LinkedIn
@@ -326,10 +326,13 @@ main {
         data-es="Resumen">Resumo</div>
       <div class="cv-item">
         <div class="cv-item-desc"
-          data-pt="Analista Sênior com 14 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos. Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. Meu lema: “Dados são fatos; a análise revela a história.”"
-          data-en="Senior Analyst with 14 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science, AI and Analytics from USP/ESALQ (2026). Fluent in English and Spanish, with ERP experience (Treasury, NetSuite) and process automation. Seeking Data Analyst/Business Analyst position focused on financial analytics, remote or hybrid work, and competitive compensation. My motto: “Data is facts; analysis reveals the story.”"
-          data-es="Analista Senior con 14 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). Fluido en inglés y español, con experiencia en ERP (Tesorería, NetSuite) y automatización de procesos. Busco posición como Data Analyst/Business Analyst enfocado en analytics financiero, trabajo remoto o híbrido y compensación competitiva. Mi lema: “Los datos son hechos; el análisis revela la historia.”">
-          Analista Sênior com 14 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos. Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. Meu lema: “Dados são fatos; a análise revela a história.”
+          data-pt="Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos. Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. Meu lema: “Dados são fatos; a análise revela a história.”"
+         
+                data-en="Senior Analyst with 15 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science, AI and Analytics from USP/ESALQ (2026). Fluent in English and Spanish, with ERP experience (Treasury, NetSuite) and process automation. Seeking Data Analyst/Business Analyst position focused on financial analytics, remote or hybrid work, and competitive compensation. My motto: “Data is facts; analysis reveals the story.”"
+          
+                data-es="Analista Senior con 15 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). Fluido en inglés y español, con experiencia en ERP (Tesorería, NetSuite) y automatización de procesos. Busco posición como Data Analyst/Business Analyst enfocado en analytics financiero, trabajo remoto o híbrido y compensación competitiva. Mi lema: “Los datos son hechos; el análisis revela la historia.”">
+          
+                Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos. Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. Meu lema: “Dados são fatos; a análise revela a história.”
         </div>
       </div>
     </div>
@@ -346,7 +349,7 @@ main {
         <p>Olá, prazer em tê-lo(a) por aqui! Vou compartilhar de forma mais simples e humana as minhas experiências, porém, caso queira algo "oficial" é só clicar no meu LinkedIn! 
                 Sente e pegue um café, pois você irá ler o que ocorreu na minha vida nas últimas duas décadas:</p>
         
-        <p><span class="journey-year">Muito Obrigado, a todos que me ajudaram ao longo dessa jornada</span>
+        <p><span class="journey-year">A todos que me ajudaram, muito obrigado!</span>
                 
         <p><span class="journey-year">Ano 2000</span> trabalhei numa pequena fábrica de embalagens de alimentos, aprendi o que era organização, dedicação e a respeitar diferenças (Obrigado João).</p>
         <p>Não recordo qual área comecei a estudar primeiro, mas acredito que foi nos cursos de microinformática pela escola Bit Company, com os clássicos da época: Sistema Windows "98, Millenium e 2000"; início do pacote Office com "Word, Excel, PowerPoint", muita aula de digitação (Datilografia que eu fiz na máquina de escrever também). Mas também havia um pacote mais avançado (planejei mas não fiz): Web Design "Front Page, Flash e Dreamweaver" ou montagem e manutenção de computadores.</p>
@@ -364,7 +367,7 @@ main {
         <p>No <span class="journey-year">ano de 2011</span> fui estudar "Introdução à linguagem SQL - Oracle Database" pela instituição "Impacta". Agora eu tinha uma ferramenta poderosa ao meu favor: minhas pesquisas eram mais rápidas, as análises melhores e mais assertivas! Mas ainda até então, havia pendências a serem sanadas…</p>
         <p><span class="journey-year">Ano de 2012</span> eu estava matriculado em "MBA em Controladoria", eu estava diante de assuntos e matérias: Economia de Mercado, Análise e Gestão de Custos, Governança Corporativa, Contabilidade Gerencial, Gestão Tributária, Finanças Corporativas, Análise de Balanços entre outras que exigiu muito empenho ao longo dos meses até a construção e apresentação do TCC. Todo esse ambiente me ajudou a entender ainda mais o que se passava por debaixo do sistema financeiro, milhares dos mais distintos e complexos tipos de coisas que podem existir em um banco de dados: tabelas, índices, visões, procedimentos, funções, gatilhos, restrições, sequências, sinônimos, esquemas, etc… todos eles faziam parte do meu dia a dia, e com isso, cada dia era uma surpresa agradável e desafiadora de aprendizado.</p>
         <p><span class="journey-year">Ano de 2013</span> a empresa mantinha o projeto da virada do sistema ERP, a demanda era alta, então, fui convidado temporariamente a fazer parte do time de "Projetos", e a primeira experiência foi no exterior, a bela Argentina! Que baita desafio eu aceitei, porque eu era um analista de suporte funcional em fase de desenvolvimento técnico, em um país que ainda passava por mudanças bruscas financeiras. Consegui implantar o sistema! Tive a compreensão e auxílio dos envolvidos. Voltei pra casa com os documentos assinados de que "não existia pendência de conciliação entre sistemas e extrato bancário".</p>
-        <p><span class="journey-year">Ano de 2014</span> a missão tinha particularidades mais complexas, e fui para a cidade de Lima, Peru, que felizmente mais uma vez, todos os envolvidos participaram do processo de implementação, revisão e adequação do sistema. Em setembro eu fiz um curso de "investimentos" pela "Fundação Getúlio Vargas", pois era e ainda permanece um tema recorrente e sensível do sistema XRT assim como no setor Financeiro.</p>
+        <p><span class="journey-year">Ano de 2015</span> a missão tinha particularidades mais complexas, e fui para a cidade de Lima, Peru, que felizmente mais uma vez, todos os envolvidos participaram do processo de implementação, revisão e adequação do sistema. Em setembro eu fiz um curso de "investimentos" pela "Fundação Getúlio Vargas", pois era e ainda permanece um tema recorrente e sensível do sistema XRT assim como no setor Financeiro.</p>
         <p><span class="journey-year">Ano de 2015</span> mudanças internas na estrutura da empresa e da equipe, permitiram que eu estivesse com mais projetos de melhorias, testes e análise técnica. O volume de transação era alto, diariamente centenas de extratos bancários para importação; dezenas de contratos de operações financeiras nas categorias: aplicação, captação e mútuo; treinamento de novos usuários.</p>
         <p><span class="journey-year">Ano de 2016</span> o ritmo estava diminuindo, eu estava desenvolvendo e implantando um projeto de importação e conciliação automática do extrato swift para os escritórios do Panamá, o passaporte já esperava mais um carimbo, porém o segundo e temido "layoff" na área da TI chegou, e agora eu fazia parte dele!</p>
         <p><span class="journey-year">1º de junho de 2016</span> recebi a informação que eu deveria deixar o notebook, assinar diversos papéis, pois eu não fazia mais parte do quadro de funcionários.</p>
@@ -389,10 +392,14 @@ main {
         <p style="color:var(--text);font-style:italic;">Ufaaaa, que história longa né?! Espero que tenha se divertido um pouco, e obrigado por ter chegado até aqui..agora vamos esperar pelo menos meia década para uma nova versão! Muita saúde e sucesso para você, e um abraço fraternal!</p>
       </div>
 
-      <!-- ENGLISH -->
+      <!-- ENGLISH Inglês-->
       <div class="journey-body lang-en">
-        <p>Hey, great to have you here! I'll share my experiences in a simpler, more human way, but if you want the "official" version, just click on my LinkedIn! Sit down and grab a coffee, because you're about to read what happened in my life over the last two decades:</p>
-        <p><span class="journey-year">Year 2000</span> I worked at a small food packaging factory. I learned what organization, dedication, and respecting differences really meant (Thanks João).</p>
+        <p>Hey, great to have you here! I'll share my experiences in a simpler, more human way, but if you want the "official" version, just click on my LinkedIn!
+                Sit down and grab a coffee, because you're about to read what happened in my life over the last two decades:</p>
+
+              <p><span class="journey-year">To everyone who helped me, thank you very much!</span></p>
+              
+              <p><span class="journey-year">Year 2000</span> I worked at a small food packaging factory. I learned what organization, dedication, and respecting differences really meant (Thanks João).</p>
         <p>I don't remember which area I started studying first, but I think it was the computer basics courses at Bit Company, the classics back then: - Windows 98, Millennium, and 2000; the early Office suite with Word, Excel, PowerPoint; tons of typing classes (I actually learned on a typewriter too). There was also a more advanced track I planned but never took: Web Design with FrontPage, Flash, and Dreamweaver, or PC assembly and maintenance.</p>
         <p>The "Windows" language school was everywhere on TV at the time. I decided to give it a try for one month, their pitch was "if you don't like it, we give your money back." My previous experience with another English school "CCAA" hadn't worked out, so I needed something different. The first class was more than positive, I knew I'd finish the whole program over there.</p>
         <p><span class="journey-year">2002</span> I worked a few months as a "student supervisor" at Universidade Nove de Julho (Uni9). Not easy at the peak of my shyness, I was a tiny authority figure (like a quark) surrounded by thousands of young students. After 10 PM the demand was low, since only the truly interested ones stayed in class, so I had plenty of time to review and study English. I already knew that one day I'd be the one studying at a university, and I'd remember that moment. Then, I stayed working until the end of September.</p>
@@ -416,7 +423,7 @@ main {
         <p><span class="journey-year">2012</span> I enrolled in an MBA in Controllership. The subjects covered: Market Economics, Cost Analysis and Management, Corporate Governance, Management Accounting, Tax Management, Corporate Finance, Financial Statement Analysis, and more, all of which required serious commitment through to the final thesis presentation.</p>
         <p>That whole environment helped me understand what was really happening under the hood of the financial system. Thousands of the most distinct and complex things that can exist in a database: tables, indexes, views, procedures, functions, triggers, constraints, sequences, synonyms, schemas... all of them were part of my daily life. Every day brought a new pleasant and challenging learning surprise.</p>
         <p><span class="journey-year">2013</span> The company was pushing forward with the ERP migration project, demand was high, and I was temporarily invited to join the "Projects" team. The first international experience: beautiful Argentina! What a challenge I signed up for, I was a functional support analyst still developing technically, working in a country going through drastic financial changes and I pulled it off. I had the understanding and support of everyone involved. I came back with the documents confirming "no reconciliation issues between systems and bank statements", mission accomplished!</p>
-        <p><span class="journey-year">2014</span> I got a new complex mission and I headed to Lima, Peru. Once again, fortunately, everyone involved participated in the implementation, review, and system adjustments, another mission accomplished! In September I completed an "Investments" course at "Fundação Getúlio Vargas", a topic that was and still remains a recurring and sensitive theme in the XRT system and the financial sector.</p>
+        <p><span class="journey-year">2015</span> I got a new complex mission and I headed to Lima, Peru. Once again, fortunately, everyone involved participated in the implementation, review, and system adjustments, another mission accomplished! In September I completed an "Investments" course at "Fundação Getúlio Vargas", a topic that was and still remains a recurring and sensitive theme in the XRT system and the financial sector.</p>
         <p><span class="journey-year">2015</span> Because of internal structural and team changes, it gave me more room for improvements and projects, testing, and technical analysis. Transaction volume was high: hundreds of bank statements imported daily; dozens of financial operation contracts in categories like: investment, borrowing, and intercompany loans; plus new user training, What a lovely day!</p>
         <p><span class="journey-year">2016</span> The pace was slowing down. I was developing and deploying an automatic import and reconciliation project for SWIFT statements for the Panama offices, and my passport was waiting for another stamp. But the second feared IT layoff arrived, and I was part of it.</p>
         <p><span class="journey-year">June 1st, 2016</span> I was told to hand over my laptop, sign several papers, I was no longer part of the team.</p>
@@ -455,10 +462,14 @@ main {
         <p style="color:var(--text);font-style:italic;">Phew, what a long story, right?! I hope you had some fun, and thank you for making it all the way here... now let's wait at least half a decade for a new version! lol Wishing you great health and success and a warm hug!</p>
       </div>
 
-      <!-- ESPAÑOL -->
+      <!-- ESPAÑOL espanhol - spanish -->
       <div class="journey-body lang-es">
-        <p>¡Hola, qué bueno tenerte por aquí! Voy a compartir mis experiencias de una forma más simple y humana, pero si quieres la versión "oficial", ¡solo haz clic en mi LinkedIn! Siéntate y agarra un café, porque vas a leer lo que pasó en mi vida durante las últimas dos décadas:</p>
-        <p><span class="journey-year">Año 2000</span> trabajé en una pequeña fábrica de envases de alimentos. Aprendí lo que significa organización, dedicación y respetar las diferencias (Gracias João).</p>
+        <p>¡Hola, qué bueno tenerte por aquí! Voy a compartir mis experiencias de una forma más simple y humana, pero si quieres la versión "oficial", ¡solo haz clic en mi LinkedIn!
+                Siéntate y agarra un café, porque vas a leer lo que pasó en mi vida durante las últimas dos décadas:</p>
+        
+<p><span class="journey-year">¡A todos los que me ayudaron, muchas gracias!</span></p>
+              
+              <p><span class="journey-year">Año 2000</span> trabajé en una pequeña fábrica de envases de alimentos. Aprendí lo que significa organización, dedicación y respetar las diferencias (Gracias João).</p>
         <p>No recuerdo en qué área empecé a estudiar primero, pero creo que fueron los cursos básicos de computación en la escuela Bit Company, los clásicos de la época: - Windows 98, Millennium y 2000; el inicio del paquete Office con Word, Excel, PowerPoint; muchas clases de mecanografía (también aprendí en máquina de escribir). También había un nivel más avanzado que planeé pero nunca hice: Diseño Web con FrontPage, Flash y Dreamweaver, o ensamblaje y mantenimiento de computadoras.</p>
         <p>La escuela de idiomas "Windows" estaba en todos lados en la televisión. Decidí probarla un mes, su propuesta era "si no te adaptas, te devolvemos el dinero." Mi experiencia previa con CCAA no había funcionado, así que necesitaba algo diferente. La primera clase fue más que positiva, supe que haría el programa completo ahí.</p>
         <p><span class="journey-year">Año 2002</span> Trabajé algunos meses como "inspector de alumnos" en la Universidad Nueve de Julio (Uni9). No fue fácil, en el pico de mi timidez, era una pequeña autoridad (como un quark) en medio de miles de jóvenes. Después de las 10 PM la demanda bajaba porque solo los realmente interesados se quedaban en clases, así que tenía tiempo de sobra para repasar y estudiar inglés. Ya sabía que algún día yo sería el que estaría estudiando en una universidad, y que recordaría ese momento. Me quedé hasta fines de septiembre.</p>
@@ -485,7 +496,7 @@ main {
         <p>Todo ese entorno me ayudó a entender mucho mejor lo que pasaba por debajo del sistema financiero. Miles de elementos distintos y complejos que pueden existir en una base de datos: tablas, índices, vistas, procedimientos, funciones, disparadores, restricciones, secuencias, sinónimos, esquemas... todos eran parte de mi día a día. Cada día traía una nueva sorpresa agradable y desafiante.</p>
         <p><span class="journey-year">2013</span> La empresa seguía empujando el proyecto de migración del ERP, la demanda era alta, y me invitaron temporalmente a unirme al equipo de "Proyectos." La primera experiencia internacional: ¡la hermosa Argentina!</p>
         <p>Menudo desafío acepté, era un analista de soporte funcional todavía en desarrollo técnico, trabajando en un país que atravesaba cambios financieros bruscos. Lo logré. Conté con la comprensión y el apoyo de todos los involucrados. Volví a casa con los documentos firmados confirmando "sin pendientes de conciliación entre sistemas y extractos bancarios."</p>
-        <p><span class="journey-year">2014</span> La misión tenía detalles más complejos, y viajé a Lima, Perú. Una vez más, afortunadamente todos participaron en la implementación, revisión y ajustes del sistema. En septiembre hice un curso de "Inversiones" en la Fundação Getúlio Vargas, un tema que era y sigue siendo recurrente y sensible en el sistema XRT y en el sector financiero.</p>
+        <p><span class="journey-year">2015</span> La misión tenía detalles más complejos, y viajé a Lima, Perú. Una vez más, afortunadamente todos participaron en la implementación, revisión y ajustes del sistema. En septiembre hice un curso de "Inversiones" en la Fundação Getúlio Vargas, un tema que era y sigue siendo recurrente y sensible en el sistema XRT y en el sector financiero.</p>
         <p><span class="journey-year">2015</span> Cambios internos en la estructura y el equipo me dieron más espacio para proyectos de mejora, pruebas y análisis técnico. El volumen de transacciones era alto: cientos de extractos bancarios importados diariamente; decenas de contratos de operaciones financieras en categorías como inversión, captación y préstamos intercompañía; más capacitación de nuevos usuarios.</p>
         <p><span class="journey-year">2016</span> El ritmo estaba bajando. Estaba desarrollando e implementando un proyecto de importación y conciliación automática de extractos SWIFT para las oficinas de Panamá, mi pasaporte esperaba otro sello. Pero llegó el segundo y temido "layoff" en TI, y esta vez fui parte de él.</p>
         <p><span class="journey-year">1 de junio de 2016</span> Me informaron que debía entregar la laptop, firmar varios papeles. Ya no era parte del equipo.</p>
@@ -619,10 +630,10 @@ main {
   </div>
 </main>
 
-<!-- ── DOCK ──────────────────────────────────────────────────────────────── -->
+<!-- ── DOCK -->
 <nav id="dock">
   <a class="dock-item" href="index.html" id="dock-home">
-    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Home.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:14px;"></div>
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Home.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:15px;"></div>
     <div class="dock-tooltip" data-pt="Início" data-en="Home" data-es="Inicio">Início</div>
     <div class="dock-dot"></div>
   </a>
@@ -632,17 +643,17 @@ main {
     <div class="dock-dot"></div>
   </a>
   <a class="dock-item active-page" href="curriculo.html" id="dock-curriculo">
-    <div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+    <div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.415v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.154 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.15 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
     <div class="dock-tooltip" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</div>
     <div class="dock-dot"></div>
   </a>
   <a class="dock-item" href="quem-sou.html" id="dock-sobre">
-    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="IMG_7217.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:14px;"></div>
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="IMG_7217.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:15px;"></div>
     <div class="dock-tooltip" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</div>
     <div class="dock-dot"></div>
   </a>
   <a class="dock-item" href="livros.html" id="dock-livros">
-    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Midia.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:14px;"></div>
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Midia.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:15px;"></div>
     <div class="dock-tooltip" data-pt="Mídia" data-en="Media" data-es="Medios">Mídia</div>
     <div class="dock-dot"></div>
   </a>
@@ -651,7 +662,7 @@ main {
 
 
 <script>
-// ── CURSOR ───────────────────────────────────────────────────────────────
+// ── CURSOR 
 const cursor = document.getElementById('cursor')
 const ring   = document.getElementById('cursor-ring')
 document.addEventListener('mousemove', e => {
@@ -663,7 +674,7 @@ document.addEventListener('mousemove', e => {
   }, 80)
 })
 
-// ── TEMA ─────────────────────────────────────────────────────────────────
+// ── TEMA ─
 let isDark = true
 function toggleTheme() {
   isDark = !isDark
@@ -671,7 +682,7 @@ function toggleTheme() {
   document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️'
 }
 
-// ── IDIOMA ────────────────────────────────────────────────────────────────
+// ── IDIOMA
 let currentLang = 'pt'
 function setLang(lang, btn) {
   currentLang = lang
@@ -683,7 +694,7 @@ function setLang(lang, btn) {
   })
 }
 
-// ── ACESSO BLOQUEADO ──────────────────────────────────────────────────────
+// ── ACESSO BLOQUEADO 
 function requestAccess(type) {
   const pwd = prompt('🔑 Digite o código de acesso / Enter access code:')
   if (pwd === 'eric2025') {
