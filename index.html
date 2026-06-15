@@ -444,8 +444,14 @@ class P {
 }
 
 function pResize(){
-  pW=pCanvas.width=window.innerWidth
-  pH=pCanvas.height=window.innerHeight
+  const dpr = window.devicePixelRatio || 1
+  pW = window.innerWidth
+  pH = window.innerHeight
+  pCanvas.width  = pW * dpr
+  pCanvas.height = pH * dpr
+  pCanvas.style.width  = pW + 'px'
+  pCanvas.style.height = pH + 'px'
+  pCtx.scale(dpr, dpr)
   showWord()
 }
 
@@ -468,7 +474,7 @@ function showWord(){
   const id=getPixels(word), px=id.data
   const col=PALETTES[wIdx%PALETTES.length]
   const coords=[]
-  for(let i=0;i<px.length;i+=5*4){if(px[i+3]>0)coords.push({x:(i/4)%pW,y:Math.floor(i/4/pW)})}
+  for(let i=0;i<px.length;i+=3*4){if(px[i+3]>0)coords.push({x:(i/4)%pW,y:Math.floor(i/4/pW)})}
   for(let i=coords.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[coords[i],coords[j]]=[coords[j],coords[i]]}
   let pi=0
   for(const{x,y}of coords){
@@ -487,7 +493,7 @@ function pAnimate(){
     if(p.killed&&p.oob())particles.splice(i,1)
   }
   pFrame++
-  if(pFrame===360 && !networkShown){
+  if(pFrame===240 && !networkShown){
     networkShown = true
     setTimeout(()=>{
       particles.forEach(p=>p.kill())
@@ -500,8 +506,8 @@ function pAnimate(){
       }, 800)
     }, 400)
   }
-  if(pFrame>360 && networkShown){requestAnimationFrame(pAnimate);return}
-  if(pFrame%360===0 && !networkShown){wIdx=(wIdx+1)%5;showWord()}
+  if(pFrame>240 && networkShown){requestAnimationFrame(pAnimate);return}
+  if(pFrame%240===0 && !networkShown){wIdx=(wIdx+1)%5;showWord()}
   requestAnimationFrame(pAnimate)
 }
 
