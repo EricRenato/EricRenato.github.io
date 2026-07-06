@@ -10,7 +10,7 @@
         async src="//gc.zgo.at/count.js"></script>
 
 <style>
-/* ── RESET & VARIÁVEIS ──────────────────────────────────────────────────── */
+/* ── RESET & VARIÁVEIS ───────*/
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
 :root {
@@ -47,7 +47,7 @@ html, body {
   cursor: none;
 }
 
-/* ── CURSOR ─────────────────────────────────────────────────────────────── */
+/* ── CURSOR ─────────── */
 .cursor {
   position:fixed; width:8px; height:8px;
   background: var(--gold); border-radius:50%;
@@ -65,13 +65,13 @@ html, body {
   opacity:0.5;
 }
 
-/* ── FUNDO DE ONDAS ─────────────────────────────────────────────────────── */
+/* ── FUNDO DE ONDAS  */
 #waves-bg {
   position:fixed; inset:0; z-index:1;
   pointer-events:none;
 }
 
-/* ── BOTÃO DE TEMA ──────────────────────────────────────────────────────── */
+/* ── BOTÃO DE TEMA  */
 #theme-btn {
   position:fixed; top:16px; right:16px; z-index:300;
   background:rgba(20,20,20,0.85);
@@ -83,7 +83,7 @@ html, body {
 }
 #theme-btn:hover { background:rgba(255,255,255,0.15); transform:scale(1.1); }
 
-/* ── SELETOR DE IDIOMA ──────────────────────────────────────────────────── */
+/* ── SELETOR DE IDIOMA  */
 #lang-switcher {
   position:fixed; top:16px; left:50%; transform:translateX(-50%);
   z-index:300; display:flex; gap:8px; align-items:center;
@@ -102,7 +102,7 @@ html, body {
 }
 .lang-btn.active, .lang-btn:hover { opacity:1; transform:scale(1.12); }
 
-/* ── DOCK ───────────────────────────────────────────────────────────────── */
+/* ── DOCK  */
 #dock {
   position:fixed; bottom:20px; left:50%;
   transform:translateX(-50%);
@@ -214,15 +214,15 @@ main {
 .cv-item-title { font-size:15px; font-weight:600; }
 .cv-item-period { font-size:12px; color:var(--text-dim); letter-spacing:1px; }
 .cv-item-company { font-size:13px; color:var(--gold); margin-bottom:6px; }
-.cv-item-desc { font-size:13px; color:var(--text-dim); line-height:1.7; }
+.cv-item-desc { font-size:15px; color:var(--text-dim); line-height:1.7; }
 
-/* Jornada — visibilidade por idioma */
+/* Jornada Profissional — visibilidade por idioma */
 .lang-pt, .lang-en, .lang-es { display:none; }
 [data-lang="pt"] .lang-pt { display:block; }
 [data-lang="en"] .lang-en { display:block; }
 [data-lang="es"] .lang-es { display:block; }
 
-.journey-body { font-size:13px; color:var(--text-dim); line-height:1.85; }
+.journey-body { font-size:15.5px; color:var(--text-dim); line-height:1.9; }
 .journey-body p { margin-bottom:15px; }
 .journey-year {
   display:inline-block;
@@ -297,7 +297,7 @@ main {
   data-en="Resume"
   data-es="Currículum">Currículo</span>
 
-<!-- ── CONTEÚDO  -->
+<!-- ── CONTEÚDO AQUI COMEÇA -->
 <main>
   <div class="cv-container">
 
@@ -326,13 +326,30 @@ main {
         data-es="Resumen">Resumo</div>
       <div class="cv-item">
         <div class="cv-item-desc"
-          data-pt="Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos. Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. Meu lema: “Dados são fatos; a análise revela a história.”"
+
+          data-pt="Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume.
+           Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). 
+           Fluente em inglês e espanhol, com experiência em ERP (XTPG, Oracle EBS e NetSuite) e automação de processos. 
+           
+           Meu lema: “Dados são fatos; a análise revela a história.”"
          
-                data-en="Senior Analyst with 15 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science, AI and Analytics from USP/ESALQ (2026). Fluent in English and Spanish, with ERP experience (Treasury, NetSuite) and process automation. Seeking Data Analyst/Business Analyst position focused on financial analytics, remote or hybrid work, and competitive compensation. My motto: “Data is facts; analysis reveals the story.”"
+                data-en="Senior Analyst with 15 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. 
+                Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science, AI and Analytics from USP/ESALQ (2026). 
+                Fluent in English and Spanish, with ERP experience (XTPG, Oracle EBS and NetSuite) and process automation. 
+                
+                My motto: “Data is facts; analysis reveals the story.”"
           
-                data-es="Analista Senior con 15 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). Fluido en inglés y español, con experiencia en ERP (Tesorería, NetSuite) y automatización de procesos. Busco posición como Data Analyst/Business Analyst enfocado en analytics financiero, trabajo remoto o híbrido y compensación competitiva. Mi lema: “Los datos son hechos; el análisis revela la historia.”">
+                data-es="Analista Senior con 15 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. 
+                Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). 
+                Fluido en inglés y español, con experiencia en ERP (XTPG, Oracle EBS y NetSuite) y automatización de procesos. 
+                
+                 Mi lema: “Los datos son hechos; el análisis revela la historia.”">
           
-                Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos. Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. Meu lema: “Dados são fatos; a análise revela a história.”
+                Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume.
+                 Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). 
+                 Fluente em inglês e espanhol, com experiência em ERP (Tesouraria, NetSuite) e automação de processos.
+                 Busco posição como Data Analyst/Business Analyst com foco em analytics financeiro, trabalho remoto ou híbrido e compensação competitiva. 
+                 Meu lema: “Dados são fatos; a análise revela a história.”
         </div>
       </div>
     </div>
@@ -344,52 +361,220 @@ main {
         data-en="Professional Journey"
         data-es="Trayectoria Profesional">Jornada Profissional</div>
 
-      <!-- PORTUGUÊS história aqui-->
+      <!-- PORTUGUÊS história começa aqui-->
       <div class="journey-body lang-pt">
         <p>Olá, prazer em tê-lo(a) por aqui! Vou compartilhar de forma mais simples e humana as minhas experiências, porém, caso queira algo "oficial" é só clicar no meu LinkedIn! 
                 Sente e pegue um café, pois você irá ler o que ocorreu na minha vida nas últimas duas décadas:</p>
         
         <p><span class="journey-year">A todos que me ajudaram, muito obrigado!</span>
                 
-        <p><span class="journey-year">Ano 2000</span> trabalhei numa pequena fábrica de embalagens de alimentos, aprendi o que era organização, dedicação e a respeitar diferenças (Obrigado João).</p>
-        <p>Não recordo qual área comecei a estudar primeiro, mas acredito que foi nos cursos de microinformática pela escola Bit Company, com os clássicos da época: Sistema Windows "98, Millenium e 2000"; início do pacote Office com "Word, Excel, PowerPoint", muita aula de digitação (Datilografia que eu fiz na máquina de escrever também). Mas também havia um pacote mais avançado (planejei mas não fiz): Web Design "Front Page, Flash e Dreamweaver" ou montagem e manutenção de computadores.</p>
-        <p>A escola de idiomas "Windows" — eu decidi estudar um mês de teste, pois o diferencial que eles ofereciam era "Se não se adaptar/gostar, devolvemos o seu dinheiro"; minha prévia experiência exigia essa mudança, pois eu não me adaptei à metodologia do CCAA. A primeira aula foi mais que positiva, e tive a certeza que faria a formação completa naquela escola.</p>
-        <p><span class="journey-year">Ano 2002</span> trabalhei alguns meses como "inspetor de alunos" (vulgo bedel) na "Universidade Nove de Julho", vulgo "Uni9". Não foi fácil, pois no auge da timidez, eu era um pequeno (um quark) nível "uma autoridade" no meio de milhares de jovens. Lembro que após as 22 horas, havia pouca demanda, pois ficavam na aula somente aqueles que estavam interessados, então eu tinha tempo de sobra para revisar e estudar as aulas de inglês, e sabia que um dia eu estaria estudando numa universidade e me lembraria daquele momento. Fiquei nesse trabalho até o final do mês de setembro.</p>
-        <p><span class="journey-year">Ano 2003</span> Brasil o país do Turismo! Esse era o slogan e a promessa política, e com isso, diversas empresas do ramo necessitavam de profissionais. Deixei currículo (impresso meus jovens) em diversas empresas; fui até o aeroporto internacional de Guarulhos, no "check in" eu perguntei: onde poderia deixar meu "resume"? Após alguns meses fiz o processo seletivo pela "Varig" e fiquei alocado em Congonhas. Tive o prazer de trabalhar em diversos setores, do começo da etapa o "check in", até o final "Desembarque"; auxiliando na recepção de políticos estrangeiros, a "crianças e idosos com necessidades especiais". Durante aquele período, eu investi muito estudando os idiomas "inglês e espanhol", na escola Wisdom.</p>
-        <p><span class="journey-year">Ano de 2005</span> Resolvi que iria fazer um curso universitário, porém eu tinha curiosidade e vontade em áreas bem distantes: Psicologia, Comércio Exterior e TI! Na hora de selecionar uma opção, eu pedi apoio a um grande amigo (Paulão) que compartilhava ótimas histórias (agora sei que eram de terror), e disse que me apoiaria na jornada, então eu estava matriculado no curso "Redes de Computadores e Internet" pela Universidade "Uni9" e sim, eu lembrava de quando eu fui inspetor.</p>
-        <p>A empresa Varig por muito tempo passou por problemas de caixa, e agora, somado à necessidade de realizar um estágio supervisionado que estava no cronograma de formação, logo no primeiro semestre procurei e encontrei uma oportunidade, na empresa "Sonda IT", começava uma profissão.</p>
-        <p><span class="journey-year">Ano 2006</span> fui alocado no grande e famoso banco "Citibank": uma operação 24/7! Fui "sugado" pela organização e disciplina que o setor bancário possui em seu DNA; o mindset de "ITIL" era mandatório! O contato com "Latam, América, Europa e Ásia" fez parte do empolgante processo de aprendizagem. Eu estava no "Help Desk" e recebi a missão inicial de entender toda a complexa e grande estrutura operacional e sistêmica da empresa; atuar na área de microinformática; supervisionar, atualizar e escalonar os chamados, porém com o passar do tempo, fiquei somente com os chamados pois a demanda era muito alta por si só.</p>
-        <p><span class="journey-year">Ano 2007</span> fim do contrato de estágio e fui efetivado! Também fui promovido como líder da equipe. O banco tinha um processo chamado "Reconhecimento instantâneo" que basicamente era uma ferramenta de reconhecimento de um trabalho bem feito por uma pessoa. Da primeira vez que vi, disse que um dia a minha mesa estava cheia, estou na dúvida se tive 3 ou 4.</p>
-        <p>Nessa época, para buscar e se cadastrar em novas oportunidades profissionais na área da TI, você tinha que procurar pelo site "APInfo". Mesmo com pouca experiência, eu recebia alguns convites para "suporte operacional", e um desses foi para a empresa de construção civil "Odebrecht", que inicialmente eu agradeci e recusei, pois eu havia recém finalizado o curso universitário e eu começava a "internalizar e amadurecer" todo o aprendizado da empresa e técnico, ou seja: o barco já estava se movendo; eu deixava o ponto inicial de "Júnior" para "Sênior"! Obrigado a todos que me ajudaram.</p>
-        <p><span class="journey-year">Começo de 2008</span> revisitei, analisei e decidi fazer parte de um projeto inicial de uma área operacional de suporte, então eu estava na maior construtora civil da América Latina. Totalmente diferente e com zero pretensão de ser "rígida", a Odebrecht queria montar o seu suporte operacional de TI, muito próxima do cliente interno! Teríamos que "fazer parte da dor de quem está na linha de frente", ou seja, auxiliar a ponta final, naquilo que a empresa faz de melhor, construir! Eu fiquei 7 meses em microinformática. Consegui o certificado do ITIL V2; presenciei e ajudei o que foi de "6 baias" para "uma sala de dezenas de analistas"!</p>
-        <p>Então em <span class="journey-year">setembro de 2009</span>, de terceirizado a efetivado, eu aceitei fazer parte da equipe de ERP, e fui aprender o que era "Finanças" (Obrigado Camila e Roni) sistemicamente (também comprei livros de Tesouraria e Contabilidade); tive certa facilidade, mas olhando para aquela época, eu acredito que foi devido ao sistema ser "caseiro", porque eu aprendi o que "cada tela fazia" ao invés da regra de negócio, ou "de onde o dinheiro vem e para onde ele vai"! Mas isso estava por mudar, porque algo maior e com muitas camadas de complexidade estava por vir...</p>
-        <p>No final do <span class="journey-year">ano de 2010</span> eu aceitei ir para outro time, era o suporte do sistema XRT, módulo financeiro e de operações financeiras (investimentos, empréstimos e afins), casca grossa! Esse sistema fazia parte de um grande projeto: sair do sistema legado (caseiro) para o grande "Oracle EBS" como carro chefe, e o XRT complementava essa parte do fluxo financeiro. Os primeiros dias foram desconfortáveis, pois no vocabulário havia as palavras "ingresso, intra company, saque, fluxo de caixa, conta de chegada" entre outras; eu estava ao lado de profissionais de alto calibre: desenvolvedor formado no ITA, funcionais com anos de experiência em finanças e implementação de sistemas! Passei alguns finais de semana estudando para fazer valer a minha presença ali.</p>
-        <p>No <span class="journey-year">ano de 2011</span> fui estudar "Introdução à linguagem SQL - Oracle Database" pela instituição "Impacta". Agora eu tinha uma ferramenta poderosa ao meu favor: minhas pesquisas eram mais rápidas, as análises melhores e mais assertivas! Mas ainda até então, havia pendências a serem sanadas…</p>
-        <p><span class="journey-year">Ano de 2012</span> eu estava matriculado em "MBA em Controladoria", eu estava diante de assuntos e matérias: Economia de Mercado, Análise e Gestão de Custos, Governança Corporativa, Contabilidade Gerencial, Gestão Tributária, Finanças Corporativas, Análise de Balanços entre outras que exigiu muito empenho ao longo dos meses até a construção e apresentação do TCC. Todo esse ambiente me ajudou a entender ainda mais o que se passava por debaixo do sistema financeiro, milhares dos mais distintos e complexos tipos de coisas que podem existir em um banco de dados: tabelas, índices, visões, procedimentos, funções, gatilhos, restrições, sequências, sinônimos, esquemas, etc… todos eles faziam parte do meu dia a dia, e com isso, cada dia era uma surpresa agradável e desafiadora de aprendizado.</p>
-        <p><span class="journey-year">Ano de 2013</span> a empresa mantinha o projeto da virada do sistema ERP, a demanda era alta, então, fui convidado temporariamente a fazer parte do time de "Projetos", e a primeira experiência foi no exterior, a bela Argentina! Que baita desafio eu aceitei, porque eu era um analista de suporte funcional em fase de desenvolvimento técnico, em um país que ainda passava por mudanças bruscas financeiras. Consegui implantar o sistema! Tive a compreensão e auxílio dos envolvidos. Voltei pra casa com os documentos assinados de que "não existia pendência de conciliação entre sistemas e extrato bancário".</p>
-        <p><span class="journey-year">Ano de 2015</span> a missão tinha particularidades mais complexas, e fui para a cidade de Lima, Peru, que felizmente mais uma vez, todos os envolvidos participaram do processo de implementação, revisão e adequação do sistema. Em setembro eu fiz um curso de "investimentos" pela "Fundação Getúlio Vargas", pois era e ainda permanece um tema recorrente e sensível do sistema XRT assim como no setor Financeiro.</p>
-        <p><span class="journey-year">Ano de 2015</span> mudanças internas na estrutura da empresa e da equipe, permitiram que eu estivesse com mais projetos de melhorias, testes e análise técnica. O volume de transação era alto, diariamente centenas de extratos bancários para importação; dezenas de contratos de operações financeiras nas categorias: aplicação, captação e mútuo; treinamento de novos usuários.</p>
-        <p><span class="journey-year">Ano de 2016</span> o ritmo estava diminuindo, eu estava desenvolvendo e implantando um projeto de importação e conciliação automática do extrato swift para os escritórios do Panamá, o passaporte já esperava mais um carimbo, porém o segundo e temido "layoff" na área da TI chegou, e agora eu fazia parte dele!</p>
-        <p><span class="journey-year">1º de junho de 2016</span> recebi a informação que eu deveria deixar o notebook, assinar diversos papéis, pois eu não fazia mais parte do quadro de funcionários.</p>
-        <p><span class="journey-year">Outubro de 2016</span> recebi um layoff, porém no mesmo período chegou uma proposta de emprego com defasagem de quase 50%. Em vez de aceitar, decidi investir em mim mesmo: fui para San Diego estudar inglês intensivo por um mês. Incorporei o princípio de Steve Jobs "Se hoje fosse o último dia da minha vida, eu iria querer fazer o que estou prestes a fazer?" e aproveitei cada dia ao máximo. O intercâmbio não foi turismo; foi uma recalibração profissional consciente. Voltei ao Brasil com uma decisão clara: os anos de trabalho no setor financeiro me deram background suficiente para tentar algo ousado, que um grande amigo também trilhava, então eu seria "trader" independente, iria operar (comprar e vender ativos) na bolsa de valores. E com essa mentalidade empreendedora, eu já tinha fechado o ano de 2016.</p>
-        <p><span class="journey-year">Ano de 2017</span> e eu tinha um longo caminho para entender as minúcias da bolsa de valores! Foi diferente, eu estava muito além daqueles contratos que diversas vezes eu tive que ler, entender, cadastrar e validar no sistema! O sistema era rápido, e movimentava milhões por dia, aqueles números passando diante de meus olhos e eu só queria uma pequena porcentagem dele, e já naquela época, o mercado já estava tomado por robôs que massacravam os novatos que gostavam de operar com a mão pesada (muitos contratos)!</p>
+        <p><span class="journey-year">Ano 2000</span> 
+          trabalhei numa pequena fábrica de embalagens de alimentos, aprendi o que era organização, dedicação e a respeitar diferenças (Obrigado João).</p>
+        <p>Não recordo qual área comecei a estudar primeiro, mas acredito que foi nos cursos de microinformática pela escola "Bit Company", com os clássicos da época:
+           Sistema Windows "98, Millenium e 2000"; 
+           início do pacote Office com "Word, Excel, PowerPoint", muita aula de digitação (Datilografia que eu fiz na máquina de escrever também). 
+           Mas também havia um pacote mais avançado (planejei mas não fiz): 
+           Web Design "Front Page, Flash e Dreamweaver" ou montagem e manutenção de computadores.</p>
+        <p>Na escola de idiomas "Windows" eu decidi estudar um mês de teste, pois o diferencial que eles ofereciam era "Se não se adaptar/gostar,
+           devolvemos o seu dinheiro"; minha prévia experiência exigia essa mudança, pois eu não me adaptei à metodologia do CCAA. 
+           A primeira aula foi mais que positiva, e tive a certeza que faria a formação completa naquela escola.</p>
+        
+        <p><span class="journey-year">Ano 2002</span> 
+          trabalhei alguns meses como "inspetor de alunos" (vulgo bedel) na "Universidade Nove de Julho", tradicionalmente conhecida como "Uni9" (obrigado Renata). 
+          Não foi fácil, pois no auge da minha timidez, eu era um pequeno (um quark) nível de uma "autoridade" no meio de milhares de jovens. 
+          Lembro que após as 22 horas, havia pouca demanda, pois ficavam na aula somente aqueles que estavam interessados, 
+          então eu tinha tempo de sobra para revisar e estudar as aulas de inglês, e sabia que um dia eu estaria estudando numa universidade e me lembraria daquele momento. 
+          Fiquei nesse trabalho até o final do mês de setembro.</p>
+        
+        <p><span class="journey-year">Ano 2003</span>
+           Brasil o país do Turismo! Esse era o slogan e a promessa política, e com isso, diversas empresas do ramo necessitavam de profissionais.
+            Deixei currículo (impresso meus jovens) em diversas empresas; fui até o aeroporto internacional de Guarulhos, no "check in" eu perguntei: 
+            onde poderia deixar meu "resume"? Após alguns meses fiz o processo seletivo pela "Varig" e fiquei alocado em Congonhas. 
+            Tive o prazer de trabalhar em diversos setores, do começo da etapa o "check in", 
+            até o final "Desembarque"; auxiliando na recepção de políticos estrangeiros; até "crianças e idosos com necessidades especiais". 
+            Durante aquele período, eu investi muito estudando os idiomas "inglês e espanhol" ainda na escola Wisdom.</p>
+        
+        <p><span class="journey-year">Ano de 2005</span> 
+          Resolvi que iria fazer um curso universitário, porém eu tinha curiosidade e vontade em áreas bem distantes:<br> 
+          -Psicologia, Comércio Exterior e TI! Na hora de selecionar uma opção, eu pedi apoio a um grande amigo (eternamanete agradecido Paulão) que na época 
+          compartilhava ótimas histórias (agora sei que eram de terror) de terceiro a funcionário da IBM,  
+          afirmando que me apoiaria na jornada, então eu estava matriculado no curso "Redes de Computadores e Internet" pela Universidade "Uni9" e sim, 
+          eu lembrava de quando eu fui inspetor.</p>
+
+        <p>A empresa Varig por muito tempo passou por problemas de caixa, e agora, 
+          somado à necessidade de realizar um estágio supervisionado que estava no cronograma de formação, 
+          e logo no primeiro semestre procurei e encontrei uma oportunidade, na empresa "Sonda IT", ali começava uma profissão.</p>
+        
+        <p><span class="journey-year">Ano 2006</span> 
+          fui alocado no grande e famoso banco "Citibank": 
+          uma operação 24/7! Fui "sugado" pela organização e disciplina que o setor bancário possui em seu DNA; 
+          o mindset de "ITIL" era mandatório! O contato com "Latam, América, Europa e Ásia" fez parte do empolgante processo de aprendizagem. 
+          Eu estava no "Help Desk" e recebi a missão inicial de entender toda a complexa e grande estrutura operacional e sistêmica da empresa; 
+          atuar na área de microinformática; supervisionar, atualizar e escalonar os chamados, porém com o passar do tempo, 
+          fiquei somente com os chamados pois a demanda era muito alta por si só.</p>
+        
+        <p><span class="journey-year">Ano 2007</span> 
+          fim do contrato de estágio e fui efetivado! Também fui promovido como líder da equipe. 
+          O banco tinha um processo chamado "Reconhecimento instantâneo" que basicamente era uma ferramenta de reconhecimento de um trabalho bem feito por uma pessoa. 
+          Da primeira vez que vi, disse que um dia a minha mesa estava cheia, estou na dúvida se tive 3 ou 4.</p>
+        <p>Nessa época, para buscar e se cadastrar em novas oportunidades profissionais na área da TI, você tinha que procurar pelo site "APInfo". 
+          Mesmo com pouca experiência, eu recebia alguns convites para "suporte operacional", e um desses foi para a empresa de construção civil "Odebrecht",
+           que inicialmente eu agradeci e recusei, pois eu havia recém finalizado o curso universitário e eu começava a "internalizar e amadurecer" todo o aprendizado da empresa e técnico, ou seja: 
+           o barco já estava se movendo; eu deixava o ponto inicial de "Júnior" para "Sênior"! Obrigado a todos que me ajudaram.</p>
+        
+        <p><span class="journey-year">Começo de 2008</span> 
+          revisitei, analisei e decidi fazer parte de um projeto inicial de uma área operacional de suporte, então eu estava na maior construtora civil da América Latina. 
+          Totalmente diferente e com zero pretensão de ser "rígida", 
+          a Odebrecht queria montar o seu suporte operacional de TI, muito próxima do cliente interno! 
+          Teríamos que "fazer parte da dor de quem está na linha de frente", ou seja, auxiliar a ponta final, naquilo que a empresa faz de melhor, 
+          construir! Eu fiquei 7 meses em microinformática. Consegui o certificado do ITIL V2; 
+          presenciei e ajudei o que foi de "6 baias" para "uma sala de dezenas de analistas"!</p>
+        
+        <p>Então em <span class="journey-year">setembro de 2009</span>, 
+          de terceirizado a efetivado, eu aceitei fazer parte da equipe de ERP, e fui aprender o que era "Finanças" (Obrigado Camila e Roni) 
+          sistemicamente (também comprei livros de Tesouraria e Contabilidade); tive certa facilidade, mas olhando para aquela época, 
+          eu acredito que foi devido ao sistema ser "caseiro", porque eu aprendi o que "cada tela fazia" ao invés da regra de negócio,
+          ou "de onde o dinheiro vem e para onde ele vai"! 
+          Mas isso estava por mudar, porque algo maior e com muitas camadas de complexidade estava por vir...</p>
+        
+        <p>No final do <span class="journey-year">ano de 2010</span> 
+          eu aceitei ir para outro time, era o suporte do sistema XRT, módulo financeiro e de operações financeiras (investimentos, empréstimos e afins), 
+          casca grossa! Esse sistema fazia parte de um grande projeto: sair do sistema legado (caseiro) para o grande "Oracle EBS" como carro chefe, 
+          e o XRT complementava essa parte do fluxo financeiro. Os primeiros dias foram desconfortáveis,
+           pois no vocabulário havia as palavras "ingresso, intra company, saque, fluxo de caixa, conta de chegada" entre outras; eu estava ao lado de profissionais de alto calibre: 
+           desenvolvedor formado no ITA, funcionais com anos de experiência em finanças e implementação de sistemas! 
+           Passei alguns finais de semana estudando para fazer valer a minha presença ali.</p>
+        
+        <p>No <span class="journey-year">ano de 2011</span> 
+          fui estudar "Introdução à linguagem SQL - Oracle Database" pela instituição "Impacta". 
+          Agora eu tinha uma ferramenta poderosa ao meu favor: minhas pesquisas eram mais rápidas, as análises melhores e mais assertivas! 
+          Mas ainda até então, havia pendências a serem sanadas…</p>
+        
+        <p><span class="journey-year">Ano de 2012</span> 
+          eu estava matriculado em "MBA em Controladoria", eu estava diante de assuntos e matérias: 
+          Economia de Mercado, Análise e Gestão de Custos, Governança Corporativa, Contabilidade Gerencial, Gestão Tributária, Finanças Corporativas, Análise de Balanços 
+          entre outras que exigiu muito empenho ao longo dos meses até a construção e apresentação do TCC. 
+          Todo esse ambiente me ajudou a entender ainda mais o que se passava por debaixo do sistema financeiro, milhares dos mais distintos e complexos tipos de coisas que podem existir em um banco de dados: 
+          tabelas, índices, visões, procedimentos, funções, gatilhos, restrições, sequências, sinônimos, esquemas, etc… 
+          todos eles faziam parte do meu dia a dia, e com isso, cada dia era uma surpresa agradável e desafiadora de aprendizado.</p>
+        
+        <p><span class="journey-year">Ano de 2013</span> 
+          a empresa mantinha o projeto da virada do sistema ERP, a demanda era alta, então, fui convidado temporariamente a fazer parte do time de "Projetos", 
+          e a primeira experiência foi no exterior, a bela Argentina! 
+          Que baita desafio eu aceitei, porque eu era um analista de suporte funcional em fase de desenvolvimento técnico, em um país que ainda passava por mudanças bruscas financeiras. 
+          Consegui implantar o sistema! Tive a compreensão e auxílio dos envolvidos. 
+          Voltei pra casa com os documentos assinados de que "não existia pendência de conciliação entre sistemas e extrato bancário".
+        <p>
+          Fila de projetos/melhorias só crescia:
+        -Aporte Automatizado — automatizar a contabilização e o registro financeiro dos aportes da Matriz para outras empresas.
+        O processo inicial parte da criação de 1 registro financeiro a partir de regras pré-estabelecidas para que o sistema gere outros mais outros 4 registros,
+        totalizando 5 registros financeiros para validação.
+        <p>
+        -Segregação base Latam — Devido às particularidades fiscais que nós "Brazucas" temos e conhecemos bem, tivemos o projeto de
+        criação de uma base dedicada para a Latam. A implementação e manutenção das regras de negócio tornaram-se mais rápidas.
+        Países: Argentina, Colômbia, México, Panamá, Guatemala, Peru e República Dominicana.
+        </p>
+        
+        <p><span class="journey-year">Ano de 2014</span>
+          Muitas demandas, novos negócios, que participei no processo de avaliação e aderência do sistema... <p>
+          <p>Aeroporto Galeão — lembro de ter sido um dia intenso...fiz a implementação/treinamento de diversos contratos de financeiros (investimento). 
+          <p>Austrália — análise, implementação e treinamento do "key user" no entendimento, utilização e atividades financeiras no sistema XRT.</p>
+
+
+        <p><span class="journey-year">Ano de 2015</span> 
+          a missão tinha particularidades mais complexas, e fui para a cidade de Lima, Peru, que felizmente mais uma vez, todos os envolvidos participaram do processo de implementação, revisão e adequação do sistema. Em setembro eu fiz um curso de "investimentos" pela "Fundação Getúlio Vargas", pois era e ainda permanece um tema recorrente e sensível do sistema XRT assim como no setor Financeiro.</p>
+        
+        <p><span class="journey-year">Ano de 2015</span> 
+          mudanças internas na estrutura da empresa e da equipe, permitiram que eu estivesse com mais projetos de melhorias, testes e análise técnica. O volume de transação era alto, diariamente centenas de extratos bancários para importação; dezenas de contratos de operações financeiras nas categorias: aplicação, captação e mútuo; treinamento de novos usuários.</p>
+        
+        <p><span class="journey-year">Ano de 2016</span> 
+          o ritmo estava diminuindo, eu estava desenvolvendo e implantando um projeto de importação e conciliação automática do extrato swift para os escritórios do Panamá, o passaporte já esperava mais um carimbo, porém o segundo e temido "layoff" na área da TI chegou, e agora eu fazia parte dele!</p>
+        <p><span class="journey-year">1º de junho de 2016</span> 
+          recebi a informação que eu deveria deixar o notebook, assinar diversos papéis, pois eu não fazia mais parte do quadro de funcionários.</p>
+        <p><span class="journey-year">Outubro de 2016</span> 
+          recebi um layoff, porém no mesmo período chegou uma proposta de emprego com defasagem de quase 50%. Em vez de aceitar, decidi investir em mim mesmo: fui para San Diego estudar inglês intensivo por um mês. Incorporei o princípio de Steve Jobs "Se hoje fosse o último dia da minha vida, eu iria querer fazer o que estou prestes a fazer?" e aproveitei cada dia ao máximo. O intercâmbio não foi turismo; foi uma recalibração profissional consciente. Voltei ao Brasil com uma decisão clara: os anos de trabalho no setor financeiro me deram background suficiente para tentar algo ousado, que um grande amigo também trilhava, então eu seria "trader" independente, iria operar (comprar e vender ativos) na bolsa de valores. E com essa mentalidade empreendedora, eu já tinha fechado o ano de 2016.</p>
+        
+        <p><span class="journey-year">Ano de 2017</span> 
+          e eu tinha um longo caminho para entender as minúcias da bolsa de valores! Foi diferente, eu estava muito além daqueles contratos que diversas vezes eu tive que ler, entender, cadastrar e validar no sistema! O sistema era rápido, e movimentava milhões por dia, aqueles números passando diante de meus olhos e eu só queria uma pequena porcentagem dele, e já naquela época, o mercado já estava tomado por robôs que massacravam os novatos que gostavam de operar com a mão pesada (muitos contratos)!</p>
         <p>Na verdade, se você conhece um pouco de mercado (Bolsa de Valores), deve ter ouvido falar do "crash de 2016" que foi causado por robôs, então, hoje após 10 anos, o Brasil que está nesse Hype com "IA", não tinha a ideia para quem estava na bolsa de valores, que aquilo não era novidade. Lembro de ter tentado operar com robô também, na época, havia uma plataforma que facilitava muito a configuração; também na plataforma da Profit, disponibiliza que você escrevesse um código para criar um robô; dependendo do que ocorria para cima para baixo mais diversos gatilhos misturado com outras variáveis. Passei o ano de 2017 até agosto de 2018, por muitas vezes, 12 horas em frente ao computador estudando, fazendo simulações, e cometendo o pior dos erros: não permitir que o treinamento fosse prioritário! Eu cometi um erro clássico! acreditei que o meu passado atuando com sistemas financeiro, pudessem influenciar no Day Trader! Além de não garantir nada, e eu ainda atuava talvez na pior área (se é que podemos dizer que existe melhor e o pior), eu estava operando o dólar futuro, extremamente volátil, rápido e com os famosos "Big players" ou os temidos tubarões!</p>
-        <p><span class="journey-year">Ano 2018</span> após diversos cursos intensivos (Portal do Trader, Dólar Futuro com Vata), a falta de disciplina para permanecer na "conta de simulação" (teste) e ficar o máximo de tempo possível estudando, cobrou o seu preço; eu simplesmente cheguei no meu limite financeiro e não tinha mais condições de continuar no mercado; fui imprudente e perdi muito dinheiro! Por mais que eu gostasse, tinha que reconhecer que somente força de vontade, não era suficiente; os últimos meses tinham se tornado extremamente torturantes, o desgaste psicológico foi brutal; por mais que eu tivesse me tornado cauteloso porque reconheci que o começo da jornada me deixei iludir e muitas vezes entrava sem os devidos cuidados, era tarde, não tinha me adaptado e respeitado como o jogo funciona.</p>
-        <p><span class="journey-year">Agosto de 2018</span> "O sonho acabou" e tinha se tornado um pesadelo! Nova realidade, currículo atualizado, cadastro em plataformas de emprego, e criei uma rotina para me adaptar ao horário comercial e me sentir produtivo: acordava às 8 e ficava até às 12 horas procurando emprego; após o almoço, limpava a casa, voltava pra mesa e estudava. Ainda tenho a planilha de controle que criei para não me candidatar na mesma vaga, ter o controle de quanto tempo também a empresa permaneceria com aquela posição. O total de curriculum enviados em quatro meses foi 222. No mês de dezembro, estava agendado para a primeira semana de 2019, uma entrevista para a vaga de consultor sênior no ERP Cloud da Oracle chamado Netsuite, que eu nunca tinha ouvido falar.</p>
-        <p><span class="journey-year">Ano de 2019</span> primeira semana, conversei com o RH, tudo tranquilo, tive que fazer alguns testes on line para identificar o meu perfil; Teste online do idioma em inglês; por último conversar com os gestores; Dia 23 de janeiro eu começava na empresa Active, prestadora de suporte e venda do sistema Oracle Netsuite! Após anos em grandes empresas, eu estava numa empresa pequena em ascensão. Precisei de uns dias para relaxar, e entender que o jogo era mais próximo, de impacto, eu não apenas respondia chamados, também deveria responder integralmente por ele no entendimento e aceite do cliente externo, havia uma análise final sobre a minha tratativa até a finalização. Agora eu não olhava mais um pedaço do ERP, tinha que aprender o sistema: do módulo base, passando por compras, estoque, vendas, financeiro, até o contábil e fiscal. Mais a camada de localização brasileira, terceirizada, aquela parte fiscal que assusta quem é de fora (e também os de dentro). Eu sentia falta de ter acesso ao banco de dados, porém nesse tipo de serviço (Saas), essa facilidade não é para a parte funcional do suporte, somente aos profissionais gabaritados (DBA). Porém resolvia super bem as demandas, pois imaginava a relação que as telas (tabelas) possuíam, suas chaves e afins, então a minha análise andava rápida. Na carteira de clientes havia empresas de todos os portes: Ifood, Empiricus, Sensedia...alguns unicórnios.</p>
-        <p><span class="journey-year">Ano 2020</span> na virada do ano eu já tinha visto que a Itália estava com problemas com um vírus, e que idosos não resistiram, mas o verão desse país somado a chegada do carnaval, fizeram com que muitos simplesmente ignorassem todo o movimento estranho que ocorria agora em diversos países. Março - "Eric, vem aqui no escritório assinar um documento e pegar uma cadeira, e a partir de agora você trabalha remoto devido a essa doença mundial chamada Covid-19". Foram meses difíceis, incerteza, medo, precauções, informações desencontradas, espero não passar novamente por esse momento histórico. Havia tempo para estudar e se reinventar, e nesse ínterim, cursos e certificados pela própria Netsuite foram feitos, treinamento interno para melhorar a gerência e atuação nos chamados com "Lean, Kanban e Scrum" foram ministrados (obrigado Karina).</p>
+        
+        <p><span class="journey-year">Ano 2018</span>
+           após diversos cursos intensivos (Portal do Trader, Dólar Futuro com Vata), a falta de disciplina para permanecer na "conta de simulação" (teste) e ficar o máximo de tempo possível estudando, cobrou o seu preço; eu simplesmente cheguei no meu limite financeiro e não tinha mais condições de continuar no mercado; fui imprudente e perdi muito dinheiro! Por mais que eu gostasse, tinha que reconhecer que somente força de vontade, não era suficiente; os últimos meses tinham se tornado extremamente torturantes, o desgaste psicológico foi brutal; por mais que eu tivesse me tornado cauteloso porque reconheci que o começo da jornada me deixei iludir e muitas vezes entrava sem os devidos cuidados, era tarde, não tinha me adaptado e respeitado como o jogo funciona.</p>
+        <p><span class="journey-year">Agosto de 2018</span> 
+          "O sonho acabou" e tinha se tornado um pesadelo! Nova realidade, currículo atualizado, cadastro em plataformas de emprego, e criei uma rotina para me adaptar ao horário comercial e me sentir produtivo: acordava às 8 e ficava até às 12 horas procurando emprego; após o almoço, limpava a casa, voltava pra mesa e estudava. Ainda tenho a planilha de controle que criei para não me candidatar na mesma vaga, ter o controle de quanto tempo também a empresa permaneceria com aquela posição. O total de curriculum enviados em quatro meses foi 222. No mês de dezembro, estava agendado para a primeira semana de 2019, uma entrevista para a vaga de consultor sênior no ERP Cloud da Oracle chamado Netsuite, que eu nunca tinha ouvido falar.</p>
+        
+        <p><span class="journey-year">Ano de 2019</span> 
+          primeira semana, conversei com o RH, tudo tranquilo, tive que fazer alguns testes on line para identificar o meu perfil; Teste online do idioma em inglês; por último conversar com os gestores; Dia 23 de janeiro eu começava na empresa Active, prestadora de suporte e venda do sistema Oracle Netsuite! Após anos em grandes empresas, eu estava numa empresa pequena em ascensão. Precisei de uns dias para relaxar, e entender que o jogo era mais próximo, de impacto, eu não apenas respondia chamados, também deveria responder integralmente por ele no entendimento e aceite do cliente externo, havia uma análise final sobre a minha tratativa até a finalização. Agora eu não olhava mais um pedaço do ERP, tinha que aprender o sistema: do módulo base, passando por compras, estoque, vendas, financeiro, até o contábil e fiscal. Mais a camada de localização brasileira, terceirizada, aquela parte fiscal que assusta quem é de fora (e também os de dentro). Eu sentia falta de ter acesso ao banco de dados, porém nesse tipo de serviço (Saas), essa facilidade não é para a parte funcional do suporte, somente aos profissionais gabaritados (DBA). Porém resolvia super bem as demandas, pois imaginava a relação que as telas (tabelas) possuíam, suas chaves e afins, então a minha análise andava rápida. Na carteira de clientes havia empresas de todos os portes: Ifood, Empiricus, Sensedia...alguns unicórnios.</p>
+        
+        <p><span class="journey-year">Ano 2020</span> 
+          na virada do ano eu já tinha visto que a Itália estava com problemas com um vírus, e que idosos não resistiram, mas o verão desse país somado a chegada do carnaval, fizeram com que muitos simplesmente ignorassem todo o movimento estranho que ocorria agora em diversos países. Março - "Eric, vem aqui no escritório assinar um documento e pegar uma cadeira, e a partir de agora você trabalha remoto devido a essa doença mundial chamada Covid-19". Foram meses difíceis, incerteza, medo, precauções, informações desencontradas, espero não passar novamente por esse momento histórico. Havia tempo para estudar e se reinventar, e nesse ínterim, cursos e certificados pela própria Netsuite foram feitos, treinamento interno para melhorar a gerência e atuação nos chamados com "Lean, Kanban e Scrum" foram ministrados (obrigado Karina).</p>
         <p>Um amigo de trabalho da época da Odebrecht, mandou mensagem perguntando como eu estava, e que ele havia conversado com outros colegas da época (2009) e lembraram de muitas histórias e momentos engraçados, por fim, ele comentou que a empresa que em 2017 tinha terceirizado grande parte da TI para a Tech Mahindra, agora pensava em voltar com o suporte para dentro de casa, e caso eu quisesse, ele poderia lembrar meu nome. Eu tinha saudades de fazer consultas no banco de dados, porque para mim, isso representava 50% do trabalho e uma visão sistêmica/técnica que engrandece muito o entendimento macro, mas em contrapartida, eu reconhecia que o Netsuite era a bola da vez, o futuro, e eu queria permanecer na empresa, aprendendo mais. Porém em meados de Setembro, eu recebo um telefonema simples e claro oferecendo uma proposta de emprego para a Odebrecht, que financeiramente naquele momento, era tentadora; tentando conciliar "a emoção com a razão" conversei com o meu líder, tinha duas semanas pra chegar tomar uma decisão. Mais uma vez, obrigado a todos os que me ajudaram!</p>
-        <p><span class="journey-year">Novembro de 2020</span> eu estava de volta para a construtora Odebrecht, mais confiante e seguro, mas ciente que a demanda seria grande e intensa, porém a empresa não era a mesma, passava por transformações profundas, alguns setores foram reduzidos ou não existiam mais, o número de usuários estava ínfimo comparado a uma década atrás, muita informação não foi registrada e repassada adiante.</p>
-        <p><span class="journey-year">Ano de 2021</span> o mundo ainda estava enfrentando a Covid, todos estavam em trabalho remoto, toda sexta-feira havia reunião pelo Teams para que as pessoas não se sentissem sozinhas; muito trabalho a ser feito, eu permanecia revendo-investigando o que ocorreu nos últimos 4 anos com o sistema XRT, e o que poderia fazer de melhor para facilitar a vida do cliente interno.</p>
-        <p><span class="journey-year">Ano de 2022</span> Aos poucos o mundo "forçava" a volta, o contato presencial, e uma vez a cada 3 meses, tínhamos que ir ao escritório, que na maioria das vezes se tornava um momento de celebração. Eu identifiquei e resolvi que precisava urgentemente me atualizar, porque nos últimos dois anos, possibilitou ouvir muitas novas ideias, e numa dessas, eu assisti a um oriental que falava de forma assertiva, direta, clara e forte sobre tecnologia, o nome dele é Fabio Akita. O homem alugou um apartamento na minha cabeça! Eu simplesmente não entendia quase nada do que ele dizia! como era possível, haver tantas tecnologias e formas de trabalhar, do qual eu mal havia ouvido falar? Fiquei (em segredo) magoado, levemente humilhado…rsrs</p>
+        <p><span class="journey-year">Novembro de 2020</span> 
+          eu estava de volta para a construtora Odebrecht, mais confiante e seguro, mas ciente que a demanda seria grande e intensa, porém a empresa não era a mesma, passava por transformações profundas, alguns setores foram reduzidos ou não existiam mais, o número de usuários estava ínfimo comparado a uma década atrás, muita informação não foi registrada e repassada adiante.</p>
+        
+        <p><span class="journey-year">Ano de 2021</span>
+           o mundo ainda estava enfrentando a Covid, todos estavam em trabalho remoto, toda sexta-feira havia reunião pelo Teams para que as pessoas não se sentissem sozinhas; muito trabalho a ser feito, eu permanecia revendo-investigando o que ocorreu nos últimos 4 anos com o sistema XRT, e o que poderia fazer de melhor para facilitar a vida do cliente interno.</p>
+        
+        <p><span class="journey-year">Ano de 2022</span> A
+          os poucos o mundo "forçava" a volta, o contato presencial, e uma vez a cada 3 meses, tínhamos que ir ao escritório, que na maioria das vezes se tornava um momento de celebração. Eu identifiquei e resolvi que precisava urgentemente me atualizar, porque nos últimos dois anos, possibilitou ouvir muitas novas ideias, e numa dessas, eu assisti a um oriental que falava de forma assertiva, direta, clara e forte sobre tecnologia, o nome dele é Fabio Akita. O homem alugou um apartamento na minha cabeça! Eu simplesmente não entendia quase nada do que ele dizia! como era possível, haver tantas tecnologias e formas de trabalhar, do qual eu mal havia ouvido falar? Fiquei (em segredo) magoado, levemente humilhado…rsrs</p>
         <p>Resolvi que iria acompanhá-lo, me esforçar ao máximo pra entender tudo o que ele falava, a missão era árdua, o homem batia forte em conhecimentos básicos em tudo que ocorria por debaixo do tapete: Algoritmos e Estruturas de Dados, Arquitetura e Organização de Computadores, Sistemas Operacionais, Cálculo Diferencial e Integral, Álgebra Linear, Matemática Discreta, Probabilidade e Estatística. Bom, precisava de mais fontes de conhecimento na mesma pegada que a dele, então achei o podcast DataHackers (demorei pra entender), e tive uma nova atitude: me matriculei na plataforma de educação online "Alura", e passei a estudar diversos temas.</p>
-        <p><span class="journey-year">Ano de 2023</span> Muito trabalho, e o que havia sido alinhado inicialmente, não era a realidade, mas permanecia firme, focando em melhoria e dias melhores. Na "Alura", pelo menos naquela época, o formato era livre para escolha das matérias a serem estudadas, sem uma exigência de exercícios como parte da aula, e isso, me fez reconhecer que eu não estava me dedicando como o propósito exigia, eu assistia a aula, anotava, fazia "alguns exercícios", e às vezes saía de C++ para UX. Aos poucos, eu passava semanas sem acessar os módulos que eu havia montado para estudar.</p>
-        <p><span class="journey-year">Ano de 2024</span> Resolvi que não iria renovar a matrícula na Alura. Profissionalmente eu questionava se estava no caminho certo, na vida pessoal eu estava paraíso, pois estava prestes a me casar! Áreas distintas mas que influenciam uma na outra, e assim, eu permaneci o ano todo, porém, pelo menos agora eu entendia na totalidade o que Fabio Akita falava em seus vídeos e escrevia no LinkedIn. Mas no último mês do ano, uma "promessa e provocação" foi despertada para o próximo ano.</p>
-        <p><span class="journey-year">Ano de 2025</span> identifiquei que eu estava desatualizado, "o que e como" eu fazia profissionalmente; eu usava nomenclatura antiga e errada; o espaço para melhoria era grande, mas a estrutura vertical e a burocracia atuam igual à gravidade, você não enxerga, mas está lá sempre e a todo momento! Resolvi novamente estudar, mas agora iria em algo com nome e desafio reais e ajustados a minha realidade, acessei a plataforma Coursera e selecionei o "Certificado em Análise de Dados do Google", e de imediato, identifiquei o quanto aquela escola estava alinhada tecnicamente comigo.</p>
-        <p><span class="journey-year">Ano de 2026</span> O curso simplesmente me deu uma injeção de rejuvenescimento! Eu estava feliz em saber que eu em algum grau, já era um analista de dados há muito tempo, porém só não sabia! Fiquei triste também, porque se soubesse antes, com certeza estaria atuando e aprendendo tecnologia atual, mas tudo bem, como bem dito por Steve Jobs há duas décadas antes "você não consegue conectar os pontos olhando para o futuro…somente olhando para o passado". Mas agora eu estava refinando tudo o que eu "sabia e fazia", implementando melhorias, cada demanda se tornava uma forma de eu colocar em prática da melhor forma, tudo que eu estava estudando. O curso tem 8 módulos distintos, cada um possui dezenas de horas de aulas, diversos textos e exercícios…que sensação boa o aprendizado causa!</p>
-        <p>Mas havia espaço para mais, o objeto para ser alcançado, demandava investimento intelectual, financeiro e de tempo. <span class="journey-year">Mês de Março</span>, iria me atualizar fortemente, porque eu estava testemunhando algo incrível novamente na tecnologia (o advento do smartphone foi um diferencial e o iPhone foi grande), mais forte do que nunca e ainda acontecendo, a "Inteligência Artificial" estava invadindo o mundo corporativo, identifiquei que eu tinha condições de participar, então resolvi voltar a estudar inglês, pois poderia conciliar sem impactar o curso da Google. Pesquisei por aulas particulares, plataformas, vídeos, podcasts e cheguei na Preply com certa desconfiança (sou cético de natureza) até fazer a primeira aula de amostra com o professor Fillip, que me ajudou a recuperar minha fluência e o amor pelo idioma. Eu já estava rejuvenescido, porém agora com velocidade e músculos!</p>
-        <p><span class="journey-year">Mês de maio</span> eu estava com a "mão grande" como se diz no jogo de cartas "Truco", eu estava com o "casal maior" e queria ouvir alguém responder o meu truco: Me matriculei no MBA em "Data Science, IA & Analytics" pela USP! Sim, eu queria mais, queria o nome dessa instituição no meu CV, eu queria conhecer profissionais mais qualificados do que eu, eu queria sentir a frustração de várias tentativas malsucedidas até aprender algo novo. Eu estava disposto a entrar numa rigorosa e delicada gerência do meu tempo no calendário.</p>
-        <p style="color:var(--text);font-style:italic;">Ufaaaa, que história longa né?! Espero que tenha se divertido um pouco, e obrigado por ter chegado até aqui..agora vamos esperar pelo menos meia década para uma nova versão! Muita saúde e sucesso para você, e um abraço fraternal!</p>
+        
+        <p><span class="journey-year">Ano de 2023</span> 
+          Muito trabalho, e o que havia sido alinhado inicialmente, não era a realidade, mas eu permanecia firme, focando em melhoria e dias melhores. 
+          Parte do processo passou a ter a criação de documentos para a criação de "base de conhecimento", meu objetivo não era apenas responder às demandas, mas criar educação.
+          Gravar, revisar, regravar e editar vídeos, também se tornou parte das minhas atividades.
+
+        <br>Na "Alura", pelo menos naquela época, o formato era livre para escolha das matérias a serem estudadas, sem uma exigência de exercícios como parte da aula, e isso, me fez reconhecer que eu não estava me dedicando como o propósito exigia, eu assistia a aula, anotava, fazia "alguns exercícios", e às vezes saía de C++ para UX. 
+          Aos poucos, eu passava semanas sem acessar os módulos que eu havia montado para estudar.
+         </p>
+        
+        <p><span class="journey-year">Ano de 2024</span> 
+          Resolvi que não renovaria a matrícula na Alura pelos motivos citados anteriormente.
+        <br>Para o sistema XRT, havia novas demandas, e para isso eu participaria parcialmente do projeto de "Recuperação Judicial":
+        <br>— Eu auxiliei em temas técnicos, assim também como poderia ser a implementação e manutenção de mais de 3 mil contratos no módulo de Captação;
+         o gerenciamento financeiro e contábil desses contratos de dívida.<br>
+          
+          Profissionalmente eu "me questionava" se estava no caminho certo, mas na vida pessoal, eu estava paraíso, pois estava prestes a me casar! 
+          Áreas distintas, mas que influenciam uma na outra, e assim, eu permaneci o ano todo... porém, pelo menos agora eu entendia na totalidade o que Fabio Akita falava em seus vídeos e escrevia no LinkedIn.
+     
+          Mas no último mês do ano, uma "promessa e provocação" foi despertada para o seguinte ano de 2025.</p>
+        
+        <p><span class="journey-year">Ano de 2025</span> 
+        identifiquei que eu estava desatualizado, "o que e como" eu fazia profissionalmente; eu usava nomenclaturas antigas e erradas; 
+        o espaço para melhoria era grande, mas a estrutura vertical e a burocracia atuam igual à gravidade, você não enxerga, mas estão lá sempre e a todo momento! <br>
+        Resolvi novamente estudar, mas agora iria em algo com nome e desafios reais e ajustados a minha realidade, acessei a plataforma "Coursera" e selecionei o "Certificado em Análise de Dados do Google",
+        e de imediato, identifiquei o quanto aquela escola estava alinhada tecnicamente comigo.
+        <br>
+        Assim como eu, o sistema também precisava ser atualizado, e agora passaria de "XRT para XTPG", prestei auxílio por demanda em todas as frentes para a migração do sistema de "On Premise para Cloud".
+        </p>
+        
+        <p><span class="journey-year">Ano de 2026</span>
+        O curso simplesmente me deu uma injeção de rejuvenescimento! Eu estava feliz em saber que eu em algum grau, já era um analista de dados há muito tempo, 
+        porém só não sabia! Fiquei triste também, porque se soubesse antes, com certeza estaria atuando e aprendendo tecnologia atual, 
+        mas tudo bem, como bem dito por Steve Jobs há duas décadas antes: 
+        <br>-"Você não consegue conectar os pontos olhando para o futuro…somente olhando para o passado".<br> 
+        Mas agora eu estava refinando tudo o que eu "sabia e fazia", implementando melhorias, cada demanda se tornava uma forma de eu colocar em prática da melhor forma, 
+        tudo que eu estava estudando. O curso tem 8 módulos distintos, cada um possui dezenas de horas de aulas, diversos textos e exercícios…
+        que sensação boa o aprendizado causa!<br>
+        Mas havia espaço para mais, o objeto para ser alcançado, demandava investimento intelectual, financeiro e de tempo. 
+        
+        <br><span class="journey-year">Mês de Março</span> 
+        eu iria me atualizar fortemente, porque eu estava testemunhando algo incrível novamente na tecnologia (o advento do smartphone foi um diferencial e o iPhone foi grande),
+         mais forte do que nunca e ainda acontecendo, a "Inteligência Artificial" estava invadindo o mundo corporativo, identifiquei que eu tinha condições de participar, 
+         então resolvi voltar a estudar inglês, pois poderia conciliar sem impactar o curso da Google. 
+         Pesquisei por aulas particulares, plataformas, vídeos, podcasts e cheguei na "Preply" com certa desconfiança (sou cético de natureza) até fazer a primeira aula de amostra com o professor Fillip, 
+         que me ajudou a recuperar minha fluência e o amor pelo idioma. Eu já estava rejuvenescido, porém agora com velocidade e músculos!</p>
+        
+        <p><span class="journey-year">Mês de maio</span> 
+        eu estava com a "mão grande" como se diz no jogo de cartas "Truco", eu estava com o "casal maior" e queria ouvir alguém responder o meu truco: 
+        <br>-Me matriculei no MBA em "Data Science, IA & Analytics" pela USP! 
+        Sim, eu queria mais, queria o nome dessa instituição no meu CV, eu queria conhecer profissionais mais qualificados do que eu,
+        eu queria sentir a frustração de várias tentativas malsucedidas até aprender algo novo.
+        Eu estava disposto a entrar numa rigorosa e delicada gerência do meu tempo, tudo anotado no app do calendario, tudo para conciliar todas essas atividades !</p>
+
+        <p style="color:var(--text);font-style:italic;
+        ">Ufaaaa, que história longa né?! Espero que tenha se divertido um pouco, e obrigado por ter chegado até aqui..
+        agora vamos esperar pelo menos meia década para uma nova versão! Muita saúde e sucesso para você, e um abraço fraternal!</p>
       </div>
 
       <!-- ENGLISH Inglês-->
