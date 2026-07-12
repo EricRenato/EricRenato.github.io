@@ -1,96 +1,160 @@
-# EricRenato.github.io 🌐
+# 🌐 EricRenato.github.io
 
-- #### Data is a real fact ... even though I'm trying to figure them out
+![Eric Renato Profile](./assets/images/profile.jpg)
 
-- ####  Dados são fatos ... mesmo assim estou tentando entendê-los
+> Personal Portfolio • Data Analytics • Financial Systems • Business Intelligence
 
-- #### Los datos son hechos reales ... sin embargo estoy tratando de entenderlos
+A responsive, interactive portfolio website that centralizes my professional journey, technical projects, academic background and direct contact information. Built with HTML5, CSS3, and vanilla JavaScript.
 
-- **Check:** [ericrenato.github.io](https://ericrenato.github.io)
+🔗 **Live Website:** https://ericrenato.github.io
 
-- **Check** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eric-renato)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eric-renato-da-silva)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/EricRenato)
 
------
-## Status
-🚧 Em evolução constante V2 (31/05/2026)
+---
 
-#### Últimas atualizações
-- [Data] Dividido em múltiplas páginas
-- [Data] Adicionado vídeo de apresentação
-- [Data] Reescrito texto "Quem sou eu"
+## Overview
 
------
+This portfolio replaces traditional résumés with an interactive, narrative-driven experience. It showcases my 15+ years in corporate financial systems alongside my current specialization in Data Science, AI, and Business Analytics through the MBA program at USP/ESALQ.
 
-## ✨ Funcionalidades
+The site is built entirely with vanilla JavaScript (no frameworks) to maintain performance and full transparency of the codebase.
 
-### Públicas — qualquer visitante
-- Apresentação pessoal
-- Portfólio de projetos com links para GitHub
-- Currículo em texto completo
-- Links LinkedIn e GitHub
+---
 
-### Bloqueadas — acesso sob solicitação - ideia em desenvolvimento 
+## Features
 
-- 🔒 Áudio de apresentação em Português, Espanhol e Inglês.
-- 🔒 Vídeo de apresentação pessoal em Português, Espanhol e Inglês.
------
+- **Responsive Design:** Fully mobile-optimized interface
+- **Dark/Light Mode:** Automatic theme switching based on time of day
+- **Multilingual Support:** Portuguese, English, and Spanish
+- **Interactive Navigation:** Smooth transitions and hover effects
+- **Profile Pages:** Detailed sections on career, projects, education, and personal philosophy
+- **Performance First:** Lightweight, framework-free implementation
+- **GitHub Pages Ready:** Deployed directly from this repository
 
-## 🛠️ Stack
+---
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-100000?style=flat&logo=github&logoColor=white)
+## Technology Stack
 
------
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
+- **Hosting:** GitHub Pages
+- **Styling:** CSS Grid, Flexbox, Custom Properties
+- **Font Family:** Bebas Neue, Syne
 
-## 📂 Estrutura do Projeto
+---
+
+## Project Structure
 
 ```
-projeto/
-├── index.html (Home)
-├── curriculo.html
-├── projetos.html
-├── quem-sou.html
-├── Livros.html
+/
+├── index.html                    # Home page
+├── curriculo.html                # Professional resume
+├── quem-sou.html                 # About me (with interactive sections)
+├── quem-sou-completo.html        # Full personal narrative with tabs
+├── projetos.html                 # Project portfolio
+├── livros.html                   # Books and learning resources
+├── README.md                     # This file
 ├── css/
-│   └── style.css
+│   └── style.css                 # Main stylesheet
 ├── js/
-│   └── main.js
+│   └── main.js                   # Interactive features
 └── assets/
     ├── images/
     └── video/
 ```
 
------
+---
 
-## 🎨 Design
+## Key Sections
 
-- Fundo interativo que reage ao movimento do mouse
-- Layout responsivo — funciona em desktop e mobile
-- Tema escuro com elementos visuais dinâmicos
+### 💼 Currículo (Resume)
+Professional background spanning 15+ years in corporate finance and systems, with technical skills and project highlights.
 
------
+### 👤 Quem Sou Eu (About Me)
+Interactive narrative divided into four thematic sections:
+- **Em busca de respostas** — My intellectual journey and early influences
+- **Refinamento contínuo** — Continuous learning and academic pursuits
+- **Caos e Silêncio** — Spirituality and self-reflection
+- **Tem que suar** — Physical discipline and health philosophy
 
-## 📂 Projetos Futuros
+### 📊 Projetos (Projects)
+Showcase of technical and analytical work:
 
-### 🎵 [dangerous_data_mj_statistics](https://github.com/EricRenato/dangerous_data_mj_statistics)
+#### Dangerous Data — Michael Jackson Statistics
+Statistical analysis exploring Michael Jackson's chart performance, award history, and cultural impact. Developed as a real-world case study using analytical techniques.
 
-Análise estatística dos números de vendas do cantor Michael Jackson.
-- Decidi utilizar essa abordagem, para auxiliar nos exercícios do curos de Data Science!
-- Teremos estatísticas descritivas, testes de hipóteses, correlação e regressão.*(comming soon)*
-- `Excel` - `Statistics`- `USP/ESALQ`
+**Technologies:** Excel, Statistical Analysis, Python (in progress)
 
-### 🏦 cash_investment_reconciliation
-(https://github.com/EricRenato/cash_investment_reconciliation) *(comming soon)*
-- Este é um projeto que tenho em mentes há anos!
-- Uma dor real que usuários de Tesouraria possuem.
-- Farei um modelo automatizado de conciliação em um contrato de investimento atrelado ao CDI.
-- `Oracle SQL`- `Financial Analytics`- `Data Quality`
+#### Cash Investment Reconciliation
+Automated financial reconciliation system for validating CDI (Certificado de Depósito Interbancário) investments. Designed to reduce manual reconciliation time and improve accuracy.
 
------
+**Technologies:** Oracle SQL, Excel, Python, Financial Analytics
 
+---
 
-## 📋 Licença
+## Roadmap
 
-MIT License — consulte o arquivo LICENSE para detalhes.
+Near-term improvements:
+
+- [ ] SQL-based analytics dashboard for project data
+- [ ] Video presentation on home page
+- [ ] Dynamic project filtering by technology
+- [ ] Reading list with book summaries
+- [ ] RSS feed integration for learning resources
+- [ ] WCAG 2.1 accessibility audit and improvements
+- [ ] Performance optimization (Lighthouse score 90+)
+
+---
+
+## How to Run Locally
+
+1. Clone the repository:
+```bash
+git clone https://github.com/EricRenato/EricRenato.github.io.git
+cd EricRenato.github.io
+```
+
+2. Open `index.html` in your browser, or use a local server:
+```bash
+python -m http.server 8000
+# or
+npx http-server
+```
+
+3. Visit `http://localhost:8000`
+
+---
+
+## Design Philosophy
+
+This portfolio embraces **minimalist functionality**:
+- Vanilla JavaScript for complete code transparency and performance
+- Responsive design that works seamlessly on all devices
+- Intentional use of dark mode with accent gold (#C9A84C) to reduce visual fatigue
+- Fast load times and no external dependencies (except fonts)
+
+---
+
+## About Me
+
+I'm a professional transitioning from 15+ years in corporate financial systems to specialized expertise in data-driven decision-making. My approach combines technical rigor with business acumen, transforming complex problems into actionable insights.
+
+This portfolio is where I document that journey — both the technical projects and the personal philosophy behind them.
+
+---
+
+## Contact
+
+- **Website:** https://ericrenato.github.io
+- **LinkedIn:** https://www.linkedin.com/in/eric-renato-da-silva
+- **GitHub:** https://github.com/EricRenato
+- **Email:** Available on the portfolio site
+
+---
+
+## License
+
+MIT License — Feel free to fork, adapt, and use this template for your own portfolio.
+
+---
+
+**Last Updated:** July 2026
