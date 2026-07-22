@@ -1,1 +1,296 @@
-/tmp/upserts.json#curriculo.html
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark" data-lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo — Eric Renato</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Syne:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script data-goatcounter="https://ericrenato.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --gold: #C9A84C; --gold2: #FFD700; --dark: #080808; --panel: #111111; --panel2: #181818;
+  --border: rgba(255,255,255,0.08); --text: #E8E8E0; --text-dim: #888; --radius: 16px;
+  --glass-bg: rgba(255,255,255,0.07); --glass-border: rgba(255,255,255,0.15); --transition: 0.6s cubic-bezier(0.34,1.56,0.64,1);
+}
+[data-theme="light"] {
+  --dark: #F0EDE6; --panel: #FAF8F4; --panel2: #F0EDE6; --border: rgba(0,0,0,0.08);
+  --text: #1A1A1A; --text-dim: #666; --glass-bg: rgba(0,0,0,0.05); --glass-border: rgba(0,0,0,0.12);
+}
+html, body { width:100%; min-height:100%; background: var(--dark); color: var(--text); font-family: 'Syne', sans-serif; cursor: none; }
+.cursor { position:fixed; width:8px; height:8px; background: var(--gold); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition: width 0.2s, height 0.2s; mix-blend-mode: difference; }
+.cursor-ring { position:fixed; width:32px; height:32px; border:1px solid var(--gold); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition: all 0.15s ease; opacity:0.5; }
+#waves-bg { position:fixed; inset:0; z-index:1; pointer-events:none; }
+#theme-btn { position:fixed; top:16px; right:16px; z-index:300; background:rgba(20,20,20,0.85); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:8px 12px; font-size:16px; cursor:none; transition:all 0.3s; }
+#theme-btn:hover { background:rgba(255,255,255,0.15); transform:scale(1.1); }
+#lang-switcher { position:fixed; top:16px; left:50%; transform:translateX(-50%); z-index:300; display:flex; gap:8px; align-items:center; background:rgba(20,20,20,0.85); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); padding:8px 16px; border-radius:24px; border:1px solid rgba(255,215,0,0.18); box-shadow:0 12px 30px rgba(0,0,0,0.35); }
+.lang-btn { background:rgba(255,215,0,0.16); color:#ffd700; border:1px solid rgba(255,215,0,0.35); cursor:none; padding:8px 10px; border-radius:12px; opacity:0.8; transition:opacity 0.2s, transform 0.2s; font-size:18px; }
+.lang-btn.active, .lang-btn:hover { opacity:1; transform:scale(1.12); }
+#dock { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:200; display:flex; align-items:flex-end; gap:10px; padding:12px 19px 15px; background:rgba(20,20,20,0.85); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1.25px solid rgba(160,175,190,0.55); border-radius:29px; box-shadow:0 0 0 1px rgba(100,130,155,0.2), 0 8px 40px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.3); max-width:calc(100vw - 24px); overflow-x:auto; scrollbar-width:none; }
+#dock::-webkit-scrollbar { display:none; }
+.dock-item { display:flex; flex-direction:column; align-items:center; cursor:none; position:relative; transition:transform var(--transition); text-decoration:none; color:inherit; }
+.dock-item:hover { transform:translateY(-15px) scale(1.2); }
+.dock-item.active-page > .dock-icon { box-shadow:0 0 0 2px var(--gold); }
+.dock-icon { width:65px; height:65px; background:var(--glass-bg); border-radius:17px; display:flex; align-items:center; justify-content:center; font-size:29px; border:1px solid var(--glass-border); transition:background 0.2s; }
+.dock-icon:hover { background:rgba(255,255,255,0.15); }
+.dock-dot { width:4px; height:4px; background:var(--text); border-radius:50%; margin-top:4px; opacity:0; transition:opacity 0.2s; }
+.dock-item.active-page .dock-dot { opacity:1; }
+.dock-tooltip { position:absolute; bottom:calc(100% + 10px); background:rgba(20,20,20,0.9); color:var(--text); padding:5px 10px; border-radius:8px; font-size:11px; white-space:nowrap; pointer-events:none; opacity:0; transform:translateY(4px); transition:opacity 0.2s, transform 0.2s; }
+.dock-item:hover .dock-tooltip { opacity:1; transform:translateY(0); }
+.dock-separator { width:1px; height:48px; background:var(--border); margin:0 4px; align-self:center; }
+main { position:relative; z-index:5; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:80px 40px 120px; }
+.sec-title { position:fixed; top:72px; left:50%; transform:translateX(-50%); font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; z-index:10; white-space:nowrap; }
+.cv-container { max-width:800px; width:100%; }
+.cv-header { display:flex; gap:24px; align-items:center; margin-bottom:40px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+.cv-photo { width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid var(--gold); flex-shrink:0; }
+.cv-name { font-family:'Bebas Neue',sans-serif; font-size:40px; letter-spacing:4px; color:var(--gold); line-height:1; }
+.cv-subtitle { font-size:13px; color:var(--text-dim); letter-spacing:2px; margin-top:6px; }
+.cv-section { margin-bottom:36px; }
+.cv-section-title { font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:3px; color:var(--gold); margin-bottom:16px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+.cv-item { margin-bottom:20px; }
+.cv-item-header { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
+.cv-item-title { font-size:15px; font-weight:600; }
+.cv-item-period { font-size:12px; color:var(--text-dim); letter-spacing:1px; }
+.cv-item-company { font-size:13px; color:var(--gold); margin-bottom:6px; }
+.cv-item-desc { font-size:15px; color:var(--text-dim); line-height:1.7; }
+.lang-pt, .lang-en, .lang-es { display:none; }
+[data-lang="pt"] .lang-pt { display:block; }
+[data-lang="en"] .lang-en { display:block; }
+[data-lang="es"] .lang-es { display:block; }
+.journey-body { font-size:15.5px; color:var(--text-dim); line-height:1.9; }
+.journey-body p { margin-bottom:15px; }
+.journey-year { display:inline-block; color:var(--gold); font-family:'Bebas Neue',sans-serif; font-size:15px; letter-spacing:2px; margin-right:6px; }
+.skills-grid { display:flex; flex-wrap:wrap; gap:8px; }
+.skill-tag { padding:6px 15px; border-radius:20px; border:1px solid var(--border); font-size:12px; letter-spacing:1px; color:var(--text-dim); transition:all 0.2s; }
+.skill-tag:hover { border-color:var(--gold); color:var(--gold); }
+.cv-locked { margin-top:32px; padding:24px; background:var(--glass-bg); border:1px solid var(--border); border-radius:var(--radius); text-align:center; }
+.cv-locked p { font-size:13px; color:var(--text-dim); margin-bottom:16px; }
+.cv-lock-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.lock-btn { display:flex; align-items:center; gap:8px; padding:10px 20px; border-radius:20px; border:1px solid var(--border); background:var(--glass-bg); color:var(--text-dim); font-size:12px; letter-spacing:1px; cursor:none; transition:all 0.2s; font-family:'Syne',sans-serif; }
+.lock-btn:hover { border-color:var(--gold); color:var(--gold); }
+@media (max-width:600px) { main { padding:80px 20px 120px; } .cv-header { flex-direction:column; } .cv-item-header { flex-direction:column; gap:2px; } }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<button id="theme-btn" onclick="toggleTheme()" title="Toggle theme">🌙</button>
+<a href="index.html" style="position:fixed;top:60px;right:16px;z-index:300;background:rgba(20,20,20,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:7px 15px;font-size:12px;color:#E8E8E0;text-decoration:none;font-family:'Syne',sans-serif;letter-spacing:1px;display:flex;align-items:center;gap:6px;cursor:none;transition:all 0.3s;">🏠 Home</a>
+<div id="lang-switcher">
+  <button id="lang-pt" class="lang-btn active" onclick="setLang('pt',this)" title="Português" type="button">🇧🇷</button>
+  <button id="lang-en" class="lang-btn" onclick="setLang('en',this)" title="English" type="button">🇺🇸</button>
+  <button id="lang-es" class="lang-btn" onclick="setLang('es',this)" title="Español" type="button">🇪🇸</button>
+</div>
+<div id="waves-bg">
+  <svg id="waves-svg" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;position:absolute;inset:0;"></svg>
+</div>
+<span class="sec-title" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</span>
+<main>
+  <div class="cv-container">
+    <div class="cv-header">
+      <img src="IMG_01.jpeg" alt="Eric Renato" class="cv-photo" onerror="this.style.display='none'">
+      <div>
+        <div class="cv-name">Eric Renato</div>
+        <div class="cv-subtitle" data-pt="ANALISTA DE DADOS FINANCEIROS· SQL · SISTEMA DE TESOURARIA " data-en="FINANCIAL DATA ANALYST · SQL · TREASURY SYSTEM" data-es="ANALISTA DE DATOS FINANCIEROS · SQL · SISTEMAS TESORERÍA">ANALISTA DE DADOS FINANCEIROS· SQL · SISTEMA DE TESOURARIA</div>
+        <a href="https://linkedin.com/in/eric-renato" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 16px;border-radius:20px;border:1px solid rgba(10,102,194,0.4);background:rgba(10,102,194,0.12);color:#6ab0f5;text-decoration:none;font-size:12px;letter-spacing:1px;cursor:none;transition:all 0.2s;">
+          <i class="fab fa-linkedin" style="font-size:16px;"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="cv-section">
+      <div class="cv-section-title" data-pt="Resumo" data-en="Summary" data-es="Resumen">Resumo</div>
+      <div class="cv-item">
+        <div class="cv-item-desc" data-pt="Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (XTPG, Oracle EBS e NetSuite) e automação de processos. Meu lema: “Dados são fatos; a análise revela a história.”" data-en="Senior Analyst with 15 years in corporate financial systems, specialized in SQL for analysis and validation of critical data in high-volume environments. Currently transitioning strategically to Data Analytics, with Google training (ongoing) and MBA in Data Science, AI and Analytics from USP/ESALQ (2026). Fluent in English and Spanish, with ERP experience (XTPG, Oracle EBS and NetSuite) and process automation. My motto: “Data is facts; analysis reveals the story.”" data-es="Analista Senior con 15 años en sistemas financieros corporativos, especialista en SQL para análisis y validación de datos críticos en ambientes de alto volumen. Actualmente en transición estratégica hacia Data Analytics, con formación Google (en curso) y MBA en Data Science, AI y Analytics por USP/ESALQ (2026). Fluido en inglés y español, con experiencia en ERP (XTPG, Oracle EBS y NetSuite) y automatización de procesos. Mi lema: “Los datos son hechos; el análisis revela la historia.”">Analista Sênior com 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume. Atualmente em transição estratégica para Data Analytics, com formação Google (em andamento) e MBA em Data Science, AI e Analytics pela USP/ESALQ (2026). Fluente em inglês e espanhol, com experiência em ERP (XTPG, Oracle EBS e NetSuite) e automação de processos. Meu lema: “Dados são fatos; a análise revela a história.”</div>
+      </div>
+    </div>
+    <div class="cv-section">
+      <div class="cv-section-title" data-pt="Jornada Profissional" data-en="Professional Journey" data-es="Trayectoria Profesional">Jornada Profissional</div>
+      <div class="journey-body lang-pt">
+        <p>Olá, prazer em tê-lo(a) por aqui! Vou compartilhar de forma mais simples e humana as minhas experiências, porém, caso queira algo "oficial" é só clicar no meu LinkedIn! Sente e pegue um café, pois você irá ler o que ocorreu na minha vida nas últimas duas décadas:</p>
+        <p><span class="journey-year">A todos que me ajudaram, muito obrigado!</span></p>
+        <p><span class="journey-year">Ano 2000</span> trabalhei numa pequena fábrica de embalagens de alimentos, aprendi o que era organização, dedicação e a respeitar diferenças (Obrigado João).</p>
+        <p>Não recordo qual área comecei a estudar primeiro, mas acredito que foi nos cursos de microinformática pela escola "Bit Company", com os clássicos da época: Sistema Windows "98, Millenium e 2000"; início do pacote Office com "Word, Excel, PowerPoint", muita aula de digitação. Mas também havia um pacote mais avançado (planejei mas não fiz): Web Design "Front Page, Flash e Dreamweaver" ou montagem e manutenção de computadores.</p>
+        <p>Na escola de idiomas "Windows" eu decidi estudar um mês de teste, pois o diferencial que eles ofereciam era "Se não se adaptar/gostar, devolvemos o seu dinheiro"; minha prévia experiência exigia essa mudança, pois eu não me adaptei à metodologia do CCAA. A primeira aula foi mais que positiva, e tive a certeza que faria a formação completa naquela escola.</p>
+        <p><span class="journey-year">Ano 2002</span> trabalhei alguns meses como "inspetor de alunos" (vulgo bedel) na "Universidade Nove de Julho", tradicionalmente conhecida como "Uni9" (obrigado Renata). Não foi fácil, pois no auge da minha timidez, eu era um pequeno nível de uma autoridade no meio de milhares de jovens. Lembro que após as 22 horas, havia pouca demanda, então eu tinha tempo de sobra para revisar e estudar as aulas de inglês. Fiquei nesse trabalho até o final do mês de setembro.</p>
+        <p><span class="journey-year">Ano 2003</span> Brasil o país do Turismo! Esse era o slogan e a promessa política, e com isso, diversas empresas do ramo necessitavam de profissionais. Deixei currículo em diversas empresas; fui até o aeroporto internacional de Guarulhos e perguntei onde poderia deixar meu "resume". Após alguns meses fiz o processo seletivo pela "Varig" e fiquei alocado em Congonhas. Tive o prazer de trabalhar em diversos setores, do check-in ao desembarque. Investi muito estudando inglês e espanhol na escola Wisdom.</p>
+        <p><span class="journey-year">Ano 2005</span> Resolvi fazer um curso universitário entre Psicologia, Comércio Exterior e TI! Me matriculei no curso "Redes de Computadores e Internet" pela Universidade Uni9. No primeiro semestre encontrei uma oportunidade na empresa "Sonda IT", ali começava uma profissão.</p>
+        <p><span class="journey-year">Ano 2006</span> Fui alocado no Citibank: uma operação 24/7! O mindset de ITIL era mandatório! Fui para o Help Desk e entendi a estrutura operacional da empresa.</p>
+        <p><span class="journey-year">Ano 2007</span> Fui efetivado e promovido como líder da equipe! Recebi vários reconhecimentos instantâneos.</p>
+        <p><span class="journey-year">Começo de 2008</span> Aceitei fazer parte do projeto de suporte operacional da "Odebrecht", maior construtora civil da América Latina. Tirei a certificação ITIL V2.</p>
+        <p><span class="journey-year">Setembro de 2009</span> Passei para a equipe de ERP e fui aprender Finanças sistemicamente.</p>
+        <p><span class="journey-year">Final de 2010</span> Passei para o suporte do sistema XRT, módulo financeiro e de operações financeiras. Migração do sistema legado para o Oracle EBS.</p>
+        <p><span class="journey-year">Ano 2011</span> Estudei "Introdução à linguagem SQL - Oracle Database" na Impacta.</p>
+        <p><span class="journey-year">Ano 2012</span> Fui estudar "MBA em Controladoria", aprofundando em finanças, contabilidade e regras de negócio.</p>
+        <p><span class="journey-year">Ano 2013</span> Fui para a equipe de Projetos na Argentina e implementei o sistema sem pendências de conciliação.</p>
+        <p><span class="journey-year">Ano 2014</span> Implementei projetos no Aeroporto Galeão e na Austrália.</p>
+        <p><span class="journey-year">Ano 2015</span> Implementação em Lima, Peru, e curso de Investimentos na Fundação Getúlio Vargas (FGV).</p>
+        <p><span class="journey-year">Ano 2016</span> Projeto SWIFT no Panamá e convite para intercâmbio em San Diego para estudo intensivo de inglês.</p>
+        <p><span class="journey-year">Ano 2017</span> Atuação como trader independente no mercado financeiro.</p>
+        <p><span class="journey-year">Ano 2018</span> Transição e preparação profissional com mais de 200 candidaturas focadas.</p>
+        <p><span class="journey-year">Ano 2019</span> Consultor Sênior no sistema Oracle NetSuite na Active, atendendo iFood, Empiricus e Sensedia.</p>
+        <p><span class="journey-year">Ano 2020</span> Trabalho remoto na pandemia, certificações NetSuite, métodos Ágeis (Scrum, Kanban) e retorno à Odebrecht.</p>
+        <p><span class="journey-year">Ano 2021-2022</span> Suporte e melhorias no XRT, estudos em tecnologia com apoio do canal do Fabio Akita e comunidade DataHackers.</p>
+        <p><span class="journey-year">Ano 2023-2024</span> Projetos de consolidação de base de conhecimento, treinamento e preparação para transição em dados.</p>
+        <p><span class="journey-year">Ano 2025</span> Certificado Profissional de Análise de Dados do Google no Coursera e migração XRT para XTPG em nuvem.</p>
+        <p><span class="journey-year">Ano 2026</span> MBA em Data Science, IA & Analytics pela USP/ESALQ e aperfeiçoamento avançado de inglês no Preply.</p>
+        <p style="color:var(--text);font-style:italic;">Obrigado por acompanhar minha trajetória!</p>
+      </div>
+      <div class="journey-body lang-en">
+        <p>Hey, great to have you here! I'll share my experiences in a simpler, more human way, but if you want the "official" version, just click on my LinkedIn!</p>
+        <p><span class="journey-year">2000 — 2008</span> Early career in IT, customer service at Varig, and computer networks degree at Uni9.</p>
+        <p><span class="journey-year">2008 — 2016</span> Senior Financial Systems Analyst at Odebrecht, specialized in XRT treasury software, Oracle EBS, SQL databases, and international implementations across Latin America (Argentina, Peru, Panama).</p>
+        <p><span class="journey-year">2019 — 2020</span> Senior NetSuite ERP Consultant at Active, supporting key accounts such as iFood, Empiricus, and Sensedia.</p>
+        <p><span class="journey-year">2020 — Present</span> Returning to financial systems analytics, Google Data Analytics Professional Certificate, and MBA in Data Science, AI & Analytics at USP/ESALQ.</p>
+      </div>
+      <div class="journey-body lang-es">
+        <p>¡Hola, qué bueno tenerte por aquí! Comparto mi trayectoria laboral de manera directa y transparente:</p>
+        <p><span class="journey-year">2000 — 2008</span> Inicios en TI, atención al cliente y carrera en Redes de Computadoras.</p>
+        <p><span class="journey-year">2008 — 2016</span> Analista Senior de Sistemas Financieros en Odebrecht, especialista en XRT, Oracle EBS, SQL e implementaciones internacionales en América Latina.</p>
+        <p><span class="journey-year">2019 — 2020</span> Consultor Senior ERP NetSuite en Active.</p>
+        <p><span class="journey-year">2020 — Presente</span> Transición estratégica a Data Analytics, Certificado Google y MBA en Data Science, IA y Analytics por USP/ESALQ.</p>
+      </div>
+    </div>
+    <div class="cv-section">
+      <div class="cv-section-title" data-pt="Experiência" data-en="Experience" data-es="Experiencia">Experiência</div>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title" data-pt="Analista de Sistemas Financeiros Sênior" data-en="Senior Financial Systems Analyst" data-es="Analista Senior de Sistemas Financieros">Analista de Sistemas Financeiros Sênior</span>
+          <span class="cv-item-period">2008 — Presente</span>
+        </div>
+        <div class="cv-item-company">Odebrecht / Novonor</div>
+        <div class="cv-item-desc" data-pt="Análise de dados financeiros, conciliação bancária automatizada, consultas complexas SQL em Oracle Database e suporte ao sistema XTPG/XRT." data-en="Financial data analysis, automated bank reconciliation, complex SQL queries in Oracle Database, and XTPG/XRT treasury support." data-es="Análisis de datos financieros, conciliación bancaria automatizada, consultas SQL complejas en Oracle Database y soporte XTPG/XRT.">Análise de dados financeiros, conciliação bancária automatizada, consultas complexas SQL em Oracle Database e suporte ao sistema XTPG/XRT.</div>
+      </div>
+    </div>
+    <div class="cv-section">
+      <div class="cv-section-title" data-pt="Formação" data-en="Education" data-es="Formación">Formação</div>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title" data-pt="MBA em Data Science, IA & Analytics" data-en="MBA in Data Science, AI & Analytics" data-es="MBA en Data Science, IA y Analytics">MBA em Data Science, IA & Analytics</span>
+          <span class="cv-item-period">2025 — 2026</span>
+        </div>
+        <div class="cv-item-company">USP / ESALQ</div>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-header">
+          <span class="cv-item-title" data-pt="Google Data Analytics Professional Certificate" data-en="Google Data Analytics Professional Certificate" data-es="Certificado Profesional de Análisis de Datos de Google">Google Data Analytics Professional Certificate</span>
+          <span class="cv-item-period">2025</span>
+        </div>
+        <div class="cv-item-company">Coursera / Google</div>
+      </div>
+    </div>
+    <div class="cv-section">
+      <div class="cv-section-title" data-pt="Habilidades" data-en="Skills" data-es="Habilidades">Habilidades</div>
+      <div class="skills-grid">
+        <span class="skill-tag">SQL (Oracle)</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Data Analytics</span>
+        <span class="skill-tag">ERP (XTPG / NetSuite)</span>
+        <span class="skill-tag">Tesouraria & Finanças</span>
+        <span class="skill-tag">Inglês Fluente</span>
+        <span class="skill-tag">Espanhol Fluente</span>
+      </div>
+    </div>
+    <div class="cv-locked">
+      <div style="display:inline-block;padding:4px 12px;border-radius:12px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:11px;letter-spacing:1px;margin-bottom:12px;font-weight:600;">
+        <span data-pt="🛠️ Em desenvolvimento (Work in Progress)" data-en="🛠️ Work in Progress" data-es="🛠️ En desarrollo (Work in Progress)">🛠️ Em desenvolvimento (Work in Progress)</span>
+      </div>
+      <p data-pt="🔒 Apresentação em Áudio (Amostras de 10s no site · Versão completa privada no Google Drive)" data-en="🔒 Audio Presentation (10s preview on site · Full version private on Google Drive)" data-es="🔒 Presentación en Audio (Muestra de 10s en el sitio · Versión completa privada en Google Drive)">🔒 Apresentação em Áudio (Amostras de 10s no site · Versão completa privada no Google Drive)</p>
+      <div class="cv-lock-btns">
+        <button class="lock-btn" onclick="playAudioPreview('pt')">
+          <span>🎧</span>
+          <span data-pt="▶ Amostra 10s (PT)" data-en="▶ 10s Preview (PT)" data-es="▶ Muestra 10s (PT)">▶ Amostra 10s (PT)</span>
+        </button>
+        <button class="lock-btn" onclick="playAudioPreview('en')">
+          <span>🎧</span>
+          <span data-pt="▶ Amostra 10s (EN)" data-en="▶ 10s Preview (EN)" data-es="▶ Muestra 10s (EN)">▶ Amostra 10s (EN)</span>
+        </button>
+        <button class="lock-btn" onclick="playAudioPreview('es')">
+          <span>🎧</span>
+          <span data-pt="▶ Amostra 10s (ES)" data-en="▶ 10s Preview (ES)" data-es="▶ Muestra 10s (ES)">▶ Amostra 10s (ES)</span>
+        </button>
+        <button class="lock-btn" onclick="requestLinkedInAccess()" style="border-color:var(--gold);color:var(--gold);">
+          <span>💼</span>
+          <span data-pt="Solicitar Acesso Completo (LinkedIn)" data-en="Request Full Access (LinkedIn)" data-es="Solicitar Acceso Completo (LinkedIn)">Solicitar Acesso Completo (LinkedIn)</span>
+        </button>
+      </div>
+      <audio id="preview-audio-player" style="display:none;" controlsList="nodownload"></audio>
+      <div id="preview-audio-status" style="margin-top:12px;font-size:12px;color:var(--gold);display:none;"></div>
+    </div>
+  </div>
+</main>
+<nav id="dock">
+  <a class="dock-item" href="index.html" id="dock-home">
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Home.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:15px;"></div>
+    <div class="dock-tooltip" data-pt="Início" data-en="Home" data-es="Inicio">Início</div>
+    <div class="dock-dot"></div>
+  </a>
+  <a class="dock-item" href="projetos.html" id="dock-projetos">
+    <div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+    <div class="dock-tooltip" data-pt="Projetos" data-en="Projects" data-es="Proyectos">Projetos</div>
+    <div class="dock-dot"></div>
+  </a>
+  <a class="dock-item active-page" href="curriculo.html" id="dock-curriculo">
+    <div class="dock-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.415v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.154 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.15 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+    <div class="dock-tooltip" data-pt="Currículo" data-en="Resume" data-es="Currículum">Currículo</div>
+    <div class="dock-dot"></div>
+  </a>
+  <a class="dock-item" href="quem-sou.html" id="dock-sobre">
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="IMG_7217.jpeg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:15px;"></div>
+    <div class="dock-tooltip" data-pt="Quem eu sou" data-en="About me" data-es="Quién soy">Quem eu sou</div>
+    <div class="dock-dot"></div>
+  </a>
+  <a class="dock-item" href="livros.html" id="dock-livros">
+    <div class="dock-icon" style="overflow:hidden;padding:0;"><img src="Midia.png" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:15px;"></div>
+    <div class="dock-tooltip" data-pt="Mídia" data-en="Media" data-es="Medios">Mídia</div>
+    <div class="dock-dot"></div>
+  </a>
+</nav>
+<script>
+const cursor = document.getElementById('cursor')
+const ring   = document.getElementById('cursor-ring')
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px'; cursor.style.top  = e.clientY + 'px';
+  setTimeout(() => { ring.style.left = e.clientX + 'px'; ring.style.top  = e.clientY + 'px'; }, 80)
+})
+let isDark = true
+function toggleTheme() {
+  isDark = !isDark
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light')
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️'
+}
+let currentLang = 'pt'
+function setLang(lang, btn) {
+  currentLang = lang
+  document.documentElement.setAttribute('data-lang', lang)
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'))
+  if (btn) btn.classList.add('active')
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => { el.textContent = el.getAttribute('data-' + lang) })
+}
+let currentAudio = document.getElementById('preview-audio-player');
+let audioStatus  = document.getElementById('preview-audio-status');
+function playAudioPreview(lang) {
+  if (!currentAudio) currentAudio = document.getElementById('preview-audio-player');
+  if (!audioStatus) audioStatus = document.getElementById('preview-audio-status');
+  const audioFiles = { 'pt': 'audio/preview-pt.mp3', 'en': 'audio/preview-en.mp3', 'es': 'audio/preview-es.mp3' };
+  const src = audioFiles[lang] || audioFiles['pt'];
+  if (currentAudio.src.includes(src) && !currentAudio.paused) {
+    currentAudio.pause();
+    if (audioStatus) audioStatus.style.display = 'none';
+    return;
+  }
+  currentAudio.src = src;
+  currentAudio.play().then(() => {
+    if (audioStatus) { audioStatus.style.display = 'block'; audioStatus.textContent = `▶ Reproduzindo amostra de 10s (${lang.toUpperCase()})...`; }
+  }).catch(err => {
+    if (audioStatus) { audioStatus.style.display = 'block'; audioStatus.textContent = `ℹ️ Amostra de áudio (${lang.toUpperCase()}) em breve no ar! Para ouvir a versão completa, solicite via LinkedIn.`; }
+  });
+  currentAudio.onended = () => { if (audioStatus) audioStatus.style.display = 'none'; };
+}
+function requestLinkedInAccess() {
+  const linkedinUrl = "https://www.linkedin.com/in/eric-renato/";
+  window.open(linkedinUrl, '_blank');
+}
+</script>
+</body>
+</html>
