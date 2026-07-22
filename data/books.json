@@ -1,8 +1,1 @@
-[
-    {
-        "title": "",
-        "author": "",
-        "cover": "assets/images/books/livro1.jpg",
-        "amazon_url": ""
-    }
-]
+[{"id":"book-1","title":"Storytelling com Dados","author":"Cole Nussbaumer Knaflic","category":"Data Visualization","description":{"pt":"Guia prático sobre como transformar dados complexos em histórias visuais claras e impactantes.","en":"A practical guide to turning complex data into clear, impactful visual stories.","es":"Guía práctica sobre cómo transformar datos complejos en historias visuales claras e impactantes."},"cover":"Midia.png","amazon_url":"https://www.amazon.com.br"},{"id":"book-2","title":"Outliers (Fora de Série)","author":"Malcolm Gladwell","category":"Desenvolvimento Pessoal","description":{"pt":"Análise fascinante sobre os fatores que levam pessoas de alto desempenho ao sucesso.","en":"A fascinating look at the factors that drive high achievers to success.","es":"Análisis fascinante sobre los factores que llevan a las personas de alto rendimiento al éxito."},"cover":"Midia.png","amazon_url":"https://www.amazon.com.br"}]
