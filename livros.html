@@ -40,7 +40,7 @@ html, body { width:100%; min-height:100%; background:var(--dark); color:var(--te
 .dock-tooltip { position:absolute; bottom:calc(100% + 10px); background:rgba(20,20,20,0.9); color:var(--text); padding:5px 10px; border-radius:8px; font-size:11px; white-space:nowrap; pointer-events:none; opacity:0; transform:translateY(4px); transition:opacity 0.2s, transform 0.2s; }
 .dock-item:hover .dock-tooltip { opacity:1; transform:translateY(0); }
 .dock-separator { width:1px; height:48px; background:var(--border); margin:0 4px; align-self:center; }
-main { position:relative; z-index:5; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:80px 40px 120px; }
+main { position:relative; z-index:5; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:110px 40px 120px; }
 .sec-title { position:fixed; top:72px; left:50%; transform:translateX(-50%); font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:4px; color:var(--text-dim); text-transform:uppercase; z-index:10; white-space:nowrap; }
 
 /* ── LIVROS ── */
@@ -51,7 +51,12 @@ main { position:relative; z-index:5; display:flex; align-items:center; justify-c
 .livro-title { font-size:13px; font-weight:600; line-height:1.4; }
 .livro-author { font-size:11px; color:var(--text-dim); }
 .livro-badge { padding:3px 10px; border-radius:20px; font-size:10px; letter-spacing:1px; background:rgba(201,168,76,0.15); color:var(--gold); border:1px solid rgba(201,168,76,0.3); }
-@media (max-width:600px) { main { padding:80px 20px 120px; } }
+.media-sections { width:100%; max-width:900px; display:flex; flex-direction:column; gap:34px; }
+.media-row { display:flex; flex-direction:column; gap:13px; }
+.media-row-title { font-family:'Bebas Neue',sans-serif; font-size:21px; letter-spacing:2px; color:var(--gold); }
+.media-row .livros-grid { max-width:none; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); }
+.media-placeholder { min-height:200px; justify-content:center; cursor:default; }
+@media (max-width:600px) { main { padding:100px 20px 120px; } .media-sections { gap:28px; } }
 </style>
 </head>
 <body>
@@ -70,29 +75,151 @@ main { position:relative; z-index:5; display:flex; align-items:center; justify-c
 <span class="sec-title" data-pt="Mídia" data-en="Media" data-es="Medios">Mídia</span>
 
 <main>
-  <div class="livros-grid">
+  <div class="media-sections">
+    <section class="media-row">
+      <h2 class="media-row-title" data-pt="Livros" data-en="Books" data-es="Libros">Livros</h2>
+      <div class="livros-grid">
+       
+        <!------------------------------------------BOOKS-------------------------------------------------->
 
-    <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📊</div>
-      <div class="livro-title">Seja uma Analista de Dados</div>
-      <div class="livro-author">—</div>
-      <span class="livro-badge">RECOMENDO</span>
+   <div class="livro-card">
+  <a href="#" target="_blank" class="livro-link-wrapper">
+    <div class="livro-cover">📊</div>
+    <div class="livro-title">Seja uma Analista de Dados</div>
+    <div class="livro-author"></div>
+  </a>  
+  <span class="livro-badge">
+    <a href="https://www.linkedin.com/posts/eric-renato_datascience-dataanalytics-datadriven-activity-7463669947110465537-C6w1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC7-NP4Bu9uVPLLzX2sy36FnfhkCx1cAkbE" target="_blank">
+      Aqui a minha análise
     </a>
+  </span>
+</div>
 
-    <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">🤖</div>
-      <div class="livro-title">Manual de Análise de Dados</div>
-      <div class="livro-author">Fávero & Belfiore</div>
-      <span class="livro-badge">MBA USP</span>
+
+
+   
+
+   <div class="livro-card">
+  <!-- Link principal do livro -->
+  <a href="#" target="_blank" class="livro-link-wrapper" style="color: inherit; text-decoration: none;">
+    <div class="livro-cover">📚</div>
+    <div class="livro-title">Storytelling com Dados</div>
+    <div class="livro-author">Knaflic</div>
+  </a>  
+
+  <!-- Badge com o link da sua análise do LinkedIn -->
+  <span class="livro-badge">
+    <a href="https://www.linkedin.com/posts/eric-renato_dataanalytics-datadriven-activity-7484658166543122432-hqLD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC7-NP4Bu9uVPLLzX2sy36FnfhkCx1cAkbE" target="_blank" style="color: inherit; text-decoration: none;">
+      Aqui a minha análise
     </a>
+  </span>
+</div>
 
-    <a class="livro-card" href="#" target="_blank">
-      <div class="livro-cover">📚</div>
-      <div class="livro-title">Storytelling com Dados</div>
-      <div class="livro-author">Knaflic</div>
-      <span class="livro-badge">EM BREVE</span>
+
+
+  <div class="livro-card">
+  <!-- Link principal do livro -->
+  <a href="#" target="_blank" class="livro-link-wrapper" style="color: inherit; text-decoration: none;">
+    <div class="livro-cover">📚</div>
+    <div class="livro-title">Seja Egoísta com sua carreira</div>
+    <div class="livro-author">Luciano Santos</div>
+  </a>  
+
+  <!-- Badge com o link da sua análise do LinkedIn -->
+  <span class="livro-badge">
+    <!--<a href="https://www.linkedin.com/posts/eric-renato_dataanalytics-datadriven-activity-7484658166543122432-hqLD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC7-NP4Bu9uVPLLzX2sy36FnfhkCx1cAkbE" 
+    target="_blank" style="color: inherit; text-decoration: none;">-->
+      Leitura em Andamento
     </a>
+  </span>
+</div>
 
+
+
+  <div class="livro-card">
+  <!-- Link principal do livro -->
+  <a href="#" target="_blank" class="livro-link-wrapper" style="color: inherit; text-decoration: none;">
+    <div class="livro-cover">📚</div>
+    <div class="livro-title">Entendendo algoritmos</div>
+    <div class="livro-author">Bhargava</div>
+  </a>  
+
+  <!-- Badge com o link da sua análise do LinkedIn -->
+  <span class="livro-badge">
+    <!--<a href="https://www.linkedin.com/posts/eric-renato_dataanalytics-datadriven-activity-7484658166543122432-hqLD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC7-NP4Bu9uVPLLzX2sy36FnfhkCx1cAkbE" 
+    target="_blank" style="color: inherit; text-decoration: none;">-->
+      Próximo na fila de leitura
+    </a>
+  </span>
+</div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+   <!--------------------------------------- AUDIO --------------------------------------->
+
+    <section class="media-row">
+      <h2 class="media-row-title" data-pt="Áudio" data-en="Audio" data-es="Audio">Áudio</h2>
+      <div class="livros-grid">
+    <a class="livro-card" href="https://open.spotify.com/playlist/0AjPvKyC1DCoLwLJS679JD?si=ac58eb0982a34a2b" target="_blank" rel="noopener noreferrer">
+      <div class="livro-cover">🎧</div>
+      <div class="livro-title">Spotify "Code, War & Coffee"</div>
+      <div class="livro-author">Epic soundtracks that turn tasks into missions and challenges into victories</div>
+      <span class="livro-badge">OUVIR AGORA</span>
+    </a>
+      </div>
+    </section>
+
+
+
+
+    <!--------------------------------------- VIDEOS --------------------------------------->
+
+    <section class="media-row">
+      <h2 class="media-row-title" data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</h2>
+      <div class="livros-grid">
+        <div class="livro-card media-placeholder">
+          
+          <div class="livro-cover">Fabio Akita</div>
+          <br>A Dor de Aprender | Que Cursos/Livros?
+          <span class="livro-badge">
+          <a href="https://youtu.be/HEaIsKm-pao?si=OUAAntGQ2rtaECe4" target="_blank" rel="noopener noreferrer"> Assista Agora </a>
+</span>
+          
+
+          <div class="livro-title" data-pt="Vídeos em breve" 
+          data-en="Videos coming soon" 
+          data-es="Vídeos próximamente">
+          </div>
+        </div>
+
+
+      <div class="livros-grid">
+        <div class="livro-card media-placeholder">
+          <div class="livro-cover">Fabio Akita</div>
+          <br> Conhecimentos Básicos para Iniciantes em Programação
+          <span class="livro-badge">
+            <a href="https://youtu.be/sx4hAHhO9CY?si=4pr7N_EwtSrV3U0x"> Assista Agora </a>
+          </span>
+          
+          <div class="livro-title" 
+          data-pt="Vídeos em breve" 
+          data-en="Videos coming soon" 
+          data-es="Vídeos próximamente">
+          
+        </div>
+
+
+        
+      </div>
+    </section>
   </div>
 </main>
 
