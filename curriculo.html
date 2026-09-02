@@ -262,6 +262,11 @@ main {
 }
 .lock-btn:hover { border-color:var(--gold); color:var(--gold); }
 
+.cv-audio-section .cv-locked { margin-top:0; }
+.cv-audio-section .cv-locked p + p { margin-top:-8px; }
+.audio-disabled { opacity:0.5; }
+.cv-lock-btns .lock-btn { text-decoration:none; }
+
 @media (max-width:600px) {
   main { padding:80px 20px 120px; }
   .cv-header { flex-direction:column; }
@@ -307,9 +312,9 @@ main {
       <div>
         <div class="cv-name">Eric Renato</div>
         <div class="cv-subtitle"
-          data-pt="ANALISTA DE DADOS FINANCEIROS· SQL · SISTEMA DE TESOURARIA "
-          data-en="FINANCIAL DATA ANALYST · SQL · TREASURY SYSTEM"
-          data-es="ANALISTA DE DATOS FINANCIEROS · SQL · SISTEMAS TESORERÍA">
+          data-pt="FINANCIAL SYSTEMS & BUSINESS ANALYST | DATA & ANALYTICS"
+          data-en="FINANCIAL SYSTEMS & BUSINESS ANALYST | DATA & ANALYTICS"
+          data-es="FINANCIAL SYSTEMS & BUSINESS ANALYST | DATA & ANALYTICS">
           ANALISTA DE DADOS FINANCEIROS· SQL · SISTEMA DE TESOURARIA
         </div>
         <a href="https://linkedin.com/in/eric-renato" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 16px;border-radius:20px;border:1px solid rgba(10,102,194,0.4);background:rgba(10,102,194,0.12);color:#6ab0f5;text-decoration:none;font-size:12px;letter-spacing:1px;cursor:none;transition:all 0.2s;">
@@ -318,43 +323,34 @@ main {
       </div>
     </div>
 
-    <!---------------------------------------- Resumo profissional ---------------------------------------->
+    <!-- 01 · Resumo profissional -->
     <div class="cv-section">
-      <div class="cv-section-title"
-        data-pt="Resumo"
-        data-en="Summary"
-        data-es="Resumen">Resumo</div>
+      <div class="cv-section-title" data-pt="01 · Resumo" data-en="01 · Summary" data-es="01 · Resumen">01 · Resumo</div>
       <div class="cv-item">
-        <div class="cv-item-desc"
+        <div class="cv-item-desc" data-pt="Financial Systems & Business Analyst com mais de 20 anos de experiência em Tecnologia e mais de 15 anos dedicados a sistemas financeiros corporativos. Especialista em análise, investigação e validação de dados com SQL, processos de Tesouraria e ambientes ERP, atuando na interface entre negócio, tecnologia e dados." data-en="Financial Systems & Business Analyst with more than 20 years of experience in Technology and more than 15 years dedicated to corporate financial systems. Experienced in data analysis, investigation and validation using SQL, Treasury processes and ERP environments, working at the intersection of business, technology and data." data-es="Financial Systems & Business Analyst con más de 20 años de experiencia en Tecnología y más de 15 años dedicados a sistemas financieros corporativos. Experiencia en análisis, investigación y validación de datos utilizando SQL, procesos de Tesorería y entornos ERP, trabajando en la intersección entre negocio, tecnología y datos.">Financial Systems & Business Analyst com mais de 20 anos de experiência em Tecnologia e mais de 15 anos dedicados a sistemas financeiros corporativos. Especialista em análise, investigação e validação de dados com SQL, processos de Tesouraria e ambientes ERP, atuando na interface entre negócio, tecnologia e dados.</div>
+        <div class="cv-item-desc" style="margin-top:12px;" data-pt="Atualmente, amplio essa experiência em direção a Data & Analytics, com MBA em Data Science, AI & Analytics pela USP/ESALQ e formação em Google Data Analytics. Meu foco está na combinação entre Business Analysis, Financial Systems, Data Analytics e melhoria de processos para transformar problemas complexos em soluções confiáveis e informação útil para o negócio." data-en="I am currently expanding this experience toward Data & Analytics, with an MBA in Data Science, AI & Analytics from USP/ESALQ and training in Google Data Analytics. My focus is on combining Business Analysis, Financial Systems, Data Analytics and process improvement to transform complex problems into reliable solutions and useful business information." data-es="Actualmente, estoy ampliando esta experiencia hacia Data & Analytics, con un MBA en Data Science, AI & Analytics por USP/ESALQ y formación en Google Data Analytics. Mi enfoque está en combinar Business Analysis, Financial Systems, Data Analytics y mejora de procesos para transformar problemas complejos en soluciones confiables e información útil para el negocio.">Atualmente, amplio essa experiência em direção a Data & Analytics, com MBA em Data Science, AI & Analytics pela USP/ESALQ e formação em Google Data Analytics. Meu foco está na combinação entre Business Analysis, Financial Systems, Data Analytics e melhoria de processos para transformar problemas complexos em soluções confiáveis e informação útil para o negócio.</div>
+      </div>
+    </div>
 
-data-pt="Analista Sênior, 20 anos de carreira em Tecnologia, sendo 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume.
-Atualmente, amplio esse conhecimento por meio do MBA em Data Science, IA & Analytics (USP/ESALQ) 
-e da certificação Google Data Analytics Professional Certificate, expandindo conhecimentos em Analytics, Business Intelligence, automação e IA aplicada aos negócios. 
-Inglês e espanhol avançados, com experiência em ERP (XTPG, Oracle EBS e NetSuite) e automação de processos. 
-Meu lema: “Dados são fatos; a análise revela a história.”"
-
-data-en="Senior Analyst with a 20-year track record in Technology, including 15 years specialized in corporate financial systems. Expert in SQL for analyzing and validating critical data within high-volume environments. 
-Currently enhancing this expertise through an MBA in Data Science, AI & Analytics at USP/ESALQ and the Google Data Analytics Professional Certificate, expanding skills in Analytics, 
-Business Intelligence, automation, and AI applied to business. Advanced English and Spanish skills, with experience in ERPs (XTPG, Oracle EBS, and NetSuite) and process automation. 
-My motto: “Data is facts; analysis reveals the story.”"
-
-data-es="Analista Senior con una trayectoria de 20 años en Tecnología, incluyendo 15 años de especialización en sistemas financieros corporativos. Experto en SQL para el análisis y la validación de datos críticos en entornos de alto volumen.
-Actualmente, amplio este conocimiento a través del MBA en Data Science, IA & Analytics (USP/ESALQ) y de la certificación Google Data Analytics Professional Certificate, expandiendo competencias en Analytics, 
-Business Intelligence, automatización e IA aplicada a los negocios. Inglés y español avanzados, con experiencia en ERP (XTPG, Oracle EBS y NetSuite) y automatización de procesos. 
-Mi lema: “Los datos son hechos; el análisis revela la historia.”">
-
-Analista Sênior, 20 anos de carreira em Tecnologia, sendo 15 anos em sistemas financeiros corporativos, especialista em SQL para análise e validação de dados críticos em ambientes de alto volume.
-Atualmente, amplio esse conhecimento por meio do MBA em Data Science, IA & Analytics (USP/ESALQ) 
-e da certificação Google Data Analytics Professional Certificate, expandindo conhecimentos em Analytics, Business Intelligence, automação e IA aplicada aos negócios. 
-Inglês e espanhol avançados, com experiência em ERP (XTPG, Oracle EBS e NetSuite) e automação de processos. 
-<p>Meu lema: “Dados são fatos; a análise revela a história.”</p>
-
-
+    <!-- 02 · Apresentação em áudio -->
+    <div class="cv-section cv-audio-section">
+      <div class="cv-section-title" data-pt="02 · Apresentação em Áudio" data-en="02 · Audio Presentation" data-es="02 · Presentación en Audio">02 · Apresentação em Áudio</div>
+      <div class="cv-locked" style="margin-top:0;">
+        <p data-pt="🎧 Conheça minha trajetória pela minha voz" data-en="🎧 Discover my professional journey through my voice" data-es="🎧 Conoce mi trayectoria profesional a través de mi voz">🎧 Conheça minha trajetória pela minha voz</p>
+        <p data-pt="Uma breve apresentação sobre minha experiência, trajetória e momento profissional." data-en="A brief introduction to my experience, career journey and current professional focus." data-es="Una breve presentación sobre mi experiencia, trayectoria y momento profesional.">Uma breve apresentação sobre minha experiência, trajetória e momento profissional.</p>
+        <div class="cv-lock-btns">
+          <a class="lock-btn" href="https://eric-audio-access.neggereric.workers.dev/" target="_blank" rel="noopener"><span>🇧🇷</span><span data-pt="Ouvir em Português" data-en="Listen in Portuguese" data-es="Escuchar en Portugués">Ouvir em Português</span><span>▶</span></a>
+          <button class="lock-btn audio-disabled" type="button" onclick="requestAccess('audio-en')"><span>🇺🇸</span><span data-pt="English — Em breve" data-en="English — Coming soon" data-es="English — Próximamente">English — Em breve</span></button>
+          <button class="lock-btn audio-disabled" type="button" onclick="requestAccess('audio-es')"><span>🇪🇸</span><span data-pt="Español — Em breve" data-en="Español — Coming soon" data-es="Español — Próximamente">Español — Em breve</span></button>
         </div>
       </div>
     </div>
 
-    <!-- Jornada Profissional -->
+    <!-- 03 · Trajetória Profissional -->
+    <div class="cv-section">
+      <div class="cv-section-title" data-pt="03 · Trajetória Profissional" data-en="03 · Professional Journey" data-es="03 · Trayectoria Profesional">03 · Trajetória Profissional</div>
+
+
     <div class="cv-section">
       <div class="cv-section-title"
         data-pt="Jornada Profissional"
@@ -941,42 +937,6 @@ Inglês e espanhol avançados, com experiência em ERP (XTPG, Oracle EBS e NetSu
         </div>
     </div>
 
-    <!-- Conteúdo bloqueado -->
-    <div class="cv-locked">
-      <p data-pt="🔒 Conteúdo exclusivo — solicite acesso ao candidato"
-         data-en="🔒 Exclusive content — request access from the candidate"
-         data-es="🔒 Contenido exclusivo — solicite acceso al candidato">
-        🔒 Conteúdo exclusivo — solicite acesso ao candidato
-      </p>
-      <div class="cv-lock-btns">
-
-<a class="lock-btn"
-   href="https://eric-audio-access.neggereric.workers.dev/"
-   target="_blank"
-   rel="noopener">
-  <span>🎧</span>
-  <span data-pt="Ouvir áudio de teste"
-        data-en="Listen to test audio"
-        data-es="Escuchar audio de prueba">
-    Ouvir áudio de teste
-  </span>
-</a>
-              
-        <button class="lock-btn" onclick="requestAccess('audio-en')">
-          <span>🎧</span>
-          <span data-pt="Listen in English" data-en="Listen in English" data-es="Listen in English">Listen in English</span>
-        </button>
-        <button class="lock-btn" onclick="requestAccess('audio-es')">
-          <span>🎧</span>
-          <span data-pt="Escuchar en español" data-en="Escuchar en español" data-es="Escuchar en español">Escuchar en español</span>
-        </button>
-        <button class="lock-btn" onclick="requestAccess('video')">
-          <span>🎬</span>
-          <span data-pt="Ver apresentação em vídeo" data-en="Watch video presentation" data-es="Ver presentación en video">Ver apresentação em vídeo</span>
-        </button>
-      </div>
-    </div>
-
   </div>
 </main>
 
@@ -1046,12 +1006,7 @@ function setLang(lang, btn) {
 
 // ── ACESSO BLOQUEADO 
 function requestAccess(type) {
-  const pwd = prompt('🔑 Digite o código de acesso / Enter access code:')
-  if (pwd === 'eric2025') {
-    alert('✅ Acesso concedido! / Access granted!')
-  } else if (pwd !== null) {
-    alert('❌ Código inválido. Solicite ao candidato. / Invalid code.')
-  }
+  alert('🎧 Este conteúdo estará disponível em breve.\n\nThis content will be available soon.')
 }
 
 // ── FUNDO DE ONDAS (simplex noise) ────────────────────────────────────────
