@@ -489,6 +489,7 @@ function showWord(){
 }
 
 function restartIntro(){
+  hideHomeGif()
   if (introFrame !== null) cancelAnimationFrame(introFrame)
   clearTimeout(introExitTimer)
   clearTimeout(introFadeTimer)
