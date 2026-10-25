@@ -358,7 +358,7 @@ function setLang(lang, btn) {
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
     el.textContent = el.getAttribute('data-' + lang)
   })
-  if (current === 'home' && (pRunning || sessionStorage.getItem('voltouHome'))) restartIntro()
+  if (current === 'home') restartIntro()
 }
 
 // ── HOME GIF ──────────────────────────────────────────────────────────────
