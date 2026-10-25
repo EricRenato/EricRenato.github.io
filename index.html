@@ -352,11 +352,13 @@ let currentLang = 'pt'
 function setLang(lang, btn) {
   currentLang = lang
   document.documentElement.setAttribute('data-lang', lang)
+  document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : lang)
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'))
   if (btn instanceof HTMLElement) btn.classList.add('active')
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
     el.textContent = el.getAttribute('data-' + lang)
   })
+  if (pRunning && current === 'home') showWord()
 }
 
 // ── HOME GIF ──────────────────────────────────────────────────────────────
