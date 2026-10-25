@@ -358,7 +358,7 @@ function setLang(lang, btn) {
   document.querySelectorAll('[data-' + lang + ']').forEach(el => {
     el.textContent = el.getAttribute('data-' + lang)
   })
-  if (pRunning && current === 'home') showWord()
+  if (current === 'home' && (pRunning || sessionStorage.getItem('voltouHome'))) restartIntro()
 }
 
 // ── HOME GIF ──────────────────────────────────────────────────────────────
@@ -393,6 +393,7 @@ const PALETTES = [
 ]
 
 let pW, pH, particles=[], wIdx=0, pFrame=0, pRunning=false
+let introFrame=null, introExitTimer=null, introFadeTimer=null
 
 class P {
   constructor(){
@@ -487,8 +488,29 @@ function showWord(){
   for(let i=pi;i<particles.length;i++)particles[i].kill()
 }
 
+function restartIntro(){
+  if (introFrame !== null) cancelAnimationFrame(introFrame)
+  clearTimeout(introExitTimer)
+  clearTimeout(introFadeTimer)
+  introFrame = null
+  current = 'home'
+  pFrame = 0
+  wIdx = 0
+  networkShown = false
+  pRunning = true
+  pCanvas.style.display = 'block'
+  pCanvas.style.transition = 'none'
+  pCanvas.style.opacity = '1'
+  dock.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
+  dock.style.opacity = '0'
+  dock.style.transform = 'translateX(-50%) translateY(20px)'
+  pResize()
+  pAnimate()
+}
+
 function pAnimate(){
-  if(current!=='home'){pFrame++;requestAnimationFrame(pAnimate);return}
+  introFrame = null
+  if(current!=='home'){pFrame++;introFrame=requestAnimationFrame(pAnimate);return}
   pCtx.fillStyle='rgba(0,0,0,0.5)'; pCtx.fillRect(0,0,pW,pH)
   for(let i=particles.length-1;i>=0;i--){
     const p=particles[i]; p.update(); p.draw()
@@ -497,9 +519,9 @@ function pAnimate(){
   pFrame++
   if(pFrame===180 && !networkShown){
     networkShown = true
-    setTimeout(()=>{
+    introExitTimer=setTimeout(()=>{
       particles.forEach(p=>p.kill())
-      setTimeout(()=>{
+      introFadeTimer=setTimeout(()=>{
         pCanvas.style.transition='opacity 0.8s'
         pCanvas.style.opacity='0'
         showNetworkBg()
@@ -508,9 +530,9 @@ function pAnimate(){
       }, 800)
     }, 400)
   }
-  if(pFrame>180 && networkShown){requestAnimationFrame(pAnimate);return}
+  if(pFrame>180 && networkShown)return
   if(pFrame%180===0 && !networkShown){wIdx=(wIdx+1)%5;showWord()}
-  requestAnimationFrame(pAnimate)
+  introFrame=requestAnimationFrame(pAnimate)
 }
 
 // ── WAVE BACKGROUND (simplex noise) ──────────────────────────────────────
